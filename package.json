@@ -1,0 +1,32 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "online shopping website",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "_comment1": "COMMENT --> ADD TEST,SERVER,CLIENT,DEV script in this file",
+    "test": "node backend/server.js",
+    "server": "nodemon backend/server.js ",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder.js",
+    "data:des": "node backend/seeder.js -d"
+  },
+  "author": "Niharika Dutta", 
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.14"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
+  }
+}

@@ -1,0 +1,82 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+    /* font-size: 10px; */
+    /* setting 1rem = 10 px */
+}
+
+.main-cls {
+    height: 100vh;
+    /*     background: #FFAFBD;
+    background: linear-gradient(to bottom, #ffc3a0, #FFAFBD); */
+    /* background: #c6ffdd; */
+    /* background: -webkit-linear-gradient(to bottom, #c6ffdd, #fbd786, #f7797d); */
+    background: #43C6AC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F8FFAE, #43C6AC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F8FFAE, #43C6AC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bubble {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    bottom: -70px;
+    position: absolute;
+}
+
+.bubble img {
+    width: 3rem;
+    animation: bubly 7s linear infinite;
+}
+
+@keyframes bubly {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-80vh);
+    }
+}
+
+.bubble img:nth-child(1) {
+    animation-delay: 2s;
+}
+
+.bubble img:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.bubble img:nth-child(3) {
+    animation-delay: 3s;
+}
+
+.bubble img:nth-child(4) {
+    animation-delay: 6s;
+}
+
+.bubble img:nth-child(5) {
+    animation-delay: 5s;
+}
+
+.bubble img:nth-child(6) {
+    animation-delay: 4.5s;
+}
+
+.bubble img:nth-child(7) {
+    animation-delay: 7s;
+}

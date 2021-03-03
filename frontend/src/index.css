@@ -1,0 +1,57 @@
+main {
+    min-height: 85vh;
+}
+
+.arrow {
+    border: solid orangered;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 6px;
+}
+
+.left {
+    transform: rotate(135deg);
+}
+
+.card_css {
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    padding: 14px 80px 18px 36px;
+    cursor: pointer;
+}
+
+.card_css:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.rating span {
+    padding: 0.1rem;
+}
+
+.listy {
+    background: white;
+    color: black;
+}
+
+.listy1 {
+    color: black;
+    background: white;
+    border: .5px solid black;
+}
+
+.listy1:hover {
+    color: black;
+    background: white;
+}
+
+.boxsm {
+    background-color: #edf2f4;
+    padding: .8rem 2rem
+}
+
+.boxsm_cart {
+    padding: .8rem 5rem
+}
