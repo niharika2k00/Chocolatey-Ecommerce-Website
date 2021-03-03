@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-// import products from '../products.js';
 import PROD from '../Components/Prod.js';
 import backend_URL from '../backend_URL.js';
 import axios from 'axios';
