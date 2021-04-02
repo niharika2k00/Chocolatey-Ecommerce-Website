@@ -1,0 +1,37 @@
+.procart {
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.boxsm {
+    margin-top: 14px;
+    padding: .6rem;
+}
+
+.boxsm_cart {
+    padding: .8rem 5rem
+}
+
+.cartitem_num {
+    border-radius: 10px;
+    background-color: #fae1dd;
+}
+
+.cartbox_rgt {
+    background-color: #fff3b0;
+    color: #000;
+}
+
+.cartbox_rgt h2 {
+    font-family: 'Cormorant', serif;
+    font-size: 2.1rem;
+    font-weight: 300;
+    color: #000000;
+}
+
+.cartbox_rgt p {
+    margin-bottom: 1px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000000;
+}

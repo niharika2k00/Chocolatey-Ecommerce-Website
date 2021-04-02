@@ -1,7 +1,9 @@
 
 import {
     CART_ADD_ITEM,
-    CART_REMOVE_ITEM
+    CART_REMOVE_ITEM,
+    CART_SAVE_PAYMENT_METHOD,
+    CART_SAVE_SHIPPING_ADDRESS
 } from '../Constants/Cart_constant.js';
 
 export const cartReducer = (state = { cartItems: [] }, action) => {
@@ -27,12 +29,28 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
                     }
             }
 
+
         case CART_REMOVE_ITEM:
-            console.log(action.payload);
             return {
                 ...state,
                 cartItems: state.cartItems.filter(x => x.product !== action.payload) //action.payload contains the ID of the element whose deleted BTN is pressed
             }
+
+        case CART_SAVE_SHIPPING_ADDRESS:
+            // console.log(action);
+            return {
+                ...state,
+                shippingAddress: action.payload
+            }
+
+        case CART_SAVE_PAYMENT_METHOD:         
+            console.log("paymentMethod = ", action.payload); // PayPal_______ as the action is the full {}obj
+            return {
+                ...state,
+                paymentMethod: action.payload
+            }
+
+
         default:
             return state;
     }

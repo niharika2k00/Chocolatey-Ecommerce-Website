@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap';
 import Rating from '../Components/Rating.js';
 import '../index.css';
+import "../STYLES/product_style.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { Detailsproducts } from '../Actions/product_action.js';
 import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
-// import backend_URL from '../backend_URL.js';
+
 
 
 const Productscreen = ({ history, match }) => {
@@ -31,33 +32,38 @@ const Productscreen = ({ history, match }) => {
         history.push(`/cart/${match.params.id}?qty=${qty}`)
     }
 
+
+
     return (
         <div>
             {/* { product.name} */}
-            <Link className="btn btn-success my-3" to="/home" >  GO BACK  </Link>
+            <section className="Button">
+                <a className="Button-btn" href="/home"> Back </a>
+            </section>
+
 
             {loading ? < Load /> :
                 error ? < Mess variant="danger" > {error}</Mess> :
                     product ?
                         (<Row>
-                            <Col md={5}>
-                                <Image src={product.image} fluid />
+                            <Col md={5} id="proimg">
+                                <img src={product.image} fluid />
                             </Col>
 
-                            <Col md={3}>
+                            <Col md={4}>
                                 <ListGroup variant="flush" >
-                                    <ListGroup.Item  ><h3> {product.name} </h3></ListGroup.Item>
+                                    <ListGroup.Item  ><h3 id="prohead"> {product.name} </h3></ListGroup.Item>
 
                                     <ListGroup.Item className='listy1'>
                                         <Rating
                                             value={product.rating}
                                             text={` ${product.numReviews} reviews`}
-                                            color='#faa307'
+                                            color='crimson'
                                         />
                                     </ListGroup.Item >
 
-                                    <ListGroup.Item className='listy1'><strong> Price : </strong>₹{product.price}  </ListGroup.Item>
-                                    <ListGroup.Item className='listy1'><strong> Description :  </strong>{product.description}  </ListGroup.Item>
+                                    <ListGroup.Item className='listy1' style={{ fontSize: "1.8rem" }}><b> Price : </b>₹{product.price}  </ListGroup.Item>
+                                    <ListGroup.Item className='listy1'><b> Description :  {' '}</b>{product.description}  </ListGroup.Item>
                                 </ListGroup>
                             </Col>
 
@@ -90,7 +96,6 @@ const Productscreen = ({ history, match }) => {
                                                                     {x + 1}
                                                                 </option>
                                                             ))}
-
                                                         </Form.Control>
                                                     </Col>
                                                 </Row>
@@ -105,7 +110,7 @@ const Productscreen = ({ history, match }) => {
                                                 type='button'
                                                 disabled={product.countInStock === 0}
                                             >
-                                                <strong>ADD TO CART</strong>
+                                                <strong><i class="fas fa-cart-arrow-down"></i> ADD TO CART</strong>
                                             </Button>
                                         </ListGroup.Item>
                                     </ListGroup>

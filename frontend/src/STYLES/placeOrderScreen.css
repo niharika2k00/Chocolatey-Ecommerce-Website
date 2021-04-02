@@ -1,0 +1,31 @@
+#Orderhead {
+    font-size: 24px;  
+    font-family: "Cormorant", serif;
+    background: linear-gradient(160deg, #c6f3e5, #fcd80c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+#Ordersubhead {
+    font-family: 'Kiwi Maru', serif;
+    font-size: 16px;
+    padding: 0 10px 10px 6px;
+}
+
+.Orderbkgrnd {
+    /* color: green; */
+    background-color: #141314;
+}
+
+.Orderbox {
+    border: 3px dotted #fdffb6;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+#boxsubitem{
+    padding: 6px 20px;
+    font-size:.9rem;
+    font-family: 'Kiwi Maru', serif;
+
+}

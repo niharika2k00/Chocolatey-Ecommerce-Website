@@ -25,13 +25,14 @@ const importDATA = async () => {
         const adminUser = createdUsers[0]._id;
         // console.log(adminUser);
         const sampleProducts = prdk.map(product => {  //prdk ---> the product.js 
-            return { ...product, user: adminUser }   // ...products includes all the stuffs of the product with addition to the adminUser field
+            return { ...product, user: adminUser } // ...products includes all the stuffs of the product with addition to the adminUser field
         })
 
         await Product.insertMany(sampleProducts); // insert the final data with the admin field
         console.log("DATA IMPORTED".green.inverse);
         process.exit();
     }
+
     catch (error) {
         console.error(`${error}`);
         process.exit(1);
@@ -53,8 +54,14 @@ const destroyedDATA = async () => {  // async bcz it we are fetching data frm th
     }
 }
 
+
 if (process.argv[2] === '-d')
     destroyedDATA();
 else
     importDATA();
+
+
+
+/*  npm run data:import      ----> for importing into the Data Base  */
+
 

@@ -24,7 +24,37 @@ const Homescreen = () => {
 
     return (
         <div>
-            <Link to="/"><h2> <i className="arrow left"></i> New Trends Available !!</h2> </Link>
+            <section id="parallax2" className="parallax2">
+                <div className="container" data-aos="zoom-in">
+                    <div className="text-center">
+                        <h2>Featured Chocolates Products</h2>
+                        <p><i class="fas fa-candy-cane px-2"></i>Delight in Every Bite. Lets Chocolate makes your day ........  </p>
+                        <a className="parallax2-btn" href="/cart">
+                            SHOP
+                         </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="d-flex bd-highlight">
+                <div class="p-2 flex-grow-1 bd-highlight">
+                    <Link to="/"> <i className="arrow left"></i></Link>
+                </div>
+
+                <div class="p-2 bd-highlight sorttitle" ><h5>Sort By :</h5></div>
+
+                <div class="p-2 bd-highlight">
+                    <select name="sortby" id="sortby">
+                        <option value="lh">Low to High</option>
+                        <option value="hl">High to Low</option>
+                        <option value="az">A - Z</option>
+                        <option value="less200">Price less than 200</option>
+                        <option value="bestselling">Best Selling</option>
+                    </select>
+                </div>
+            </div>
+
 
             {loading ? < Load /> :                                       // <h2>Loading...</h2>
                 error ? < Mess variant="danger" > {error}</Mess> :       //<h3>{error}</h3> 

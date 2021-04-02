@@ -12,14 +12,14 @@ const Prod = (/*props*/  { pro }) => {
             {/* <p>Left arrow: <i class="arrow left"></i></p> */}
             {/* <Link className="btn btn-success my-3" to="/home" >  GO BACK  </Link> */}
             <Card className='my-3 p-3 rounded  card_css' >
-                <Link to={`/product/${pro._id}`}  >   {/* <a> is changed to Link tag*/}
-                    <Card.Img src={pro.image} variant='top' />
+                <Link to={`/product/${pro._id}`} >   {/* <a> is changed to Link tag*/}
+                    <Card.Img id="img_product" src={pro.image} variant='top' />
                 </Link>
 
                 <Card.Body className='p-3' >
-                    <Link to={`/product/${pro._id}`}  >  {/* <a href = ''></a>  changes to link tag  */}
+                    <Link to={`/product/${pro._id}`} style={{ textDecoration: "none" }} >  {/* <a href = ''></a>  changes to link tag  */}
                         <Card.Title as='div'>
-                            <strong>{pro.name}</strong>
+                            <strong id="link_css">{pro.name}</strong>
                         </Card.Title>
                     </Link>
 
@@ -34,7 +34,7 @@ const Prod = (/*props*/  { pro }) => {
                         />
                     </Card.Text>
 
-                    <Card.Text as='h3' >
+                    <Card.Text as='h3' style={{ color: "#f1cbe0" }} >
                         ₹{pro.price}
                     </Card.Text>
                 </Card.Body>

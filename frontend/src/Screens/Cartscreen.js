@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removefromCart } from '../Actions/Cart_action.js';
+import '../STYLES/cart_style.css';
 import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
 import backend_URL from '../backend_URL.js';
@@ -22,7 +23,7 @@ const Cartscreen = ({ match, location, history }) => {
     const CART = useSelector(state => state.CART);
     // console.log("cart :: ", CART);
     const { cartItems } = CART;
-    console.log("{ cartItems } from cartscreen : ", cartItems); // Array of OBJECTS -- which are present in the CART
+    console.log("{ cartItems } from cartscreen : ", cartItems); // Array of OBJECTS -- [{}, {}, {}] present in the CART
 
     useEffect(() => {
         if (productID)
@@ -44,30 +45,36 @@ const Cartscreen = ({ match, location, history }) => {
     return (
         <div>
             <Row>
-                <Col md={8} >
-                    <h1><strong>Shopping Cart</strong></h1>
+                <Col md={8} sm={5} >
+                    <div class="p-2 ">
+                        <Link to="/home"> <i className="arrow left"></i></Link>
+                        <span>  <h1 id="prohead">Shopping Cart</h1></span>
+                    </div>
+
+
                     {cartItems.length === 0 ?
 
                         (<Mess>Your Cart id Empty <Link to="/home">Go Back</Link></Mess>) :
 
-                        (<ListGroup variant="flush" >
+                        (<ListGroup variant="flush" className="procart">
                             {/* item  ----> each product */}
                             {cartItems.map(item => (
-                                <ListGroup.Item key={item.product} className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem", color: 'black' }} >
-                                    <Row>
+                                <ListGroup.Item key={item.product} className="boxsm">
+                                    <Row >
                                         <Col md={2}>
                                             <Image src={item.image} alt={item.name} fluid rounded />
                                         </Col>
 
                                         <Col md={3}>
                                             {/* {item.product} ------->  is the ID */}
-                                            <Link to={`/product/${item.product}`}>{item.name}</Link>
+                                            <Link to={`/product/${item.product}`} id="link_css" style={{ fontSize: "1.2rem" }} ><b>{item.name}</b></Link>
                                         </Col>
 
-                                        <Col md={2}>₹{item.price}</Col>
+                                        <Col md={2} id="link_css">₹{item.price}</Col>
 
                                         <Col md={2}>
                                             <Form.Control
+                                                className="cartitem_num"
                                                 as='select'
                                                 value={item.QTY} // update in the redux devtools 
                                                 onChange={(e) =>
@@ -100,17 +107,17 @@ const Cartscreen = ({ match, location, history }) => {
                 </Col>
 
 
-                <Col md={4} style={{ padding: '.8rem' }} >
+                <Col md={4} sm={7} style={{ padding: '.5rem' }} >
                     <Card>
                         <ListGroup variant='flush' >
-                            <ListGroup.Item style={{ backgroundColor: "#ffd166", color: 'black' }}>
+                            <ListGroup.Item className="cartbox_rgt" >
                                 <h2>
-                                    Subtotal ({cartItems.reduce((acc, item) => acc + item.QTY, 0)}) items
+                                    <b>  Subtotal ({cartItems.reduce((acc, item) => acc + item.QTY, 0)}) items</b>
                                 </h2>
-
-                                ₹ {cartItems
+                                <p> ₹ {cartItems
                                     .reduce((acc, item) => acc + item.QTY * item.price, 0)
-                                    .toFixed(2)}  {/* fixed to 2 decimal places */}
+                                    .toFixed(2)}  {/* fixed to 2 decimal places */}</p>
+
                             </ListGroup.Item>
 
                             <ListGroup.Item>
@@ -121,8 +128,8 @@ const Cartscreen = ({ match, location, history }) => {
                                     disabled={cartItems.length === 0}
                                     onClick={checkoutHandler}
                                 >
-                                    Proceed To Checkout
-                                 </Button>
+                                    <b> PROCEED TO CHECKOUT</b>
+                                </Button>
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>
@@ -133,3 +140,8 @@ const Cartscreen = ({ match, location, history }) => {
 }
 
 export default Cartscreen;
+
+
+
+
+// Syntax :    array.reduce(function(total, currentValue, currentIndex, arr), initialValue)

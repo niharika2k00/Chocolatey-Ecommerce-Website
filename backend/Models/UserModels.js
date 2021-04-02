@@ -29,13 +29,14 @@ const UserSchema = mongoose.Schema({
 }, { timestamp: true })  // 2nd arguement 
 
 
+
 // Match user entered password to hashed password in database
 UserSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password)   //this.password -->Pswd of EACH individual user as this method is applied to all
 }
 
-UserSchema.pre('save', async function (next) {
 
+UserSchema.pre('save', async function (next) {
     if (!this.isModified("password"))
         next();
 
@@ -53,7 +54,7 @@ export default User;
 
 
 /*  The first argument is the singular name of the collection your model is for. Mongoose automatically looks
-for the plural, lowercased version of your model name. Thus, for the example above, the model Tank is for
+for the plural, lowercase version of your model name. Thus, for the example above, the model Tank is for
  the tanks collection in the database. */
 
 /*

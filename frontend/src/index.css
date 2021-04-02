@@ -1,21 +1,100 @@
+/* font-family: 'Lobster', cursive;
+font-family: 'Cormorant', serif;
+font-family: 'Kiwi Maru', serif; */
+
 main {
     min-height: 85vh;
 }
 
+#heading_nav {
+    font-family: 'Lobster', cursive;
+    font-size: 32px;
+    font-weight: 500;
+}
+
 .arrow {
-    border: solid orangered;
+    border: solid #ffc8dd;
     border-width: 0 4px 4px 0;
     display: inline-block;
     padding: 6px;
+}
+
+.left:hover {
+    border: solid #90be6d;
 }
 
 .left {
     transform: rotate(135deg);
 }
 
+.parallax2 {
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.shopify.com/s/files/1/0436/0932/5722/files/img-4_1920X.jpg?v=1595920250") fixed center center;
+    background-size: cover;
+    padding: 80px 0;
+    /* width of the parallax2 */
+    margin-bottom: 50px;
+}
+
+.parallax2 h2 {
+    font-family: 'Cormorant', serif;
+    background: linear-gradient(160deg, #c6f3e5, #fcd80c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.parallax2 p {
+    color: #fff;
+    font-family: 'Cormorant', serif;
+    font-size: 22px;
+    /* font-family: 'Kiwi Maru', serif; */
+    font-weight: 300;
+}
+
+.parallax2 .parallax2-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 6px 24px;
+    border-radius: 4px;
+    transition: 0.5s;
+    margin-top: 10px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.parallax2 .parallax2-btn:hover {
+    background: rgba(0, 0, 0, 0.575);
+    border: 8px double #d90429;
+}
+
+#sortby {
+    padding: 6px 8px;
+    font-size: 16px;
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    border-radius: 4px;
+    background-color: #fff3b0;
+    margin: 5px;
+}
+
+#sortby option:hover {
+    background-color: rgb(235, 57, 57)
+}
+
+.sorttitle {
+    color: rgba(255, 255, 255, 0.884);
+    font-size: 18px;
+}
+
 .card_css {
     border-radius: 4px;
-    background: #fff;
+    background: #0f0e0f31;
+    /* ACTUALLY CARD IS THERE BUT OPACITY LESSSS */
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     padding: 14px 80px 18px 36px;
@@ -27,31 +106,25 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
 
+#link_css {
+    color: #f7f7f7de;
+    font-weight: 700;
+    font-size: 1.4rem;
+    font-family: 'Cormorant', serif;
+    text-decoration: none;
+}
+
+#img_product {
+    object-fit: cover;
+    width: 14rem;
+    height: 12rem;
+}
+
 .rating span {
     padding: 0.1rem;
 }
 
-.listy {
-    background: white;
-    color: black;
-}
-
-.listy1 {
-    color: black;
-    background: white;
-    border: .5px solid black;
-}
-
-.listy1:hover {
-    color: black;
-    background: white;
-}
-
-.boxsm {
-    background-color: #edf2f4;
-    padding: .8rem 2rem
-}
-
-.boxsm_cart {
-    padding: .8rem 5rem
+.navBig {
+    font-size: 0.9rem;
+    color: #0f0e0ffa
 }

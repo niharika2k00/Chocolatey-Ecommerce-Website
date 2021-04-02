@@ -3,12 +3,13 @@ import express from 'express';
 import asyncHandler from 'express-async-handler';
 import pro from '../Models/ProductModels.js';
 
+
+
 // @desc       Fetch all products
 // @Route      GET/api/products
 // @access      public
 
-
-const getproducts = asyncHandler(async (req, res) => {
+const getproducts = asyncHandler(async (req, res) => {   // Fetch all 6 products from the backend
     const products = await pro.find({});
     /* res.status(401)
    throw new Error("Not AUthorised") */

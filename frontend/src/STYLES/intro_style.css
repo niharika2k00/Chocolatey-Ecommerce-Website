@@ -1,0 +1,361 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+    /* font-size: 10px; */
+    /* setting 1rem = 10 px */
+}
+
+.main-cls {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #262626;
+}
+
+/* ----------------------------   BUBBLE STYLES --------------------- */
+
+/* .bubble {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    bottom: -70px;
+    position: absolute;
+}
+.bubble img {
+    width: 3rem;
+    animation: bubly 7s linear infinite;
+}
+@keyframes bubly {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-80vh);
+    }
+}
+.bubble img:nth-child(1) {
+    animation-delay: 2s;
+}
+.bubble img:nth-child(2) {
+    animation-delay: 1s;
+}
+.bubble img:nth-child(3) {
+    animation-delay: 3s;
+}
+.bubble img:nth-child(4) {
+    animation-delay: 6s;
+}
+.bubble img:nth-child(5) {
+    animation-delay: 5s;
+}
+.bubble img:nth-child(6) {
+    animation-delay: 4.5s;
+}
+.bubble img:nth-child(7) {
+    animation-delay: 7s;
+}*/
+
+.mycarou {
+    height: 35rem;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.carou_center {
+    bottom: 200px;
+    left: 15%;
+}
+
+.title {
+    font-family: 'Lobster', cursive;
+    color: rgba(255, 255, 255, 0.945);
+    font-size: 6rem;
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    font-family: 'Cormorant', serif;
+}
+
+.overlay-image {
+    position: absolute;
+    height: 30rem;
+    width: 100%;
+    opacity: 0.65;
+    background-size: cover;
+    background-position: center;
+}
+
+.container_self {
+    margin-bottom: 15px;
+    padding-bottom: 50px;
+}
+
+.minihead {
+    padding: 2.5rem;
+    font-family: 'Cormorant', serif;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.932);
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.subheading span {
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    font-size: 34px;
+}
+
+.subheading span:before, .subheading span:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-bottom: 2px solid #f7fa48;
+    border-top: 2px solid rgb(230, 208, 208);
+    top: 16px;
+    width: 120px;
+}
+
+.subheading span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.subheading span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+.subheading span ::after {
+    content: "";
+    height: 3px;
+    background: #1b1b1b;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -3px;
+    width: 3000px;
+}
+
+.minislider {
+    padding: 10px;
+    /* margin: 4px; */
+    position: relative;
+    cursor: pointer;
+    /* border-radius: 4px; */
+    background: #262626;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    /* padding: 14px 80px 18px 36px; */
+}
+
+.minislider:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.htset {
+    height: 200px;
+    object-fit: cover;
+}
+
+.minisli_box {
+    background: rgba(38, 10, 2, 0.9);
+    padding: 6px;
+    position: absolute;
+    /* top: 0; */
+    bottom: 7px;
+    left: 4px;
+    right: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.minisli_box h4 {
+    color: rgba(255, 255, 255, 0.849);
+    font-weight: 300;
+    font-size: 20px;
+    font-family: 'Kiwi Maru', serif;
+}
+
+.parallax {
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("http://crems.like-themes.com/wp-content/uploads/2019/06/parallax_02.jpg") fixed center center;
+    background-size: cover;
+    padding: 90px 0;
+    /* width of the parallax */
+    margin-bottom: 50px;
+}
+
+.parallax h2 {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.parallax p {
+    color: #fff;
+    /* font-family: 'Cormorant', serif;  */
+    font-size: 24px;
+    font-family: 'Kiwi Maru', serif;
+    font-weight: 300;
+}
+
+.parallax .parallax-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 4px;
+    transition: 0.5s;
+    margin-top: 10px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.parallax .parallax-btn:hover {
+    background: rgba(0, 0, 0, 0.575);
+    border-color: #ffb703;
+    /* color: #151515; */
+}
+
+#item {
+    padding: 12px;
+    margin: 12px;
+}
+
+.itemhead {
+    color: rgba(255, 255, 255, 0.932);
+    /* text-transform: uppercase; */
+    font-family: 'Cormorant', serif;
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(160deg, #c6f3e5, #fcd80c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.item_subhead {
+    color: rgba(255, 255, 255, 0.438);
+    font-family: 'Kiwi Maru', serif;
+}
+
+.icoo {
+    color: gold;
+    font-size: 36px;
+    padding: 4px;
+}
+
+/* ---------------------------    Chocolate Hover Effect        ----------------------------- */
+
+.HOVER img {
+    transform: scale(1);
+    transition: .3s ease-in-out;
+}
+
+.HOVER img:hover {
+    transform: scale(1.3);
+}
+
+.choco_name h4 {
+    margin-top: 20px;
+    transform: translateY(1px);
+    transition: .1s ease-in-out;
+}
+
+.choco_name h4:hover {
+    margin-top: 0;
+}
+
+.choco {
+    padding: 15px;
+    justify-content: center;
+}
+
+.choco_img {
+    padding-bottom: 20px;
+    height: 14rem;
+    width: 14rem;
+}
+
+.choco_name h4 {
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.877);
+    font-family: 'Cormorant', serif;
+    font-size: 24px;
+}
+
+/* -------------------------------   RESPONSIVE  STYLES ----------------------------------- */
+
+@media (max-width: 450px) {
+    .mycarou {
+        height: 16rem;
+    }
+    .carou_center {
+        bottom: 60px;
+        left: 15%;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .minihead {
+        padding: 1.5rem;
+    }
+    .subheading span {
+        font-size: 22px;
+    }
+    .minislider {
+        padding: 6px;
+    }
+    .htset {
+        height: 145px;
+        object-fit: cover;
+    }
+    .minisli_box {
+        bottom: 7px;
+    }
+    .minisli_box h4 {
+        font-size: 12px;
+    }
+    .parallax {
+        padding: 60px 0;
+        margin-bottom: 35px;
+    }
+    .parallax h2 {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .parallax p {
+        font-size: 16px;
+    }
+    .choco_img {
+        padding-bottom: 2px;
+        height: 10rem;
+        width: 10rem;
+    }
+    .choco_name h4 {
+        padding: 6px;
+        font-size: 18px;
+    }
+}

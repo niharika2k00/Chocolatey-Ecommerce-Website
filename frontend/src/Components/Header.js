@@ -1,28 +1,58 @@
+
 import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Container, Nav, Navbar, Button, Form, FormControl } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button, Form, FormControl, NavDropdown } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { LogOUT } from '../Actions/User_action.js';
+
 
 const Header = () => {
+
+    const user_Login = useSelector(state => state.user_Login);
+    const { UserInfo } = user_Login;
+
+    const dispatch = useDispatch();
+
+    const Logout_Handler = () => {
+        console.log("LOGOUT");
+        dispatch(LogOUT());
+    }
+
+
+
     return (
         <header>
-            <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar bg="dark" variant="dark" expand="lg" style={{ padding: "10px", marginbottom: "40px" }} >
                 <Container>
-                    <LinkContainer to="/"><Navbar.Brand >ECOMMERCE</Navbar.Brand></LinkContainer>
+                    <LinkContainer to="/"><Navbar.Brand id = "heading_nav">Chocolatey</Navbar.Brand></LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
 
                             <LinkContainer to="/cart">
-                                <Nav.Link>     Cart
-                            <i class="fas fa-cart-arrow-down"></i>
+                                <Nav.Link className="navBig">Cart{''}
+                                    <i class="fas fa-cart-arrow-down"></i>
                                 </Nav.Link>
                             </LinkContainer>
 
-                            <LinkContainer to="/login">
-                                <Nav.Link>       Sign In
-                                    <i class="far fa-user"></i>
-                                </Nav.Link>
-                            </LinkContainer>
+
+                            {/*CREATED LATER AFTER THE LOGIN PART(frontend + backend)*/}
+                            {UserInfo ? (
+                                <NavDropdown title={UserInfo.name} id="username" className="navBig">
+                                    <LinkContainer to='/profile' >
+                                        <NavDropdown.Item > Profile </NavDropdown.Item>
+                                    </LinkContainer>
+
+                                    <NavDropdown.Item onClick={Logout_Handler} >Logout</NavDropdown.Item>
+                                </NavDropdown>)
+                                :
+                                (<LinkContainer to="/login">
+                                    <Nav.Link className="navBig" >  Sign In {''}
+                                        <i class="far fa-user"></i>
+                                    </Nav.Link>
+                                </LinkContainer>)
+                            }
+
 
                         </Nav>
                         <Form inline>

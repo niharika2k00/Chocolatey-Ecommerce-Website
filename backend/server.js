@@ -16,6 +16,9 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const products = require('./Data/products.js'); */
 
+
+
+
 // syntax using ESSCRIPT
 import express from 'express';
 import dotenv from 'dotenv';
@@ -26,6 +29,7 @@ import cors from 'cors';
 import product_routes from './Routes/product_routes.js';
 import products from './Data/products.js';
 import user_routes from './Routes/user_routes.js';
+import order_routes from './Routes/user_routes.js';
 
 
 dotenv.config();
@@ -40,15 +44,16 @@ app.use(
   })
 );
 
-app.use(express.json()); //allows json data in the body
+app.use(express.json());                           //allows json data in the body
 
-app.get('/', (req, res) => {                       //ES6 FUNCTION
+// SYNTAX: app.get( path, callback )
+app.get('/', (req, res) => {                       //ES6 FUNCTION    
   res.send('API is running succesfully');
 })
 
-/*
- // http://localhost:8090/users/getUser/userid11/postid22
-app.get('/users/getUser/:userid/:postid', (req, res) => {
+
+// http://localhost:8090/users/getUser/userid11/postid22
+/* app.get('/users/getUser/:userid/:postid', (req, res) => {
   console.log(req.params); // {userid: userid11, postid: postid22}
   res.send({});
 })
@@ -59,9 +64,10 @@ app.get('/user', (req, res) => {
   console.log("Name: ", req.query.name);
   console.log("Age:", req.query.age);
   console.log(req.query);      // {userid: userid11, postid: postid22}
+  console.log(req.body);       // {}
   res.send();
-})
- */
+}) */
+
 
 // GET method Route  --- shifted to product_routes
 /* app.get('/api/products', function (req, res) {
@@ -76,6 +82,7 @@ app.get('/api/products/:id', (req, res) => {
 // SYNTAX: app.use(path, callback)
 app.use('/api/products', product_routes);
 app.use('/api/users', user_routes);
+app.use('/api/orders', order_routes);
 
 /* app.use((req, res, next) => {
   console.log(req.originalUrl);

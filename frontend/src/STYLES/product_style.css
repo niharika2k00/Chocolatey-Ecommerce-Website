@@ -1,0 +1,68 @@
+.Button {
+    padding: 4px auto 4px auto;
+    margin-bottom: 6px;
+}
+
+.Button .Button-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 6px 24px;
+    border-radius: 4px;
+    transition: 0.5s;
+    margin-top: 10px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.Button .Button-btn:hover {
+    background: rgba(87, 83, 83, 0.575);
+    border: 6px double #d90429;
+}
+
+#proimg img {
+    width: 430px;
+    height: auto;
+    border-radius: 4px;
+    padding: 10px;
+    /* border: 4px double #e8ecb8cb; */
+    transition: .3s ease-in-out;
+}
+
+#proimg img:hover {
+    width: 410px;
+    box-shadow: 0 10px 16px rgba(223, 23, 23, 0.12), 0 10px 12px rgba(44, 233, 167, 0.288);
+}
+
+#prohead {
+    /* font-family: 'Cormorant', serif; */
+    background: linear-gradient(160deg, #c6f3e5, #fcd80c);
+    /* TEXT GRADIENT */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-bottom: 4px;
+}
+
+.listy {
+    background: rgb(221, 153, 153);
+    color: black;
+}
+
+.listy1 {
+    color: rgba(245, 245, 245, 0.897);
+    background: #0f0e0ffa;
+    border: .5px solid black;
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.listy1:hover {
+    color: rgb(255, 255, 255);
+}

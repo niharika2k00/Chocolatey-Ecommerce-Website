@@ -4,8 +4,9 @@ import asyncHandler from 'express-async-handler';
 import Generate_Web_Tokens from '../Utils/Generate_Web_Tokens.js';
 import User from '../Models/UserModels.js';
 
+
 // @desc       Auth users & get tokens
-// @Route      POST/api/user/login
+// @Route      POST/api/users/login
 // @access      public
 
 const userAuth = asyncHandler(async (req, res) => {
@@ -15,9 +16,11 @@ const userAuth = asyncHandler(async (req, res) => {
 
     // Find() method ----> returns all the documents present in the collection ELSE returns nothing
     //  findOne()  ------> returns only the 1st doc when matched with the query ELSE returns NULL
-    const user = await User.findOne({ email })
+    const user = await User.findOne({ email });
+    console.log(user);  // <--------------- after sending the req(SEND CLICK) in Postman
 
-    if (user && (await user.matchPassword(password))) {
+
+    if (user && (await user.matchPassword(password))) {          // receive the returned value from ModelUser
         res.json({                                               // req.json returns the Object 
             _id: user._id,
             name: user.name,
@@ -27,11 +30,11 @@ const userAuth = asyncHandler(async (req, res) => {
         })
     }
     else {
-        // res.send(401)
         res.status(401)
         throw new Error("Invalid email OR password");
     }
 })
+
 
 
 
@@ -41,32 +44,66 @@ const userAuth = asyncHandler(async (req, res) => {
 
 const userRegister = asyncHandler(async (req, res) => {
     const { name, email, password } = req.body;
-    const userExists = await User.findOne({ email })
+    const userExists = await User.findOne({ email }) // <------ returns the whole obj of the Person 
+    // console.log(userExists);
 
     if (userExists) {
         res.status(400);          // Bad Req
         throw new Error("User is Aready Registered");
     }
 
-    const person = await User.create({ name, email, password });
-
-    if (person) {
-        res.status(201).json({   // Successfully created & led to the creation of a resource
-            _id: person._id,
-            name: person.name,
-            email: person.email,
-            isAdmin: person.isAdmin,
-            token: Generate_Web_Tokens(person._id),
-        })
-    }
     else {
-        res.status(400)
-        throw new Error('Invalid user data')
-    };
+        const new_person = await User.create({ name, email, password }); // WITH THIS CREATE METHOD the password also get HASHED frm the UserModels before save
 
+        if (new_person) {
+            res.status(201).json({    // Successfully created & led to the creation of a resource
+                _id: new_person._id,
+                name: new_person.name,
+                email: new_person.email,
+                isAdmin: new_person.isAdmin,
+                password: new_person.password,
+                token: Generate_Web_Tokens(new_person._id),
+            })
+        }
+        else {
+            res.status(400)
+            throw new Error('Invalid user data')
+        };
+    }
 })
 
 
+
+
+
+// @desc       Update users profile
+// @Route      PUT/api/user/profile
+// @access      Private
+
+const UpdateuserProfile = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id);
+
+    if (user) {
+        user.name = req.body.name || user.name;
+        user.email = req.body.email || user.email;
+        if (req.body.password)
+            user.password = req.body.password;
+
+        const Updated_User = await user.save();
+        res.json({                                               // req.json returns the Object 
+            _id: Updated_User._id,
+            name: Updated_User.name,
+            email: Updated_User.email,
+            isAdmin: Updated_User.isAdmin,
+            token: Generate_Web_Tokens(Updated_User._id),
+        }) 
+    }
+
+    else {
+        res.status(401);
+        throw new Error('Invalid Email OR Password');
+    }
+})
 
 
 
@@ -96,4 +133,7 @@ const getuserProfile = asyncHandler(async (req, res) => {
 })
 
 
-export { userAuth, userRegister, getuserProfile };
+
+
+
+export { userAuth, userRegister, getuserProfile ,UpdateuserProfile};

@@ -5,9 +5,8 @@ import { getproducts, getproductByID } from "../Controllers/product_controller.j
 
 
 
-router.route('/').get(getproducts) 
-
-router.route('/:id').get(getproductByID)
+router.route('/').get(getproducts) ;
+router.route('/:id').get(getproductByID);
 
 export default router;
 

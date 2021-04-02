@@ -50,13 +50,13 @@ const Rating = ({ value, text, color }) => {
                 />
             </span>
 
-            <span> {text ? text : ''} </span>
+            <span style = {{ color: "#d1eeba"}} > {text ? text : ''} </span>
         </div>
     )
 }
 
 Rating.defaultProps = {
-    color: /* '#f8e825' */ 'crimson'
+    color: "#ffcb69"
 }
 
 Rating.propTypes = {
