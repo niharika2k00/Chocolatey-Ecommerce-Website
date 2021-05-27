@@ -100,9 +100,30 @@ app.listen(port, console.log(`Server Connected in ${port} for ${process.env.NODE
 // port change if needed ---> server.js ,.env,frontend - backendurl 
 // MONGODB_COMPASS :: mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce
 
+/*
+
+STEPS ::
+
+1) npm i                  ----> /
+2) npm i                  ----> cd frontend
+3) npm start              ----> start only frontend
+4) npm run server         ----> start only Backend(SERVER)
+5) npm run dev            ----> start both Frontend(CLIENT SIDE) & Backend(SERVER SIDE)
+6) Add .env file  :
+
+PORT = 8090
+NODE_ENV = "development purpose"
+MONGODB_URI = mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce?retryWrites=true&w=majority
+
+*/
+
+
+
 
 /* const middleware = (req, res, next) => {
   // code...
   next();
   }
-  app.use(middleware()); */
+  app.use(middleware());
+
+  */

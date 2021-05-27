@@ -11,6 +11,7 @@ import backend_URL from '../backend_URL.js';
 
 const Cartscreen = ({ match, location, history }) => {
 
+
     const productID = match.params.id;
     const qTY = location.search;
     console.log(qTY);  // ?qTY=4               
