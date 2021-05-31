@@ -21,20 +21,20 @@ function App() {
 
   return (
     <Router>
-      <div className="App" style={{ backgroundColor: "#0f0e0ffa" }}>
+      <div className="App" style={{ backgroundColor:/*  "#0f0e0ffa" */   "#0a9396" }}>
         <NAVIGATION_BAR />
 
         <main >
           <Container>
-            {/* <Route path='/intro' component={INTROSCREEN} exact /> */}4
+            {/* <Route path='/intro' component={INTROSCREEN} exact /> */}
             <Route path='/placeorder' component={PLACEORDERSCREEN} />
             <Route path='/payment' component={PAYMENTSCREEN} />
             <Route path='/shipping' component={SHIPPINGSCREEN} />
             <Route path='/profile' component={PROFILESCREEN} />
-            <Route path='/register' component={REGISTERSCREEN} />
-            <Route path='/login' component={LOGINSCREEN} />
             <Route path='/cart/:id?' component={CARTSCREEN} />
             <Route path='/product/:id' component={PRODUCTSCREEN} />
+            <Route path='/register' component={REGISTERSCREEN} />
+            <Route path='/login' component={LOGINSCREEN} />
             <Route path='/home' component={HOMESCREEN} exact />
           </Container>
 

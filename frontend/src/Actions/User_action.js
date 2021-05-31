@@ -18,7 +18,10 @@ import {
 import backend_URL from "../backend_URL.js";
 
 
-// LOGIN -- ACTION
+
+
+
+// LOGIN -- ACTION (already registered)
 export const LogIN = (email, password) => async (dispatch) => {
     try {
         dispatch({ type: USER_LOGIN_REQUEST });
@@ -27,16 +30,16 @@ export const LogIN = (email, password) => async (dispatch) => {
             headers: { "Content-Type": "application/json" },
         };
 
+        // data ----> res.json full object{} that is passed from the user_controller
         const { data } = await axios.post(`${backend_URL}/api/users/login`, { email, password }, config); // from user_controller backend
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
             payload: data,
         });
-
+        // console.log(data)
         localStorage.setItem("UserInfo", JSON.stringify(data)); // UserInfo frm reducer.js
     }
-
     catch (error) {
         dispatch({
             type: USER_LOGIN_FAIL,
@@ -49,11 +52,15 @@ export const LogIN = (email, password) => async (dispatch) => {
 };
 
 
+
+
 // LOGOUT -- ACTION
 export const LogOUT = () => (dispatch) => {
     localStorage.removeItem('UserInfo');   // ERASED the info of particular user
     dispatch({ type: USER_LOGOUT })
 }
+
+
 
 
 // REGISTER -- ACTION
@@ -91,7 +98,9 @@ export const Register = (name, email, password) => async (dispatch) => {
 };
 
 
-//  GETUSER DETAILS IN PROFILE  ---- ACTION
+
+
+//  GETUSER DETAILS TO DISPLAY IN PROFILE  ---- ACTION
 export const getUserDetails = (id) => async (dispatch, getState) => {
     try {
         dispatch({ type: USER_DETAILS_REQUEST });
@@ -122,6 +131,8 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
         });
     }
 };
+
+
 
 
 //  UPDATE IN PROFILE  ---- ACTION

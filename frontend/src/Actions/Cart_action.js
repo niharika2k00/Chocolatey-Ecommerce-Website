@@ -9,9 +9,14 @@ import {
 import backend_URL from '../backend_URL.js';
 
 
-export const addToCart = (id, QTY) => async (dispatch, getState) => {
-    const { data } = await axios.get(`${backend_URL}/api/products/${id}`)
 
+
+// (productID, QTY) <---- passed from the CartScreen as props
+export const addToCart = (id, qty) => async (dispatch, getState) => {
+    const { data } = await axios.get(`${backend_URL}/api/products/${id}`)      // Item OBJ {}  added jst now to the cart
+    // console.log(data)
+
+    // ACTION PART---- dispatch
     dispatch({
         type: CART_ADD_ITEM,
         payload: {
@@ -19,8 +24,9 @@ export const addToCart = (id, QTY) => async (dispatch, getState) => {
             name: data.name,
             image: data.image,
             price: data.price,
+            brand: data.brand,
             countInStock: data.countInStock,
-            QTY,
+            qty,
         }
     })
 
@@ -30,6 +36,7 @@ export const addToCart = (id, QTY) => async (dispatch, getState) => {
     // localStorage.setItem(keyname, value) ------> SYNTAX
     localStorage.setItem('cartItems', JSON.stringify(getState().CART.cartItems))
 }
+
 
 
 
@@ -43,14 +50,19 @@ export const removefromCart = (id) => async (dispatch, getState) => {
 }
 
 
+
+// DATA ---> full object (props)
 export const SaveShippingAddress = (DATA) => async (dispatch) => {
     dispatch({
         type: CART_SAVE_SHIPPING_ADDRESS,
         payload: DATA
     })
-    console.log("Shipping Address : " + DATA);
+    console.log("Shipping Address : " + DATA.address, DATA.city, DATA.postalcode); // destructure
     localStorage.setItem('shippingAddress', JSON.stringify(DATA))
 }
+
+
+
 
 export const SavePaymentMethod = (DATA) => async (dispatch) => {
     // console.log(DATA)               // PayPal

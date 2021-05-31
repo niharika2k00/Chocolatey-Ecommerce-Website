@@ -29,7 +29,9 @@ import cors from 'cors';
 import product_routes from './Routes/product_routes.js';
 import products from './Data/products.js';
 import user_routes from './Routes/user_routes.js';
-import order_routes from './Routes/user_routes.js';
+import order_routes from './Routes/order_routes.js';
+
+
 
 
 dotenv.config();
@@ -106,14 +108,18 @@ STEPS ::
 
 1) npm i                  ----> /
 2) npm i                  ----> cd frontend
-3) npm start              ----> start only frontend
+3) npm start              ----> start only frontend (cd frontend)
 4) npm run server         ----> start only Backend(SERVER)
 5) npm run dev            ----> start both Frontend(CLIENT SIDE) & Backend(SERVER SIDE)
 6) Add .env file  :
 
+
 PORT = 8090
 NODE_ENV = "development purpose"
 MONGODB_URI = mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce?retryWrites=true&w=majority
+JWT_TOKEN = abc@123
+
+
 
 */
 

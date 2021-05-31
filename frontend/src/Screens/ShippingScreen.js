@@ -16,17 +16,20 @@ const ShippingScreen = ({ history }) => {
     const CART = useSelector(state => state.CART);
     const { shippingAddress } = CART;
 
+    // NAME SHOULD BE GIVEN ACCOEDING TO THE MODEL
     const [address, setAddress] = useState(shippingAddress.address);
     const [city, setCity] = useState(shippingAddress.city);
-    const [postalcode, setPostalCode] = useState(shippingAddress.postalcode);
+    const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
     const [country, setCountry] = useState(shippingAddress.country);
 
     const dispatch = useDispatch();
 
+
+
     const submitHandler = (e) => {
         e.preventDefault();
         console.log("submit");
-        dispatch(SaveShippingAddress({ address, city, postalcode, country }));
+        dispatch(SaveShippingAddress({ address, city, postalCode, country }));   // PASS VALUES ACCOEDING TO THE MODEL
         history.push('/payment');   // redirect to payment page
     }
 
@@ -73,7 +76,7 @@ const ShippingScreen = ({ history }) => {
                             className="form_box"
                             type='postalcode'
                             placeholder='postalcode'
-                            value={postalcode}
+                            value={postalCode}
                             onChange={(e) => setPostalCode(e.target.value)}
                         ></Form.Control>
                     </Form.Group>

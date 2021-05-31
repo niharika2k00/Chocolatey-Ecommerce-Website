@@ -33,10 +33,13 @@ export const Listproducts = () => async (dispatch) => {
     }
 }
 
+
+
+
 export const Detailsproducts = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST })
-        const { data } = await axios.get(`${backend_URL}/api/products/${id}`) // destructure - frm the prev homescreen
+        const { data } = await axios.get(`${backend_URL}/api/products/${id}`)        // returns obj{} from the backend
         console.log("successafter");
 
         dispatch({                 // TRUE

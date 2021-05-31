@@ -32,7 +32,7 @@ const LoginScreen = ({ location, history }) => {
 
 
     const submitHandler = (e) => {
-        e.preventDefault() //It'll NOT SUBMIT unless dispatch() calls ACTION & PW,EMAIL are get verified
+        e.preventDefault();                 //It'll NOT SUBMIT unless dispatch() calls ACTION & PW,EMAIL are get verified
         dispatch(LogIN(email, password)) //DISPATCH LOGIN
     }
 

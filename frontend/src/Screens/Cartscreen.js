@@ -12,6 +12,7 @@ import backend_URL from '../backend_URL.js';
 const Cartscreen = ({ match, location, history }) => {
 
 
+    const dispatch = useDispatch();
     const productID = match.params.id;
     const qTY = location.search;
     console.log(qTY);  // ?qTY=4               
@@ -19,22 +20,27 @@ const Cartscreen = ({ match, location, history }) => {
     //  ?qTY=4  is stored in an array so a[0] = ?qty  and a[1] = 4.
     const qty = location.search ? Number(location.search.split('=')[1]) : 1;
 
-    const dispatch = useDispatch();
+
 
     const CART = useSelector(state => state.CART);
     // console.log("cart :: ", CART);
     const { cartItems } = CART;
-    console.log("{ cartItems } from cartscreen : ", cartItems); // Array of OBJECTS -- [{}, {}, {}] present in the CART
+    console.log("{ cartItems } in CART from cartscreen : ", cartItems); // Array of OBJECTS -- [{}, {}, {}] present in the CART
+
 
     useEffect(() => {
         if (productID)
             dispatch(addToCart(productID, qty));
     }, [qty, productID, dispatch]);
 
+
+
     const removeFromCartHandler = (id) => {
         console.log('remove')
         dispatch(removefromCart(id));
     }
+
+
 
     const checkoutHandler = () => {
         // console.log("ccheckout")
@@ -77,7 +83,7 @@ const Cartscreen = ({ match, location, history }) => {
                                             <Form.Control
                                                 className="cartitem_num"
                                                 as='select'
-                                                value={item.QTY} // update in the redux devtools 
+                                                value={item.qty} // update in the redux devtools 
                                                 onChange={(e) =>
                                                     dispatch(
                                                         addToCart(item.product, Number(e.target.value))
@@ -113,10 +119,10 @@ const Cartscreen = ({ match, location, history }) => {
                         <ListGroup variant='flush' >
                             <ListGroup.Item className="cartbox_rgt" >
                                 <h2>
-                                    <b>  Subtotal ({cartItems.reduce((acc, item) => acc + item.QTY, 0)}) items</b>
+                                    <b>  Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</b>
                                 </h2>
                                 <p> ₹ {cartItems
-                                    .reduce((acc, item) => acc + item.QTY * item.price, 0)
+                                    .reduce((acc, item) => acc + item.qty * item.price, 0)
                                     .toFixed(2)}  {/* fixed to 2 decimal places */}</p>
 
                             </ListGroup.Item>

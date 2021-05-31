@@ -10,7 +10,7 @@ const OrderSchema = mongoose.Schema({
     },
 
     // [{} {} {}]
-    oderItems: [
+    orderItems: [
         {
             name: { type: String, required: true },
             qty: { type: Number, required: true },
@@ -27,7 +27,7 @@ const OrderSchema = mongoose.Schema({
         country: { type: String, required: true },
     },
 
-    paymentMethods: {
+    paymentMethod: {
         type: String,
         required: true
     },

@@ -6,7 +6,7 @@ import User from '../Models/UserModels.js';
 
 
 // @desc       Auth users & get tokens
-// @Route      POST/api/users/login
+// @Route      POST/api/users/login              [from the client side post request]
 // @access      public
 
 const userAuth = asyncHandler(async (req, res) => {
@@ -39,7 +39,7 @@ const userAuth = asyncHandler(async (req, res) => {
 
 
 // @desc       Register USERS
-// @Route      POST/api/users
+// @Route      POST/api/user/register
 // @access      public
 
 const userRegister = asyncHandler(async (req, res) => {
@@ -83,7 +83,9 @@ const userRegister = asyncHandler(async (req, res) => {
 const UpdateuserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
 
-    if (user) {
+    console.log(req.body.name)     // updated name
+
+    if (user) {                                            // user --> Original user thats stored previously
         user.name = req.body.name || user.name;
         user.email = req.body.email || user.email;
         if (req.body.password)
@@ -96,7 +98,7 @@ const UpdateuserProfile = asyncHandler(async (req, res) => {
             email: Updated_User.email,
             isAdmin: Updated_User.isAdmin,
             token: Generate_Web_Tokens(Updated_User._id),
-        }) 
+        })
     }
 
     else {
@@ -125,7 +127,6 @@ const getuserProfile = asyncHandler(async (req, res) => {
             isAdmin: user.isAdmin,
         })
     }
-
     else {
         res.status(401);
         throw new Error('Invalid Email OR Password');
@@ -136,4 +137,4 @@ const getuserProfile = asyncHandler(async (req, res) => {
 
 
 
-export { userAuth, userRegister, getuserProfile ,UpdateuserProfile};
+export { userAuth, userRegister, getuserProfile, UpdateuserProfile };

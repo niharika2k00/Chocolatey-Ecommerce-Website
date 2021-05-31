@@ -16,8 +16,12 @@ import {
 } from '../Constants/User_constant.js';
 
 
+
+
+
+
 export const User_Loginreducer = (state = {}, action) => {
-    console.log(action);              // OBJECT 
+    console.log("ACTION = ", action);              // OBJECT 
     switch (action.type) {
         case USER_LOGIN_REQUEST:
             return { loading: true }  // empty array bcz till now its NOT FILLED
@@ -37,6 +41,8 @@ export const User_Loginreducer = (state = {}, action) => {
 }
 
 
+
+
 export const User_Registerreducer = (state = {}, action) => {
     switch (action.type) {
         case USER_REGISTER_REQUEST:
@@ -54,6 +60,8 @@ export const User_Registerreducer = (state = {}, action) => {
 }
 
 
+
+
 export const User_Detailsreducer = (state = { USER: {} }, action) => {
     switch (action.type) {
         case USER_DETAILS_REQUEST:
@@ -69,6 +77,8 @@ export const User_Detailsreducer = (state = { USER: {} }, action) => {
             return state
     }
 }
+
+
 
 
 export const User_ProfileReducer = (state = {}, action) => {

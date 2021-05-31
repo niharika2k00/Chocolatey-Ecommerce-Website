@@ -9,6 +9,7 @@ import {
 } from '../Constants/Product_constant.js';
 
 
+
 export const product_Listreducer = (state = { products: [] }, action) => {
     switch (action.type) {
         case PRODUCT_LIST_REQUEST:
@@ -24,6 +25,8 @@ export const product_Listreducer = (state = { products: [] }, action) => {
             return state;
     }
 }
+
+
 
 
 export const product_Detailsreducer = (state = { product: { reviews: [] } }, action) => {

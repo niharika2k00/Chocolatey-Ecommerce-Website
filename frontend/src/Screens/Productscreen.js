@@ -20,8 +20,12 @@ const Productscreen = ({ history, match }) => {
     // < ------  Fetcing data from the Backend using REDUX  ------>
     const dispatch = useDispatch();
 
-    const product_details = useSelector(state => state.product_details);
-    const { loading, error, product } = product_details;
+
+    // OBJECT 
+    const product_details = useSelector(state => state.product_details); // <--- Allows to extract data from the Reducer fn frm Store
+    const { loading, error, product } = product_details;                 // product --> product {} that comes from BACKEND find by ID from params
+    console.log(product_details)
+
 
     useEffect(() => {
         dispatch(Detailsproducts(match.params.id));

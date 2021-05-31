@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom'
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckoutSteps from "../Components/CheckoutSteps.js";
-// import { createOrder } from '../actions/orderActions'
-// import { ORDER_CREATE_RESET } from '../constants/orderConstants'
-// import { USER_DETAILS_RESET } from '../constants/userConstants';
+import { Create_OrderAction } from '../Actions/Order_action.js';
 import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
 import "../STYLES/placeOrderScreen.css";
@@ -32,7 +30,7 @@ const PlaceOrderScreen = ({ history }) => {
     }
 
     CART.itemsPrice = Till_2_Decimals(
-        CART.cartItems.reduce((acc, item) => acc + item.price * item.QTY, 0)
+        CART.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
     )
     CART.shippingPrice = Till_2_Decimals(CART.itemsPrice > 500 ? 0 : 100)
     CART.taxPrice = Till_2_Decimals(Number((0.15 * CART.itemsPrice).toFixed(2))) // 15% tax
@@ -41,6 +39,39 @@ const PlaceOrderScreen = ({ history }) => {
         Number(CART.shippingPrice) +
         Number(CART.taxPrice)
     ).toFixed(2)
+
+
+
+    const order_Create = useSelector(state => state.order_Create);
+    const { Order, success, error } = order_Create;
+
+    console.log(order_Create); // {loading,succes,Order}
+
+    useEffect(() => {
+        if (success) {
+            history.push(`/order/${Order._id}`);
+        }
+    }, [history, success])
+
+
+
+    const placeOrderHandler = () => {
+        console.log('order placed');
+        console.log(order_Create);
+
+        // Dispatch(send) to Action
+        dispatch(Create_OrderAction({
+            itemsPrice: CART.itemsPrice,
+            orderItems: CART.cartItems,
+            paymentMethod: CART.paymentMethod,
+            shippingAddress: CART.shippingAddress,
+            shipping_price: CART.shippingPrice,
+            taxPrice: CART.taxPrice,
+            total_price: CART.totalPrice
+        }))
+
+    }
+
 
 
 
@@ -95,7 +126,7 @@ const PlaceOrderScreen = ({ history }) => {
                                                     </Link>
                                                 </Col>
                                                 <Col md={4} id="link_css">
-                                                    {item.QTY} x ₹{item.price} = ₹{item.QTY * item.price}
+                                                    {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                                                 </Col>
                                             </Row>
                                         </ListGroup.Item>
@@ -111,48 +142,48 @@ const PlaceOrderScreen = ({ history }) => {
                     <Card className="Orderbox">
                         <ListGroup variant='flush' >
                             <ListGroup.Item>
-                                <h2 id="Orderhead" style ={{textAlign:"center" }} >Order Summary</h2>
+                                <h2 id="Orderhead" style={{ textAlign: "center" }} >Order Summary</h2>
                             </ListGroup.Item>
 
-                            <ListGroup.Item id= "boxsubitem" >
+                            <ListGroup.Item id="boxsubitem" >
                                 <Row>
                                     <Col>Items</Col>
                                     <Col>₹{CART.itemsPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
-                            <ListGroup.Item id= "boxsubitem">
+                            <ListGroup.Item id="boxsubitem">
                                 <Row>
                                     <Col>Shipping</Col>
                                     <Col>₹{CART.shippingPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
-                            <ListGroup.Item id= "boxsubitem">
+                            <ListGroup.Item id="boxsubitem">
                                 <Row>
                                     <Col>Tax</Col>
                                     <Col>₹{CART.taxPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
-                            <ListGroup.Item id= "boxsubitem">
+                            <ListGroup.Item id="boxsubitem">
                                 <Row>
                                     <Col>Total</Col>
                                     <Col>₹{CART.totalPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
-                            <ListGroup.Item id= "boxsubitem">
-                                {/* {error && <Mess variant='danger'>{error}</Mess>} */}
+                            <ListGroup.Item id="boxsubitem">
+                                {error && <Mess variant='danger'>{error}</Mess>}
                             </ListGroup.Item>
 
-                            <ListGroup.Item id= "boxsubitem">
+                            <ListGroup.Item id="boxsubitem">
                                 <Button
                                     type='button'
                                     className='btn-block'
-                                    variant = "success"
+                                    variant="success"
                                     disabled={CART.cartItems === 0}   //cartItems -> array of obj [{},{},{}]
-                                // onClick={placeOrderHandler}
+                                    onClick={placeOrderHandler}
                                 >
                                     Place Order
                                 </Button>
@@ -165,4 +196,4 @@ const PlaceOrderScreen = ({ history }) => {
     )
 }
 
-export default PlaceOrderScreen
+export default PlaceOrderScreen;

@@ -17,12 +17,19 @@ const getproducts = asyncHandler(async (req, res) => {   // Fetch all 6 products
     res.json(products);
 })
 
+
+
+
+
+// @desc       Fetch Single Product
+// @Route      GET/api/products/:id
+// @access      public
+
 const getproductByID = asyncHandler(async (req, res) => {
     const product = await pro.findById(req.params.id)
     if (product)
         res.json(product);
-    else                                            // err
-    {   // res.status(404).json({ message: "Product not found" });
+    else {   // res.status(404).json({ message: "Product not found" });
         res.status(404)
         throw new Error("Product not found");
     }
