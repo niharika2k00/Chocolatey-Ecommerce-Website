@@ -14,6 +14,9 @@ import PROFILESCREEN from './Screens/ProfileScreen.js';
 import SHIPPINGSCREEN from './Screens/ShippingScreen.js';
 import PAYMENTSCREEN from './Screens/PaymentScreen.js';
 import PLACEORDERSCREEN from './Screens/PlaceOrderScreen.js';
+import ORDER_SCREEN from './Screens/OrderScreen.js';
+
+
 
 
 
@@ -27,6 +30,7 @@ function App() {
         <main >
           <Container>
             {/* <Route path='/intro' component={INTROSCREEN} exact /> */}
+            <Route path='/order/:id' component={ORDER_SCREEN} />
             <Route path='/placeorder' component={PLACEORDERSCREEN} />
             <Route path='/payment' component={PAYMENTSCREEN} />
             <Route path='/shipping' component={SHIPPINGSCREEN} />
