@@ -11,7 +11,7 @@ const Prod = (/*props*/  { pro }) => {
         <div>
             {/* <p>Left arrow: <i class="arrow left"></i></p> */}
             {/* <Link className="btn btn-success my-3" to="/home" >  GO BACK  </Link> */}
-            <Card className='my-3 p-3 rounded  card_css' >
+            <Card className='my-4 p-3 rounded  card_css' >
                 <Link to={`/product/${pro._id}`} >   {/* <a> is changed to Link tag*/}
                     <Card.Img id="img_product" src={pro.image} variant='top' />
                 </Link>

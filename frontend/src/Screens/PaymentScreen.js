@@ -37,13 +37,14 @@ const PaymentScreen = ({ history }) => {
     return (
         <Loginform_Container>
             <CheckoutSteps step1 step2 step3 />
-            <h1 className="loginhead" >Payment Method</h1>
+            <h1 className="cartHead" style={{ paddingBottom: "1.5rem" }} >Payment Method</h1>
 
             <Form onSubmit={submitHandler}>
                 <Form.Group>
-                    <Form.Label as='legend'>Select Method</Form.Label>
+                    <Form.Label as='legend' className="paymentSub" >Select Method</Form.Label>
                     <Col>
                         <Form.Check
+                            className="paymentSub1"
                             type='radio'
                             label='PayPal or Credit Card'
                             id='PayPal'
@@ -55,6 +56,7 @@ const PaymentScreen = ({ history }) => {
                         </Form.Check>
 
                         <Form.Check
+                            className="paymentSub1"
                             type='radio'
                             label='Stripe'
                             id='Stripe'

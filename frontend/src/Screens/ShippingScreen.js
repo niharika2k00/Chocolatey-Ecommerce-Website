@@ -40,7 +40,7 @@ const ShippingScreen = ({ history }) => {
         <div>
             <Loginform_Container>
                 <CheckoutSteps step1 step2 />
-                <h1 className="loginhead" >Shipping</h1>
+                <h1 className="cartHead" style={{ paddingBottom: "1.5rem" }}>Shipping</h1>
 
                 {/*  {msg && <Mess variant='danger'>{msg}</Mess>}
                 {error && <Mess variant='danger'>{error}</Mess>}

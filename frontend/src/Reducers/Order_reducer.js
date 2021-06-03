@@ -11,6 +11,10 @@ import {
     ORDER_PAY_SUCCESS,
     ORDER_PAY_FAIL,
     ORDER_PAY_RESET,
+    ORDER_ALL_MY_REQUEST,
+    ORDER_ALL_MY_SUCCESS,
+    ORDER_ALL_MY_FAIL,
+    ORDER_ALL_MY_RESET,
 } from '../Constants/Order_constant.js';
 
 
@@ -86,3 +90,26 @@ export const OrderPay_reducer = (state = {}, action) => {
 
 
 
+
+
+export const myAllOrders_reducer = (state = { allMyOrders: [] }, action) => {
+    switch (action.type) {
+        case ORDER_ALL_MY_REQUEST:
+            return { loading: true }
+
+        case ORDER_ALL_MY_SUCCESS:
+            return {
+                loading: false,
+                success: true,
+                allMyOrders: action.payload
+            }
+
+        case ORDER_ALL_MY_FAIL:
+            return { loading: false, error: action.payload }
+
+        case ORDER_ALL_MY_RESET:
+            return { allMyOrders: [] }
+        default:
+            return state;
+    }
+}

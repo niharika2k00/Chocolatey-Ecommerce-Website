@@ -77,7 +77,7 @@ const OrderSchema = mongoose.Schema({
         type: Date,
     },
 
-}, { timestamp: true })  // 2nd arguement 
+}, { timestamps: true, })  // 2nd arguement 
 
 const Order = mongoose.model('Order', OrderSchema)
 export default Order;

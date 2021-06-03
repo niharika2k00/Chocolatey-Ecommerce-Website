@@ -1,31 +1,62 @@
-#Orderhead {
-    font-size: 24px;  
-    font-family: "Cormorant", serif;
-    background: linear-gradient(160deg, #c6f3e5, #fcd80c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-}
-
 #Ordersubhead {
-    font-family: 'Kiwi Maru', serif;
-    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
     padding: 0 10px 10px 6px;
 }
 
 .Orderbkgrnd {
-    /* color: green; */
     background-color: #141314;
 }
 
 .Orderbox {
-    border: 3px dotted #fdffb6;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
 }
-#boxsubitem{
-    padding: 6px 20px;
-    font-size:.9rem;
-    font-family: 'Kiwi Maru', serif;
 
+#boxsubitem {
+    padding: 6px 20px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.orderHead {
+    font-weight: 600;
+    font-size: 2.0rem;
+    background: linear-gradient(160deg, #f9419d, #f5de5e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #222022ef;
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Cormorant Garamond', serif; */
+    letter-spacing: 1px;
+    padding: 2rem 1rem 0rem 0;
+}
+
+.itemDet {
+    font-size: 1.2rem;
+    color: #f7f7f7de;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+@media (max-width: 450px) {
+    .orderHead {
+        font-weight: 700;
+        font-size: 1.4rem;
+        padding: 2rem 1rem 0rem 0;
+    }
+    #Ordersubhead {
+        font-size: 0.96rem;
+    }
+    .itemDet {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .Orderbox {
+        padding-top: 1.5rem;
+    }
+    #boxsubitem {
+        font-size: 0.92rem;
+    }
 }

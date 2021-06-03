@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import './index.css';
 import NAVIGATION_BAR from './Components/Header.js';
 import FOOT from './Components/Footer.js';
 import INTROSCREEN from './Screens/Introscreen.js';
@@ -20,15 +21,16 @@ import ORDER_SCREEN from './Screens/OrderScreen.js';
 
 
 
+
 function App() {
 
   return (
     <Router>
-      <div className="App" style={{ backgroundColor:/*  "#0f0e0ffa" */   "#0a9396" }}>
+      <div className="App" style={{ backgroundColor: "#222022ef"  /*  "#0a9396" */ }}>
         <NAVIGATION_BAR />
 
         <main >
-          <Container>
+          <div className="self_containerFull">
             {/* <Route path='/intro' component={INTROSCREEN} exact /> */}
             <Route path='/order/:id' component={ORDER_SCREEN} />
             <Route path='/placeorder' component={PLACEORDERSCREEN} />
@@ -40,7 +42,7 @@ function App() {
             <Route path='/register' component={REGISTERSCREEN} />
             <Route path='/login' component={LOGINSCREEN} />
             <Route path='/home' component={HOMESCREEN} exact />
-          </Container>
+          </div>
 
           <Route path='/' component={INTROSCREEN} exact />
         </main>

@@ -57,7 +57,7 @@ export const SaveShippingAddress = (DATA) => async (dispatch) => {
         type: CART_SAVE_SHIPPING_ADDRESS,
         payload: DATA
     })
-    console.log("Shipping Address : " + DATA.address, DATA.city, DATA.postalcode); // destructure
+    console.log("Shipping Address : " + DATA.address, DATA.city, DATA.postalCode); // destructure
     localStorage.setItem('shippingAddress', JSON.stringify(DATA))
 }
 

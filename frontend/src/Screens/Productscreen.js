@@ -49,12 +49,13 @@ const Productscreen = ({ history, match }) => {
             {loading ? < Load /> :
                 error ? < Mess variant="danger" > {error}</Mess> :
                     product ?
+
                         (<Row>
-                            <Col md={5} id="proimg">
+                            <Col md={4} id="proimg" sm={12} >
                                 <img src={product.image} fluid />
                             </Col>
 
-                            <Col md={4}>
+                            <Col md={5} sm={12} xs={12} className='colGap' >
                                 <ListGroup variant="flush" >
                                     <ListGroup.Item  ><h3 id="prohead"> {product.name} </h3></ListGroup.Item>
 
@@ -71,7 +72,9 @@ const Productscreen = ({ history, match }) => {
                                 </ListGroup>
                             </Col>
 
-                            <Col md={3} >
+
+
+                            <Col md={3} sm={12} xs={12} className='colGap'>
                                 <Card>
                                     <ListGroup variant="flush" >
                                         <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem", color: 'black' }} >

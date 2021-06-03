@@ -12,58 +12,6 @@ body, html {
     background-color: #262626;
 }
 
-/* ----------------------------   BUBBLE STYLES --------------------- */
-
-/* .bubble {
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    bottom: -70px;
-    position: absolute;
-}
-.bubble img {
-    width: 3rem;
-    animation: bubly 7s linear infinite;
-}
-@keyframes bubly {
-    0% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-    50% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-80vh);
-    }
-}
-.bubble img:nth-child(1) {
-    animation-delay: 2s;
-}
-.bubble img:nth-child(2) {
-    animation-delay: 1s;
-}
-.bubble img:nth-child(3) {
-    animation-delay: 3s;
-}
-.bubble img:nth-child(4) {
-    animation-delay: 6s;
-}
-.bubble img:nth-child(5) {
-    animation-delay: 5s;
-}
-.bubble img:nth-child(6) {
-    animation-delay: 4.5s;
-}
-.bubble img:nth-child(7) {
-    animation-delay: 7s;
-}*/
-
 .mycarou {
     height: 35rem;
     position: relative;
@@ -115,17 +63,17 @@ body, html {
 .subheading span {
     display: inline-block;
     position: relative;
-    font-weight: 700;
-    font-size: 34px;
+    font-weight: 500;
+    font-size: 1.8rem;
 }
 
 .subheading span:before, .subheading span:after {
     content: "";
     position: absolute;
-    height: 5px;
-    border-bottom: 2px solid #f7fa48;
-    border-top: 2px solid rgb(230, 208, 208);
-    top: 16px;
+    height: 2.5px;
+    border-bottom: 1px solid #f7fa48;
+    border-top: 1px solid rgb(230, 208, 208);
+    top: 18px;
     width: 120px;
 }
 
@@ -141,12 +89,12 @@ body, html {
 
 .subheading span ::after {
     content: "";
-    height: 3px;
+    height: 2px;
     background: #1b1b1b;
     position: absolute;
     left: 100%;
     top: 50%;
-    margin-top: -3px;
+    margin-top: -2px;
     width: 3000px;
 }
 
@@ -197,6 +145,7 @@ body, html {
     padding: 90px 0;
     /* width of the parallax */
     margin-bottom: 50px;
+    margin-top: 4rem;
 }
 
 .parallax h2 {
@@ -252,7 +201,7 @@ body, html {
 
 .item_subhead {
     color: rgba(255, 255, 255, 0.438);
-    font-family: 'Kiwi Maru', serif;
+    font-size: .9rem;
 }
 
 .icoo {
@@ -269,12 +218,12 @@ body, html {
 }
 
 .HOVER img:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 
 .choco_name h4 {
     margin-top: 20px;
-    transform: translateY(1px);
+    transform: translateY(.5px);
     transition: .1s ease-in-out;
 }
 

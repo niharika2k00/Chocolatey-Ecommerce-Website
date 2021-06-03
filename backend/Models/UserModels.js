@@ -26,7 +26,7 @@ const UserSchema = mongoose.Schema({
         default: false
     }
 
-}, { timestamp: true })  // 2nd arguement 
+}, { timestamps: true, })  // 2nd arguement 
 
 
 

@@ -75,7 +75,7 @@ const ProductSchema = mongoose.Schema({          // CREATING SCHEMA AND MODELS
         required: true,
         default: 0
     },
-}, { timestamp: true })   // 2nd arguement 
+}, { timestamps: true, })   // 2nd arguement 
 
 const Product = mongoose.model('Product', ProductSchema);
 export default Product;

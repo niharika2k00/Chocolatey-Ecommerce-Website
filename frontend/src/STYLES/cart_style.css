@@ -1,6 +1,6 @@
 .procart {
-    padding-top: 10px;
-    margin-top: 10px;
+    padding-top: 1rem;
+    margin-top: 1rem;
 }
 
 .boxsm {
@@ -14,7 +14,7 @@
 
 .cartitem_num {
     border-radius: 10px;
-    background-color: #fae1dd;
+    background-color: #faf6f5;
 }
 
 .cartbox_rgt {
@@ -34,4 +34,53 @@
     font-size: 1.6rem;
     font-weight: 500;
     color: #000000;
+}
+
+.cartHead {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    background: linear-gradient(160deg, #f9419d, #f5de5e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #222022ef;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+.cart_subHead {
+    font-size: 1.2rem;
+    color: #f7f7f7de;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+@media (max-width: 450px) {
+    .cartHead {
+        font-weight: 700;
+        font-size: 2.1rem;
+    }
+    .cartbox_rgt h2 {
+        font-size: 1.9rem;
+    }
+    .cart_subHead {
+        font-weight: 500;
+        font-size: .9rem;
+    }
+    .boxsm {
+        margin-top: 14px;
+        padding: .4rem;
+    }
+    #cartimg {
+        width: 4vw;
+    }
+    .cartbox_rgt h2 {
+        font-size: 2rem;
+    }
+    .cartbox_rgt p {
+        font-size: 1.6rem;
+    }
 }

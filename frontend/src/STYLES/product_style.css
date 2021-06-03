@@ -20,7 +20,7 @@
 
 .Button .Button-btn:hover {
     background: rgba(87, 83, 83, 0.575);
-    border: 6px double #d90429;
+    border: 2px double #d90429;
 }
 
 #proimg img {
@@ -29,11 +29,11 @@
     border-radius: 4px;
     padding: 10px;
     /* border: 4px double #e8ecb8cb; */
-    transition: .3s ease-in-out;
+    transition: .1s ease-in-out;
 }
 
 #proimg img:hover {
-    width: 410px;
+    width: 420px;
     box-shadow: 0 10px 16px rgba(223, 23, 23, 0.12), 0 10px 12px rgba(44, 233, 167, 0.288);
 }
 
@@ -54,15 +54,37 @@
 }
 
 .listy1 {
-    color: rgba(245, 245, 245, 0.897);
+    color: rgba(245, 245, 245, 0.932);
     background: #0f0e0ffa;
     border: .5px solid black;
     font-family: 'Cormorant', serif;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 500;
+    font-size: 1.2rem;
     letter-spacing: 1px;
 }
 
 .listy1:hover {
     color: rgb(255, 255, 255);
+}
+
+@media (max-width: 450px) {
+    #proimg img {
+        width: 92vw;
+    }
+    #proimg img:hover {
+        width: 90vw;
+    }
+    #prohead {
+        font-size: 1.5rem;
+    }
+    .listy1 {
+        border: .5px solid black;
+        font-family: 'Cormorant', serif;
+        font-weight: 500;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    .colGap {
+        padding-top: 2rem;
+    }
 }

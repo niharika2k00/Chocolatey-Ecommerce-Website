@@ -11,10 +11,12 @@ import {
     USER_DETAILS_SUCCESS,
     USER_DETAILS_FAIL,
     USER_DETAILS_REQUEST,
+    USER_DETAILS_RESET,
     USER_UPDATE_PROFILE_REQUEST,
     USER_UPDATE_PROFILE_SUCCESS,
-    USER_UPDATE_PROFILE_FAIL
+    USER_UPDATE_PROFILE_FAIL,
 } from "../Constants/User_constant.js";
+import { ORDER_ALL_MY_RESET } from "../Constants/Order_constant.js";
 import backend_URL from "../backend_URL.js";
 
 
@@ -57,7 +59,9 @@ export const LogIN = (email, password) => async (dispatch) => {
 // LOGOUT -- ACTION
 export const LogOUT = () => (dispatch) => {
     localStorage.removeItem('UserInfo');   // ERASED the info of particular user
-    dispatch({ type: USER_LOGOUT })
+    dispatch({ type: USER_LOGOUT });
+    dispatch({ USER_DETAILS_RESET });
+    dispatch({ ORDER_ALL_MY_RESET })
 }
 
 

@@ -86,10 +86,11 @@ app.use('/api/products', product_routes);
 app.use('/api/users', user_routes);
 app.use('/api/orders', order_routes);
 
-/* app.use((req, res, next) => {
-  console.log(req.originalUrl);
-  next();
-}) */
+app.get('/api/config/paypal', (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID)
+})
+
+
 
 app.use(notFound);
 app.use(errorHandler);

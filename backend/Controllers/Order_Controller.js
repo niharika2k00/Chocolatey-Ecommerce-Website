@@ -21,7 +21,6 @@ const AddOrderItems = asyncHandler(async (req, res) => {
         res.send(400)
         throw new Error('NO Ordered Items')
     }
-
     else {
         //creating a new order by making an object{} Order of the class ORDER.
         const Order = new ORDER({
@@ -46,15 +45,14 @@ const AddOrderItems = asyncHandler(async (req, res) => {
 
 
 
-
-// @desc       Get Order by ID
+// @desc        Get Order by ID
 // @Route       GET/api/orders/:id
 // @access      private
 
 // Using Order ID
 const GetOrderById = asyncHandler(async (req, res) => {
 
-    const Order = await ORDER.findById(req.params.id).populate('user', 'name email');
+    const Order = await ORDER.findById(req.params.id).populate('user', 'name email');  // reference documents in other collection
 
     if (Order) {
         res.json(Order);
@@ -69,4 +67,47 @@ const GetOrderById = asyncHandler(async (req, res) => {
 
 
 
-export { AddOrderItems, GetOrderById };
+
+// @desc        Payment Method
+// @Route       GET/api/orders/:id/pay
+// @access      private
+
+const Update_OrderToPay = asyncHandler(async (req, res) => {
+    const Order = await ORDER.findById(req.params.id).populate('user', 'name email');  // reference documents in other collection
+    console.log(Order)
+    if (Order) {
+        Order.isPid = true;
+        Order.paid_at = Date.now();
+        Order.paymentResult = {
+            id: req.body.id,
+            status: req.body.status,
+            email_id: req.body.payer.email_id,
+            update_time: req.body.update_time
+        }
+
+        const UpdatedOrder_forPayment = await Order.save();
+        res.json(UpdatedOrder_forPayment);
+    }
+    else {
+        res.status(404)
+        throw new Error('Order Not Found');
+    }
+})
+
+
+
+
+
+
+// @desc        All Orders of Logged in user
+// @Route       GET/api/orders/myorders
+// @access      private
+
+const getAllMyOrders = asyncHandler(async (req, res) => {
+    const allMyOrders = await ORDER.find({ user: req.user._id });  // reference documents in other collection
+    console.log(allMyOrders)
+    res.json(allMyOrders);
+})
+
+
+export { AddOrderItems, GetOrderById, Update_OrderToPay, getAllMyOrders };

@@ -51,35 +51,35 @@ const Cartscreen = ({ match, location, history }) => {
 
     return (
         <div>
-            <Row>
-                <Col md={8} sm={5} >
-                    <div class="p-2 ">
-                        <Link to="/home"> <i className="arrow left"></i></Link>
-                        <span>  <h1 id="prohead">Shopping Cart</h1></span>
-                    </div>
 
+            <div class="p-2 ">
+                <Link to="/home"> <i className="arrow left"></i></Link>
+                <span>  <h1 className="cartHead"  >Shopping Cart</h1></span>
+            </div>
+
+            <Row>
+                <Col md={8} sm={12} xs={12} className="procart">
 
                     {cartItems.length === 0 ?
-
-                        (<Mess>Your Cart id Empty <Link to="/home">Go Back</Link></Mess>) :
-
-                        (<ListGroup variant="flush" className="procart">
+                        (<Mess>Your Cart id Empty <Link to="/home">Go Back</Link></Mess>)
+                        :
+                        (<ListGroup variant="flush" >
                             {/* item  ----> each product */}
                             {cartItems.map(item => (
                                 <ListGroup.Item key={item.product} className="boxsm">
                                     <Row >
-                                        <Col md={2}>
-                                            <Image src={item.image} alt={item.name} fluid rounded />
+                                        <Col md={2} sm={3} xs={3}>
+                                            <Image src={item.image} alt={item.name} fluid rounded id="cartImg" />
                                         </Col>
 
-                                        <Col md={3}>
+                                        <Col md={3} sm={2} xs={2}  >
                                             {/* {item.product} ------->  is the ID */}
-                                            <Link to={`/product/${item.product}`} id="link_css" style={{ fontSize: "1.2rem" }} ><b>{item.name}</b></Link>
+                                            <Link to={`/product/${item.product}`} className="cart_subHead" ><b>{item.name}</b></Link>
                                         </Col>
 
-                                        <Col md={2} id="link_css">₹{item.price}</Col>
+                                        <Col md={2} sm={2} xs={2} className="cart_subHead">₹{item.price}</Col>
 
-                                        <Col md={2}>
+                                        <Col md={2} sm={3} xs={3} >
                                             <Form.Control
                                                 className="cartitem_num"
                                                 as='select'
@@ -97,7 +97,7 @@ const Cartscreen = ({ match, location, history }) => {
                                             </Form.Control>
                                         </Col>
 
-                                        <Col md={2}>
+                                        <Col md={2} sm={1} xs={1} >
                                             <Button
                                                 type='button'
                                                 variant='light'
@@ -114,7 +114,7 @@ const Cartscreen = ({ match, location, history }) => {
                 </Col>
 
 
-                <Col md={4} sm={7} style={{ padding: '.5rem' }} >
+                <Col md={4} sm={12} xs={12} className="procart" style={{ paddingTop: "1.7rem" }}>
                     <Card>
                         <ListGroup variant='flush' >
                             <ListGroup.Item className="cartbox_rgt" >

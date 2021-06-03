@@ -9,8 +9,13 @@ import {
     ORDER_DETAILS_REQUEST,
     ORDER_DETAILS_SUCCESS,
     ORDER_DETAILS_FAIL,
+    ORDER_ALL_MY_REQUEST,
+    ORDER_ALL_MY_SUCCESS,
+    ORDER_ALL_MY_FAIL,
 } from '../Constants/Order_constant.js';
 import backend_URL from '../backend_URL.js';
+
+
 
 
 
@@ -65,7 +70,7 @@ export const GetOrderDetails_ByID = (ID) => async (dispatch, getState) => {
 
         // axios.post(URL , DATA that we want to send back to the server , config)
         const { data } = await axios.get(`${backend_URL}/api/orders/${ID}`, config); // from user_controller backend
-        console.log(data);
+        console.log(data);           // Payload Object Printing 
 
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
@@ -118,3 +123,34 @@ export const OrderPay_Action = (ORDER_ID, paymentResult) => async (dispatch, get
     }
 };
 
+
+
+
+
+export const OrderMyAll_Action = () => async (dispatch, getState) => {
+    try {
+        dispatch({ type: ORDER_ALL_MY_REQUEST });
+        const { user_Login: { UserInfo } } = getState();
+        const config = {
+            headers: { Authorization: ` Bearer ${UserInfo.token}` },
+        };
+
+
+        const { data } = await axios.get(`${backend_URL}/api/orders/myorders`, config); // from user_controller backend
+        console.log(data);    //  [{} {} {} {}]
+
+        dispatch({
+            type: ORDER_ALL_MY_SUCCESS,
+            payload: data,
+        });
+    }
+    catch (error) {
+        dispatch({
+            type: ORDER_ALL_MY_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};

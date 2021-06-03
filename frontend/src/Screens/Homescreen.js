@@ -58,7 +58,7 @@ const Homescreen = () => {
 
             {loading ? < Load /> :                                       // <h2>Loading...</h2>
                 error ? < Mess variant="danger" > {error}</Mess> :       //<h3>{error}</h3> 
-                    <Row>
+                    <Row style={{ paddingBottom: "2rem" }} >
                         {products.map(product => (
                             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                                 {/* <h3>{product.name}</h3> */}
