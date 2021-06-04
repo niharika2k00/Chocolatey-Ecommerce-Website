@@ -12,7 +12,7 @@ import backend_URL from '../backend_URL.js';
 
 
 // (productID, QTY) <---- passed from the CartScreen as props
-export const addToCart = (id, qty) => async (dispatch, getState) => {
+export const addToCart = (id, qty, filling) => async (dispatch, getState) => {
     const { data } = await axios.get(`${backend_URL}/api/products/${id}`)      // Item OBJ {}  added jst now to the cart
     // console.log(data)
 
@@ -27,6 +27,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
             brand: data.brand,
             countInStock: data.countInStock,
             qty,
+            filling,
         }
     })
 

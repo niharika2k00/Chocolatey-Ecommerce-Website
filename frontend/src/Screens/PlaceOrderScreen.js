@@ -112,7 +112,7 @@ const PlaceOrderScreen = ({ history }) => {
                                     {CART.cartItems.map((item, index) => (
                                         <ListGroup.Item key={index}>
                                             <Row>
-                                                <Col md={2} sm={4} xs={4}>
+                                                <Col md={2} sm={3} xs={3}>
                                                     <Image
                                                         src={item.image}
                                                         alt={item.name}
@@ -121,13 +121,13 @@ const PlaceOrderScreen = ({ history }) => {
                                                     />
                                                 </Col>
 
-                                                <Col sm={4} xs={4}>
-                                                    <Link to={`/product/${item.product}`} className="itemDet">
-                                                        {item.name}
+                                                <Col md={6} sm={5} xs={5}>
+                                                    <Link to={`/product/${item.product}`} className="itemDet fontWt7_4">
+                                                        {item.name} | ({item.filling})
                                                     </Link>
                                                 </Col>
 
-                                                <Col md={4} sm={4} xs={4} className="itemDet">
+                                                <Col md={4} sm={4} xs={4} className="itemDet fontWt7_4">
                                                     {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                                                 </Col>
                                             </Row>

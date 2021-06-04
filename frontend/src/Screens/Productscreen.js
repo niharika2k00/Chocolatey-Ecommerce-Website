@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card, Button, Form, Dropdown, DropdownButton } from 'react-bootstrap';
 import Rating from '../Components/Rating.js';
 import '../index.css';
 import "../STYLES/product_style.css";
@@ -12,13 +12,16 @@ import Load from '../Components/Loading.js';
 
 
 
-const Productscreen = ({ history, match }) => {
+const Productscreen = ({ history, match, filling, setFilling }) => {
+
+    // < ------  Fetcing data from the Backend using REDUX  ------>
+    const dispatch = useDispatch();
 
     // < ------  Shopping Cart ------>
     const [qty, setqty] = useState(1);
 
-    // < ------  Fetcing data from the Backend using REDUX  ------>
-    const dispatch = useDispatch();
+    console.log(filling)
+
 
 
     // OBJECT 
@@ -30,6 +33,8 @@ const Productscreen = ({ history, match }) => {
     useEffect(() => {
         dispatch(Detailsproducts(match.params.id));
     }, [dispatch, match])
+
+
 
     // const product = [];  
     const addToCart_Handler = () => {
@@ -67,8 +72,40 @@ const Productscreen = ({ history, match }) => {
                                         />
                                     </ListGroup.Item >
 
-                                    <ListGroup.Item className='listy1' style={{ fontSize: "1.8rem" }}><b> Price : </b>₹{product.price}  </ListGroup.Item>
+                                    <ListGroup.Item className='listy1'><b> Brand :  {' '}</b>{product.brand}  </ListGroup.Item>
+                                    <ListGroup.Item className='listy1' style={{ fontSize: "1.6rem" }}><b> Price : </b>₹{product.price}  </ListGroup.Item>
                                     <ListGroup.Item className='listy1'><b> Description :  {' '}</b>{product.description}  </ListGroup.Item>
+
+                                    <ListGroup.Item className='listy1'><b> Filling :  {' '}</b>
+                                        <Row>
+                                            <Col>
+                                                <Form>
+                                                    <Form.Group controlId="exampleForm.ControlSelect1">
+                                                        <Form.Control
+                                                            as="select"
+                                                            className="filling" onChange={(e) => setFilling(e.target.value)}
+                                                            variant="success"
+                                                            value={filling}
+                                                        >
+                                                            <option>None</option>
+                                                            <option>Nuts</option>
+                                                            <option>Fudge </option>
+                                                            <option>Choco Chips </option>
+                                                            <option>Caramel </option>
+                                                            <option>50% Dark </option>
+                                                            <option>75% Dark</option>
+                                                            <option> 99% Dark</option>
+                                                            <option>White Chocolate </option>
+                                                            <option>Truffle </option>
+                                                        </Form.Control>
+                                                    </Form.Group>
+                                                </Form>
+                                            </Col>
+
+                                            <Col>   <p>{filling}</p></Col>
+                                        </Row>
+                                    </ListGroup.Item>
+
                                 </ListGroup>
                             </Col>
 

@@ -60,8 +60,8 @@ export const LogIN = (email, password) => async (dispatch) => {
 export const LogOUT = () => (dispatch) => {
     localStorage.removeItem('UserInfo');   // ERASED the info of particular user
     dispatch({ type: USER_LOGOUT });
-    dispatch({ USER_DETAILS_RESET });
-    dispatch({ ORDER_ALL_MY_RESET })
+    dispatch({ type: USER_DETAILS_RESET });
+    dispatch({ type: ORDER_ALL_MY_RESET })
 }
 
 

@@ -9,7 +9,9 @@ import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
 import backend_URL from '../backend_URL.js';
 
-const Cartscreen = ({ match, location, history }) => {
+
+
+const Cartscreen = ({ match, location, history, filling }) => {
 
 
     const dispatch = useDispatch();
@@ -30,8 +32,8 @@ const Cartscreen = ({ match, location, history }) => {
 
     useEffect(() => {
         if (productID)
-            dispatch(addToCart(productID, qty));
-    }, [qty, productID, dispatch]);
+            dispatch(addToCart(productID, qty, filling));
+    }, [qty, productID, filling, dispatch]);
 
 
 
@@ -72,10 +74,11 @@ const Cartscreen = ({ match, location, history }) => {
                                             <Image src={item.image} alt={item.name} fluid rounded id="cartImg" />
                                         </Col>
 
-                                        <Col md={3} sm={2} xs={2}  >
+                                        <Col md={4} sm={2} xs={2}  >
                                             {/* {item.product} ------->  is the ID */}
-                                            <Link to={`/product/${item.product}`} className="cart_subHead" ><b>{item.name}</b></Link>
+                                            <Link to={`/product/${item.product}`} className="cart_subHead" ><b>{item.name} | ({item.filling})</b></Link>
                                         </Col>
+
 
                                         <Col md={2} sm={2} xs={2} className="cart_subHead">₹{item.price}</Col>
 
@@ -104,6 +107,7 @@ const Cartscreen = ({ match, location, history }) => {
                                                 onClick={() => removeFromCartHandler(item.product)}
                                             >
                                                 <i className='fas fa-trash'></i>
+                                                {/* <i className="far fa-trash-alt"></i> */}
                                             </Button>
                                         </Col>
                                     </Row>

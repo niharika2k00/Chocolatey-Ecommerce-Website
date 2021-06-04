@@ -100,9 +100,9 @@ const OrderScreen = ({ match }) => {
             {loading ? <Load /> :
                 error ? <Mess variant="danger"> {error} </Mess> :
                     <>
-                        <h1>ORDER {Order._id}</h1>
+                        <h1 id="orderNum" >ORDER {Order._id}</h1>
                         <Row>
-                            <Col md={8} className="Orderbkgrnd"  >
+                            <Col md={7} className="Orderbkgrnd"  >
                                 <ListGroup variant='flush' className="Orderbkgrnd" >
                                     <ListGroup.Item style={{ backgroundColor: "#141314" }} >
                                         <h2 className="orderHead" >Shipping</h2>
@@ -143,11 +143,11 @@ const OrderScreen = ({ match }) => {
                                         {Order.orderItems.length === 0 ? (
                                             <Mess>Your cart is empty</Mess>
                                         ) : (
-                                            <ListGroup variant='flush' style={{ padding: "1.5rem", border: "1px solid white" }}>
+                                            <ListGroup variant='flush' style={{ border: "1px solid #f4f1de" }}>
                                                 {Order.orderItems.map((item, index) => (
                                                     <ListGroup.Item key={index}>
                                                         <Row>
-                                                            <Col md={2}>
+                                                            <Col md={2} sm={3} xs={3} >
                                                                 <Image
                                                                     src={item.image}
                                                                     alt={item.name}
@@ -155,12 +155,12 @@ const OrderScreen = ({ match }) => {
                                                                     rounded
                                                                 />
                                                             </Col>
-                                                            <Col>
-                                                                <Link to={`/ product / ${item.product}`} id="link_css" style={{ fontSize: "1.3rem" }}>
+                                                            <Col sm={4} xs={4} >
+                                                                <Link to={`/product/${item.product}`} className="itemDet fontWt7_4" >
                                                                     {item.name}
                                                                 </Link>
                                                             </Col>
-                                                            <Col md={4} id="link_css">
+                                                            <Col md={4} sm={5} xs={5} className="itemDet fontWt7_4" >
                                                                 {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                                                             </Col>
                                                         </Row>
@@ -172,6 +172,7 @@ const OrderScreen = ({ match }) => {
                                 </ListGroup>
                             </Col>
 
+                            <Col md={1}></Col>
 
                             <Col md={4}>
                                 <div className="Orderbox">

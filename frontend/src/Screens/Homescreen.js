@@ -1,12 +1,14 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
 import PROD from '../Components/Prod.js';
 import { Listproducts } from '../Actions/product_action.js';
+import { clone } from 'ramda';
+
 
 
 const Homescreen = () => {
@@ -21,6 +23,31 @@ const Homescreen = () => {
     }, [dispatch])
 
     // const products = [];
+
+
+
+    const [currCartItems, setcurrCartItems] = useState([]);
+    const [activee, setActivee] = useState("");
+
+    const sort = (top) => {
+        if (!top) {
+            setcurrCartItems(products);
+            setActivee("");
+        }
+        else {
+            let arr = clone(products);
+            setActivee(top);
+            arr = arr.filter((obj) => obj.top === top);
+            setcurrCartItems(arr);
+        }
+    }
+
+    useEffect(() => {
+        setcurrCartItems(products);
+    }, [products])
+
+
+
 
     return (
         <div>
@@ -37,21 +64,49 @@ const Homescreen = () => {
             </section>
 
 
-            <div class="d-flex bd-highlight">
-                <div class="p-2 flex-grow-1 bd-highlight">
+            <div className="d-flex bd-highlight">
+                <div className="p-2 flex-grow-1 bd-highlight">
                     <Link to="/"> <i className="arrow left"></i></Link>
                 </div>
 
-                <div class="p-2 bd-highlight sorttitle" ><h5>Sort By :</h5></div>
+                <div className="p-2 bd-highlight sorttitle" ><h5>Sort By :</h5></div>
 
-                <div class="p-2 bd-highlight">
-                    <select name="sortby" id="sortby">
+                <div className="p-2 bd-highlight">
+                    {/* <select name="sortby" id="sortby">
+                        <option value="all">All</option>
                         <option value="lh">Low to High</option>
                         <option value="hl">High to Low</option>
                         <option value="az">A - Z</option>
                         <option value="less200">Price less than 200</option>
                         <option value="bestselling">Best Selling</option>
-                    </select>
+                        <option value="motherDay">Mothers Day</option>
+                        <option value="valentine">Valentines Day</option>
+                        <option value="christmas">Christmas Special</option>
+                        <option value="gftbox">Gift Boxes</option>
+                        <option value="brownies">Brownies</option>
+                        <option value="cupCakes">Cup Cakes</option>
+                    </select> */}
+
+                    <Dropdown>
+                        <Dropdown.Toggle variant="danger" id="dropdown-basic">
+                            Filter <i className="fas fa-filter"></i>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item onClick={() => sort("")}  > <Link to="" >All </Link> </Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Low to High")}><Link to="">Low to High</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("High to Low")}> <Link to="">High to Low</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("A - Z")}><Link to="">A - Z</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Price less than 200")}><Link to="">Price less than 200</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Best Selling")}><Link to="">Best Selling</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Mothers Day")}><Link to="">Mothers Day</Link> </Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Valentines Day")}><Link to="">Valentines Day</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Christmas Special")}><Link to="">Christmas Special</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Gift Boxes")}><Link to="">Gift Boxes</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Brownies")}><Link to="">Brownies</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Cup Cakes")}><Link to="">Cup Cakes</Link></Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </div>
             </div>
 

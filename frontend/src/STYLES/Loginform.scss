@@ -15,17 +15,6 @@
   }
 }
 
-.loginhead {
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 2.5rem;
-  font-family: "Cormorant", serif;
-  background: linear-gradient(160deg, #c6f3e5, #fcd80c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
-
 #login_form {
   color: rgba(255, 255, 255, 0.959);
   font-size: 20px;
@@ -57,5 +46,8 @@
   .myrow {
     margin: 60px auto;
     padding: 8px;
+  }
+  #login_form {
+    font-size: 1rem;
   }
 }

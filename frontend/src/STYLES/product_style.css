@@ -67,6 +67,13 @@
     color: rgb(255, 255, 255);
 }
 
+.filling {
+    padding: 1px 1rem;
+    border-radius: 1rem;
+    font-size: 17px;
+    background-color: #f8edeb;
+}
+
 @media (max-width: 450px) {
     #proimg img {
         width: 92vw;

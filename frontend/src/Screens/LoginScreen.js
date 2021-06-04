@@ -39,7 +39,7 @@ const LoginScreen = ({ location, history }) => {
 
     return (
         <Loginform_Container>
-            <h1 className="loginhead"><b>Sign In</b></h1>
+            <h1 className="cartHead" style={{ paddingBottom: "2.3rem" }} >Login</h1>
 
             {error && <Mess variant='danger'>{error}</Mess>}
             {loading && <Load />}
