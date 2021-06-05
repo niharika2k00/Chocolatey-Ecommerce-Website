@@ -26,21 +26,72 @@ const Homescreen = () => {
 
 
 
+    // ---------------------------------           FILTER AND SORTING METHODS      -------------------------------
     const [currCartItems, setcurrCartItems] = useState([]);
     const [activee, setActivee] = useState("");
 
-    const sort = (top) => {
-        if (!top) {
+
+    const reset = () => {
+        setcurrCartItems(products);
+    }
+
+    const sort = (topic) => {
+        if (!topic) {
             setcurrCartItems(products);
             setActivee("");
         }
         else {
             let arr = clone(products);
-            setActivee(top);
-            arr = arr.filter((obj) => obj.top === top);
+            setActivee(topic);
+            console.log(arr)
+            arr = arr.filter((obj) => obj.topic === topic);
             setcurrCartItems(arr);
         }
     }
+
+
+    const sortAscending = () => {
+        const productsClone = [...products];
+        productsClone.sort(function (a, b) {
+            return a["name"].localeCompare(b["name"]);
+        });
+        setcurrCartItems(productsClone);
+        console.log(productsClone)
+    }
+
+
+    const sortLess100 = () => {
+        const result = products.filter(item => item.price < 100);
+        setcurrCartItems(result);
+    }
+
+
+    const sortMore250 = () => {
+        const result = products.filter(item => item.price > 250);
+        setcurrCartItems(result);
+    }
+
+
+    const sortLowToHigh = () => {
+        const productsClone = [...products];
+        productsClone.sort((a, b) => {
+            return (a.price - b.price);
+        });
+        setcurrCartItems(productsClone);
+        console.log(productsClone)
+    }
+
+
+    const sortHIghToLow = () => {
+        const productsClone = [...products];
+        productsClone.sort((a, b) => {
+            return (b.price - a.price);
+        });
+        setcurrCartItems(productsClone);
+        console.log(productsClone)
+    }
+
+    console.log(currCartItems)
 
     useEffect(() => {
         setcurrCartItems(products);
@@ -71,40 +122,26 @@ const Homescreen = () => {
 
                 <div className="p-2 bd-highlight sorttitle" ><h5>Sort By :</h5></div>
 
-                <div className="p-2 bd-highlight">
-                    {/* <select name="sortby" id="sortby">
-                        <option value="all">All</option>
-                        <option value="lh">Low to High</option>
-                        <option value="hl">High to Low</option>
-                        <option value="az">A - Z</option>
-                        <option value="less200">Price less than 200</option>
-                        <option value="bestselling">Best Selling</option>
-                        <option value="motherDay">Mothers Day</option>
-                        <option value="valentine">Valentines Day</option>
-                        <option value="christmas">Christmas Special</option>
-                        <option value="gftbox">Gift Boxes</option>
-                        <option value="brownies">Brownies</option>
-                        <option value="cupCakes">Cup Cakes</option>
-                    </select> */}
-
+                <div className="p-2 bd-highlight py-3">
                     <Dropdown>
-                        <Dropdown.Toggle variant="danger" id="dropdown-basic">
+                        <Dropdown.Toggle variant="success" id="dropdown-basic" style={{ fontSize: "1.18rem", padding: ".4rem .7rem", borderRadius: ".6rem" }} >
                             Filter <i className="fas fa-filter"></i>
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={() => sort("")}  > <Link to="" >All </Link> </Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Low to High")}><Link to="">Low to High</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("High to Low")}> <Link to="">High to Low</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("A - Z")}><Link to="">A - Z</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Price less than 200")}><Link to="">Price less than 200</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Best Selling")}><Link to="">Best Selling</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Mothers Day")}><Link to="">Mothers Day</Link> </Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Valentines Day")}><Link to="">Valentines Day</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Christmas Special")}><Link to="">Christmas Special</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Gift Boxes")}><Link to="">Gift Boxes</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Brownies")}><Link to="">Brownies</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Cup Cakes")}><Link to="">Cup Cakes</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => reset()}> <Link to="/home" >All </Link> </Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortLowToHigh()}> <Link to="/home">Low to High</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortHIghToLow()}> <Link to="/home">High to Low</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortAscending()}><Link to="/home">A - Z</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortLess100()}><Link to="/home">Price less than 100</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortMore250()}><Link to="/home">Price more than 250</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Best Selling")}><Link to="/home">Best Selling</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Mother's Day")}><Link to="/home">Mother's Day</Link> </Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Valentines Day")}><Link to="/home">Valentines Day</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Christmas Special")}><Link to="/home">Christmas Special</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Gift Boxes")}><Link to="/home">Gift Boxes</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Brownies")}><Link to="/home">Brownies</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Cup Cakes")}><Link to="/home">Cup Cakes</Link></Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -114,7 +151,7 @@ const Homescreen = () => {
             {loading ? < Load /> :                                       // <h2>Loading...</h2>
                 error ? < Mess variant="danger" > {error}</Mess> :       //<h3>{error}</h3> 
                     <Row style={{ paddingBottom: "2rem" }} >
-                        {products.map(product => (
+                        {currCartItems && currCartItems.map(product => (
                             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                                 {/* <h3>{product.name}</h3> */}
                                 <PROD

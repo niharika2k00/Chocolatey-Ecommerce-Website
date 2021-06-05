@@ -12,6 +12,11 @@ main {
     padding: .2rem 1.8rem;
 }
 
+a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+
 #heading_nav {
     font-family: 'Lobster', cursive;
     font-size: 32px;
@@ -86,6 +91,12 @@ main {
     border-radius: 4px;
     background-color: #fff3b0;
     margin: 5px;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #feeafa;
 }
 
 #sortby option:hover {
