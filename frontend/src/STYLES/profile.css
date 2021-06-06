@@ -1,0 +1,54 @@
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid rgb(255, 255, 255)255, 0.05);
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid rgba(255, 255, 255, 0.959);
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid rgba(255, 255, 255, 0.959);
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.959);
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+.table-hover tbody tr:hover {
+    color: rgba(255, 255, 255, 0.843);
+    background-color: rgba(198, 52, 52, 0.075);
+}
+
+.boxLength {
+    width: 21vw;
+}
+
+.headingGap {
+    padding-Bottom: 3rem;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+@media (max-width: 450px) {
+    .boxLength {
+        width: 100%;
+    }
+}

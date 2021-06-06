@@ -94,9 +94,9 @@ a:hover {
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
-    background-color: #feeafa;
+    background-color: #ff005c;
 }
 
 #sortby option:hover {

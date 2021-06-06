@@ -15,6 +15,13 @@ import {
     USER_UPDATE_PROFILE_REQUEST,
     USER_UPDATE_PROFILE_SUCCESS,
     USER_UPDATE_PROFILE_FAIL,
+    USER_LIST_REQUEST,
+    USER_LIST_SUCCESS,
+    USER_LIST_FAIL,
+    USER_LIST_RESET,
+    USER_DELETE_REQUEST,
+    USER_DELETE_SUCCESS,
+    USER_DELETE_FAIL,
 } from "../Constants/User_constant.js";
 import { ORDER_ALL_MY_RESET } from "../Constants/Order_constant.js";
 import backend_URL from "../backend_URL.js";
@@ -61,7 +68,8 @@ export const LogOUT = () => (dispatch) => {
     localStorage.removeItem('UserInfo');   // ERASED the info of particular user
     dispatch({ type: USER_LOGOUT });
     dispatch({ type: USER_DETAILS_RESET });
-    dispatch({ type: ORDER_ALL_MY_RESET })
+    dispatch({ type: ORDER_ALL_MY_RESET });
+    dispatch({ type: USER_LIST_RESET });
 }
 
 
@@ -163,6 +171,73 @@ export const UserUpdateProfile = (USER) => async (dispatch, getState) => {
     catch (error) {
         dispatch({
             type: USER_UPDATE_PROFILE_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
+
+
+
+
+//  ALL USERS LIST  ---- ACTION (Admin Access)
+export const UserAll_ListAction = () => async (dispatch, getState) => {
+    try {
+        dispatch({ type: USER_LIST_REQUEST });
+
+        const { user_Login: { UserInfo } } = getState();
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: ` Bearer ${UserInfo.token}`
+            },
+        };
+
+        const { data } = await axios.get(`${backend_URL}/api/users`, config); // from user_controller backend
+
+        dispatch({
+            type: USER_LIST_SUCCESS,
+            payload: data,
+        });
+    }
+    catch (error) {
+        dispatch({
+            type: USER_LIST_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
+
+
+
+
+
+export const userDeleteAction = (ID) => async (dispatch, getState) => {
+    try {
+        dispatch({ type: USER_DELETE_REQUEST });
+
+        const { user_Login: { UserInfo } } = getState();
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: ` Bearer ${UserInfo.token}`
+            },
+        };
+
+        const { data } = await axios.delete(`${backend_URL}/api/users/${ID}`, config); // from user_controller backend
+
+        dispatch({ type: USER_DELETE_SUCCESS });
+    }
+    catch (error) {
+        dispatch({
+            type: USER_DELETE_FAIL,
             payload:
                 error.response && error.response.data.message
                     ? error.response.data.message

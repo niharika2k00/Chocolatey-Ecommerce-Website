@@ -24,7 +24,7 @@ const Header = () => {
         <header>
             <Navbar bg="dark" variant="dark" expand="lg" style={{ padding: "10px", marginbottom: "40px" }} >
                 <Container>
-                    <LinkContainer to="/"><Navbar.Brand id = "heading_nav">Chocolatey</Navbar.Brand></LinkContainer>
+                    <LinkContainer to="/"><Navbar.Brand id="heading_nav">Chocolatey</Navbar.Brand></LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
@@ -51,6 +51,22 @@ const Header = () => {
                                         <i class="far fa-user"></i>
                                     </Nav.Link>
                                 </LinkContainer>)
+                            }
+
+
+                            {/* THIS DROPDOWN IS ONLY VISIBLE WHEN THE USER IS AN ADMIN */}
+                            {
+                                UserInfo && UserInfo.isAdmin && (
+                                    <NavDropdown title="Admin" id="adminMenu" className="navBig">
+                                        <LinkContainer to='/admin/usersList' >
+                                            <NavDropdown.Item > Users </NavDropdown.Item>
+                                        </LinkContainer>
+
+                                        <LinkContainer to='/admin/productsList' >
+                                            <NavDropdown.Item > Products </NavDropdown.Item>
+                                        </LinkContainer>
+                                    </NavDropdown>
+                                )
                             }
 
 

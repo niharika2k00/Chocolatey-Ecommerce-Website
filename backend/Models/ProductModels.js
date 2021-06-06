@@ -1,6 +1,8 @@
 
 import mongoose from 'mongoose';
 
+
+
 // REVIEW SCHEMA OR THE REVIEW MODEL
 const reviewSchema = mongoose.Schema({
 
@@ -12,7 +14,9 @@ const reviewSchema = mongoose.Schema({
         required: true,
         ref: 'User',                             // from the usermodule.js
     },
-}, { timestamp: true })
+}, { timestamps: true, })
+
+
 
 const ProductSchema = mongoose.Schema({          // CREATING SCHEMA AND MODELS
     user: {
@@ -29,20 +33,22 @@ const ProductSchema = mongoose.Schema({          // CREATING SCHEMA AND MODELS
 
     image: {
         type: String,
-        // required: true,
-        // default: 0
     },
 
     brand: {
         type: String,
-        // required: true
-        // default: 0
+    },
+
+    topic: {
+        type: String,
     },
 
     catagory: {
         type: String,
-        // required: true,
-        // default: 0
+    },
+
+    bestSelling: {
+        type: String,
     },
 
     description: {
@@ -76,6 +82,7 @@ const ProductSchema = mongoose.Schema({          // CREATING SCHEMA AND MODELS
         default: 0
     },
 }, { timestamps: true, })   // 2nd arguement 
+
 
 const Product = mongoose.model('Product', ProductSchema);
 export default Product;

@@ -5,6 +5,10 @@ import Generate_Web_Tokens from '../Utils/Generate_Web_Tokens.js';
 import User from '../Models/UserModels.js';
 
 
+
+
+
+
 // @desc       Auth users & get tokens
 // @Route      POST/api/users/login              [from the client side post request]
 // @access      public
@@ -39,7 +43,7 @@ const userAuth = asyncHandler(async (req, res) => {
 
 
 // @desc       Register USERS
-// @Route      POST/api/user/register
+// @Route      POST/api/users/
 // @access      public
 
 const userRegister = asyncHandler(async (req, res) => {
@@ -77,7 +81,7 @@ const userRegister = asyncHandler(async (req, res) => {
 
 
 // @desc       Update users profile
-// @Route      PUT/api/user/profile
+// @Route      PUT/api/users/profile
 // @access      Private
 
 const UpdateuserProfile = asyncHandler(async (req, res) => {
@@ -112,7 +116,7 @@ const UpdateuserProfile = asyncHandler(async (req, res) => {
 
 
 // @desc       Get users profile
-// @Route      GET/api/user/profile
+// @Route      GET/api/users/profile
 // @access      Private
 
 const getuserProfile = asyncHandler(async (req, res) => {
@@ -137,4 +141,44 @@ const getuserProfile = asyncHandler(async (req, res) => {
 
 
 
-export { userAuth, userRegister, getuserProfile, UpdateuserProfile };
+
+// @desc       Get all users
+// @Route      GET/api/users
+// @access      Private / For Admin
+
+const getAllUsers = asyncHandler(async (req, res) => {
+    const users = await User.find({});
+    if (users) {
+        res.json(users)
+    }
+    else {
+        res.status(401);
+        throw new Error('NEED ADMIN ACCESS. You are not an Admin');
+    }
+})
+
+
+
+
+
+
+// @desc        DELETE an User
+// @Route       DEL/api/users/:id
+// @access      Private / For Admin
+
+const deleteUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+        await user.remove();
+        res.json({ message: "User Removed Success" })
+    }
+    else {
+        res.status(404);
+        throw new Error('User Not Found');
+    }
+})
+
+
+
+
+export { userAuth, userRegister, getuserProfile, UpdateuserProfile, getAllUsers, deleteUser };

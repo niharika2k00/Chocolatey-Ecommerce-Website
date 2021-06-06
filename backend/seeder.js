@@ -39,6 +39,8 @@ const importDATA = async () => {
     }
 }
 
+
+// Delete All
 const destroyedDATA = async () => {  // async bcz it we are fetching data frm the database so everything returns a promiss 
     try {
         await Order.deleteMany();

@@ -49,6 +49,20 @@ const Homescreen = () => {
         }
     }
 
+    const sortBestSelling = (bestSelling) => {
+        if (!bestSelling) {
+            setcurrCartItems(products);
+            setActivee("");
+        }
+        else {
+            let arr = clone(products);
+            setActivee(bestSelling);
+            console.log(arr)
+            arr = arr.filter((obj) => obj.bestSelling === bestSelling);
+            setcurrCartItems(arr);
+        }
+    }
+
 
     const sortAscending = () => {
         const productsClone = [...products];
@@ -135,7 +149,7 @@ const Homescreen = () => {
                             <Dropdown.Item onClick={() => sortAscending()}><Link to="/home">A - Z</Link></Dropdown.Item>
                             <Dropdown.Item onClick={() => sortLess100()}><Link to="/home">Price less than 100</Link></Dropdown.Item>
                             <Dropdown.Item onClick={() => sortMore250()}><Link to="/home">Price more than 250</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Best Selling")}><Link to="/home">Best Selling</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortBestSelling("Best Selling")}><Link to="/home">Best Selling</Link></Dropdown.Item>
                             <Dropdown.Item onClick={() => sort("Mother's Day")}><Link to="/home">Mother's Day</Link> </Dropdown.Item>
                             <Dropdown.Item onClick={() => sort("Valentines Day")}><Link to="/home">Valentines Day</Link></Dropdown.Item>
                             <Dropdown.Item onClick={() => sort("Christmas Special")}><Link to="/home">Christmas Special</Link></Dropdown.Item>

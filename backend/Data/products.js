@@ -11,6 +11,8 @@ const products = [
     numReviews: 12,
     price: 100,
     countInStock: 10,
+    topic: "Mother's Day",
+    bestSelling: "Best Selling"
   },
 
   {
@@ -22,21 +24,27 @@ const products = [
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
     rating: 4.0,
     numReviews: 8,
-    price:240,
+    price: 240,
     countInStock: 7,
+    topic: "Valentines Day",
+    bestSelling: "NO"
   },
+
   {
-    // _id: '3',
-    name: 'Choco Chef Fantasy',
-    image: 'http://crems.like-themes.com/wp-content/uploads/2019/06/shop-04-768x768.png',
-    brand: 'Fantasy World',
+    // _id: '03',
+    name: 'Choco Lattee',
+    image: 'https://cdn.dribbble.com/users/2214836/screenshots/14254786/media/226b6b55ee28d0ca27bd65621b6676ee.jpg',
+    brand: 'Lattee',
     category: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
-    rating: 2.5,
-    numReviews: 12,
-    price: 320,
-    countInStock: 5,
+    rating: 4,
+    numReviews: 10,
+    price: 350,
+    countInStock: 6,
+    topic: "general",
+    bestSelling: "Best Selling"
   },
+
   {
     // _id: '4',
     name: 'Nuts & Caramel Truffles',
@@ -48,6 +56,8 @@ const products = [
     numReviews: 12,
     price: 150,
     countInStock: 11,
+    topic: "Christmas Special",
+    bestSelling: "NO"
   },
   {
     // _id: '5',
@@ -60,9 +70,42 @@ const products = [
     numReviews: 10,
     price: 200,
     countInStock: 7,
+    topic: "general",
+    bestSelling: "NO"
   },
+
   {
-    // _id: '6',
+    // _id: '06',
+    name: 'Bunny Cake',
+    image: 'https://i.pinimg.com/564x/68/83/ec/6883ec9ed5e94ae4226cdeecbed46599.jpg',
+    brand: 'Lattee',
+    category: 'Cup Cakes',
+    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
+    rating: 3,
+    numReviews: 10,
+    price: 80,
+    countInStock: 4,
+    topic: "Cup Cakes",
+    bestSelling: "Best Selling"
+  },
+
+  {
+    // _id: '7',
+    name: 'Gift Pack',
+    image: 'https://4.imimg.com/data4/NH/DL/MY-27356866/chocolate-gift-box-500x500.jpg',
+    brand: 'Gifty',
+    category: 'Chocolate',
+    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
+    rating: 4,
+    numReviews: 12,
+    price: 690,
+    countInStock: 18,
+    topic: "Gift Boxes",
+    bestSelling: "NO"
+  },
+
+  {
+    // _id: '08',
     name: 'Ferrero Rocher Gold',
     image: 'https://www.disko-agency.com/wp-content/uploads/2016/01/ferrero-rocher.png',
     brand: 'Ferrero Rocher',
@@ -72,39 +115,13 @@ const products = [
     numReviews: 12,
     price: 210,
     countInStock: 0,
+    topic: "Mother's Day",
+    bestSelling: "NO"
   },
 
   {
-    // _id: '7',
-    name: 'Dairy Milk(all fillings)',
-    image: 'https://wallpaperaccess.com/full/3518159.jpg',
-    brand: 'Dairy Milk',
-    category: 'Chocolate',
-    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
-    rating: 4,
-    numReviews: 12,
-    price: 145,
-    countInStock: 18,
-  },
-
-  {
-    // _id: '8',
-    name: 'Ferrero Rocher Pack of 5',
-    image: 'https://data.whicdn.com/images/31996545/original.jpg',
-    brand: 'Ferrero Rocher',
-    category: 'Chocolate',
-    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
-    rating: 4,
-    numReviews: 12,
-    price: 660,
-
-
-    countInStock: 0,
-  },
-
-  {
-    // _id: '9',
-    name: 'Amul Dark Chocolate(all fillings)',
+    // _id: '09',
+    name: 'Amul Dark Chocolate',
     image: 'https://www.kolkataonlineflorists.com/images/CHCSUUN429_big.jpg',
     brand: 'Amul',
     category: 'Chocolate',
@@ -113,19 +130,100 @@ const products = [
     numReviews: 12,
     price: 120,
     countInStock: 12,
+    topic: "general",
+    bestSelling: "NO"
   },
 
   {
     // _id: '10',
+    name: 'Heart Cake',
+    image: 'https://www.karachibakery.com/images/valentine2021/big/valentine45.jpg',
+    brand: 'Lattee',
+    category: 'Cup Cakes',
+    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
+    rating: 4.5,
+    numReviews: 10,
+    price: 150,
+    countInStock: 4,
+    topic: "Valentines Day",
+    bestSelling: "Best Selling"
+  },
+
+  {
+    // _id: '11',
+    name: 'Choco Chef Fantasy',
+    image: 'http://crems.like-themes.com/wp-content/uploads/2019/06/shop-04-768x768.png',
+    brand: 'Fantasy World',
+    category: 'Chocolate',
+    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
+    rating: 2.5,
+    numReviews: 12,
+    price: 320,
+    countInStock: 5,
+    topic: "Christmas Special",
+    bestSelling: "NO"
+  },
+
+  {
+    // _id: '12',
     name: 'Bournville Cranberry',
-    image: 'https://scontent.fccu10-1.fna.fbcdn.net/v/t1.0-9/69942680_10157458423427071_188466562267611136_o.jpg?_nc_cat=102&ccb=1-3&_nc_sid=730e14&_nc_ohc=EHWLKfhuJPwAX-5Ot0k&_nc_ht=scontent.fccu10-1.fna&oh=71d32bf60d84f29cb3142e7dbaa7c648&oe=6083F934',
+    image: 'https://cdn.igp.com/f_auto,q_auto,t_prodm/products/p-cadbury-bournville-cranberry-80g-110158-m.jpg',
     brand: 'Bournville',
     category: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
     rating: 2,
     numReviews: 12,
-    price:200,
+    price: 200,
     countInStock: 6,
+    topic: "general",
+    bestSelling: "NO"
+  },
+
+
+  {
+    // _id: '13',
+    name: 'Brownie',
+    image: 'https://pixelz.cc/wp-content/uploads/2018/12/chocolate-brownies-uhd-4k-wallpaper.jpg',
+    brand: 'Pillsbury ',
+    category: 'Brownie',
+    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
+    rating: 2.5,
+    numReviews: 12,
+    price: 99,
+    countInStock: 6,
+    topic: "Brownies",
+    bestSelling: "NO"
+  },
+
+  {
+    // _id: '14',
+    name: 'Gift for Her',
+    image: 'https://images-na.ssl-images-amazon.com/images/I/71u8QnmRzXL._SL1500_.jpg',
+    brand: 'Gifty',
+    category: 'Chocolate',
+    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
+    rating: 2.5,
+    numReviews: 12,
+    price: 210,
+    countInStock: 3,
+    topic: "Gift Boxes",
+    bestSelling: "Best Selling"
+  },
+
+
+  {
+    // _id: '15',
+    name: 'Dairy Milk',
+    image: 'https://wallpaperaccess.com/full/3518159.jpg',
+    brand: 'Dairy Milk',
+    category: 'Chocolate',
+    description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
+    rating: 4,
+    numReviews: 12,
+    price: 145,
+    countInStock: 18,
+    topic: "general",
+    bestSelling: "NO"
   },
 ]
 
