@@ -41,11 +41,11 @@
     padding-Bottom: 3rem;
 }
 
-a {
+/* a {
     color: whitesmoke;
     text-decoration: none;
     background-color: transparent;
-}
+} */
 
 @media (max-width: 450px) {
     .boxLength {

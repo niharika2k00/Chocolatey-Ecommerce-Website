@@ -14,13 +14,15 @@ import Load from '../Components/Loading.js';
 
 const LoginScreen = ({ history }) => {
 
+    const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmpass, setConfirmpass] = useState('');
     const [msg, setMsg] = useState(null);
 
-    const dispatch = useDispatch();
+
+
 
     const user_Details = useSelector(state => state.user_Details);
     const { loading, error, USER } = user_Details;
@@ -34,6 +36,8 @@ const LoginScreen = ({ history }) => {
     // LOOK AT THE REDUX DEV TOOLS 
     const listOfAllMyOrders = useSelector(state => state.listOfAllMyOrders);
     const { loading: loadingAllMyOrders, error: errorOfMyOrders, allMyOrders } = listOfAllMyOrders;
+
+
 
 
 

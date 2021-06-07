@@ -6,7 +6,7 @@ import { Table, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
-import { UserAll_ListAction } from '../Actions/User_action.js'
+import { UserAll_ListAction, userDeleteAction } from '../Actions/User_action.js'
 
 
 
@@ -20,6 +20,8 @@ const UsersListScreen = ({ history }) => {
     const user_Login = useSelector(state => state.user_Login);  //user_Login -> from the store
     const { UserInfo } = user_Login;
 
+    const user_Delete = useSelector(state => state.user_Delete);  //user_Delete -> from the store
+    const { success: seccessDeleteUser } = user_Delete;
 
 
 
@@ -28,12 +30,15 @@ const UsersListScreen = ({ history }) => {
             dispatch(UserAll_ListAction())
         else
             history.push('/login');
-    }, [dispatch])
+    }, [dispatch, history, seccessDeleteUser])
 
 
 
     const deleteHandler = (id) => {
-        console.log("User Deleted Successfully")
+        if (window.confirm('Are you sure you want to delete this User?')) {
+            dispatch(userDeleteAction(id));
+            console.log("User Deleted Successfully")
+        }
     }
 
 

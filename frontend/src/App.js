@@ -17,7 +17,7 @@ import PAYMENTSCREEN from './Screens/PaymentScreen.js';
 import PLACEORDERSCREEN from './Screens/PlaceOrderScreen.js';
 import ORDER_SCREEN from './Screens/OrderScreen.js';
 import USERS_LIST from './Screens/UsersListScreen.js';
-
+import USER_EDIT from './Screens/UserEditScreen.js';
 
 
 
@@ -34,15 +34,13 @@ function App() {
 
         <main >
           <div className="self_containerFull">
-            {/* <Route path='/intro' component={INTROSCREEN} exact /> */}
+            <Route path='/admin/user/:id/edit' component={USER_EDIT} />
             <Route path='/admin/usersList' component={USERS_LIST} />
             <Route path='/order/:id' component={ORDER_SCREEN} />
             <Route path='/placeorder' component={PLACEORDERSCREEN} />
             <Route path='/payment' component={PAYMENTSCREEN} />
             <Route path='/shipping' component={SHIPPINGSCREEN} />
             <Route path='/profile' component={PROFILESCREEN} />
-            {/* <Route path='/cart/:id?' component={CARTSCREEN} /> */}
-            {/* <Route path='/product/:id' component={PRODUCTSCREEN} /> */}
 
             <Route path='/cart/:id?'
               render={(props) => (
@@ -80,4 +78,3 @@ function App() {
 
 export default App;
 
-// Container tag helps to add a broad margin around 
