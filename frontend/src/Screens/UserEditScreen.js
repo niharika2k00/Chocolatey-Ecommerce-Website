@@ -61,8 +61,18 @@ const UserEditScreen = ({ history, match }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(userUpdateAction({ id: USER._id, name, email, isadmin }))
+        const Obj = {
+            _id: USER._id,
+            name: name,
+            email: email,
+            isAdmin: isadmin
+        }
+        console.log(Obj)
+        dispatch(userUpdateAction(Obj));
     }
+
+
+
 
 
     return (
@@ -73,8 +83,8 @@ const UserEditScreen = ({ history, match }) => {
                 <h1 className="cartHead" style={{ paddingBottom: "2.1rem" }} >Edit User</h1>
 
 
-                {errorUpdate && <Mess variant='danger'>{error}</Mess>}
-                {successUpdate && <Mess variant='success'>Profile Updated</Mess>}
+                {errorUpdate && <Mess variant='danger'>{errorUpdate}</Mess>}
+                {/* {successUpdate && <Mess variant='success'>Profile Updated</Mess>} */}
                 {loadingUpdate && <Load />}
 
                 {

@@ -18,6 +18,7 @@ import PLACEORDERSCREEN from './Screens/PlaceOrderScreen.js';
 import ORDER_SCREEN from './Screens/OrderScreen.js';
 import USERS_LIST from './Screens/UsersListScreen.js';
 import USER_EDIT from './Screens/UserEditScreen.js';
+import PRODUCTS_LIST from './Screens/ProductsListScreen.js';
 
 
 
@@ -34,6 +35,7 @@ function App() {
 
         <main >
           <div className="self_containerFull">
+            <Route path='/admin/productsList' component={PRODUCTS_LIST} />
             <Route path='/admin/user/:id/edit' component={USER_EDIT} />
             <Route path='/admin/usersList' component={USERS_LIST} />
             <Route path='/order/:id' component={ORDER_SCREEN} />

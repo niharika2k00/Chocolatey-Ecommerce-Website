@@ -6,7 +6,10 @@ import {
     PRODUCT_LIST_FAIL,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
-    PRODUCT_DETAILS_FAIL
+    PRODUCT_DETAILS_FAIL,
+    PRODUCT_DELETE_REQUEST,
+    PRODUCT_DELETE_SUCCESS,
+    PRODUCT_DELETE_FAIL
 } from '../Constants/Product_constant.js';
 import backend_URL from '../backend_URL.js';
 
@@ -57,3 +60,32 @@ export const Detailsproducts = (id) => async (dispatch) => {
     }
 }
 
+
+
+export const deleteProductAction = (id) => async (dispatch, getState) => {
+    try {
+        dispatch({ type: PRODUCT_DELETE_REQUEST });
+
+        const { user_Login: { UserInfo } } = getState();
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: ` Bearer ${UserInfo.token}`
+            },
+        };
+
+        await axios.delete(`${backend_URL}/api/products/${id}`, config); // from user_controller backend
+
+        dispatch({ type: PRODUCT_DELETE_SUCCESS, });
+    }
+    catch (error) {
+        dispatch({
+            type: PRODUCT_DELETE_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
