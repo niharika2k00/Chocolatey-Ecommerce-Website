@@ -181,4 +181,72 @@ const deleteUser = asyncHandler(async (req, res) => {
 
 
 
-export { userAuth, userRegister, getuserProfile, UpdateuserProfile, getAllUsers, deleteUser };
+
+
+// @desc       Get User By ID
+// @Route      GET/api/users/:id
+// @access      Private / For Admin
+
+const getUserByID = asyncHandler(async (req, res) => {
+    const USER = await User.findById(req.params.id).select('-password');
+    if (USER) {
+        res.json(USER)
+    }
+    else {
+        res.status(401);
+        throw new Error('Invalid User');
+    }
+})
+
+
+
+
+
+// @desc       Update users profile
+// @Route      PUT/api/users/:id
+// @access      Private / For Admin
+
+const EditUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    console.log(user)     // updated user
+
+    if (user) {                                            // user --> Original user thats stored previously
+        user.name = req.body.name || user.name;
+        user.email = req.body.email || user.email;
+        user.isAdmin = req.body.isAdmin || user.isAdmin;
+
+        const Updated_User = await user.save();
+        res.json({                                               // req.json returns the Object 
+            _id: Updated_User._id,
+            name: Updated_User.name,
+            email: Updated_User.email,
+            isAdmin: Updated_User.isAdmin,
+        })
+    }
+    else {
+        res.status(401);
+        throw new Error('Invalid Email OR Password');
+    }
+})
+
+
+
+export { userAuth, userRegister, getuserProfile, UpdateuserProfile, getAllUsers, deleteUser, getUserByID, EditUser };
+
+
+
+
+
+
+
+
+/*
+// Select method is used to select which fields are to be returned in the query result, excluding select means we want all the fields to be returned.
+
+// include a and b, exclude other fields
+query.select('a b');
+
+// exclude c and d, include other fields
+query.select('-c -d');
+
+*/

@@ -9,7 +9,15 @@ import {
     PRODUCT_DETAILS_FAIL,
     PRODUCT_DELETE_REQUEST,
     PRODUCT_DELETE_SUCCESS,
-    PRODUCT_DELETE_FAIL
+    PRODUCT_DELETE_FAIL,
+    PRODUCT_CREATE_REQUEST,
+    PRODUCT_CREATE_SUCCESS,
+    PRODUCT_CREATE_FAIL,
+    PRODUCT_UPDATE_REQUEST,
+    PRODUCT_UPDATE_SUCCESS,
+    PRODUCT_UPDATE_FAIL,
+    PRODUCT_UPDATE_RESET
+
 } from '../Constants/Product_constant.js';
 import backend_URL from '../backend_URL.js';
 
@@ -82,6 +90,76 @@ export const deleteProductAction = (id) => async (dispatch, getState) => {
     catch (error) {
         dispatch({
             type: PRODUCT_DELETE_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
+
+
+
+
+export const createProductAction = () => async (dispatch, getState) => {
+    try {
+        dispatch({ type: PRODUCT_CREATE_REQUEST });
+
+        const { user_Login: { UserInfo } } = getState();
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: ` Bearer ${UserInfo.token}`
+            },
+        };
+
+        const { data } = await axios.post(`${backend_URL}/api/products`, {}, config); // from user_controller backend
+
+        dispatch({
+            type: PRODUCT_CREATE_SUCCESS,
+            payload: data,
+        });
+
+    }
+    catch (error) {
+        dispatch({
+            type: PRODUCT_CREATE_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
+
+
+
+
+export const updateProductAction = (product) => async (dispatch, getState) => {
+    try {
+        dispatch({ type: PRODUCT_UPDATE_REQUEST });
+
+        const { user_Login: { UserInfo } } = getState();
+
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: ` Bearer ${UserInfo.token}`
+            },
+        };
+
+        const { data } = await axios.put(`${backend_URL}/api/products/${product._id}`, product, config); // from user_controller backend
+
+        dispatch({
+            type: PRODUCT_UPDATE_SUCCESS,
+            payload: data,
+        });
+
+    }
+    catch (error) {
+        dispatch({
+            type: PRODUCT_UPDATE_FAIL,
             payload:
                 error.response && error.response.data.message
                     ? error.response.data.message

@@ -9,6 +9,12 @@ req.query --->  contains the URL query parameters (after the ? in the URL).
 req.query is an object containing the property for each query string parameter in the route.
 req.params will return parameters in the matched route. If your req.param is a function that peels
 parameters out of the request. 
+
+
+Content-Type Header ----->  tells the client what the content type of the returned content .
+
+
+
 */
 
 /* const express = require('express');
@@ -26,10 +32,12 @@ import ConnectDB from './config/DB.js';
 import { notFound, errorHandler } from './Middleware/Error_middleware.js';
 import colors from 'colors';
 import cors from 'cors';
+import path from 'path';
 import product_routes from './Routes/product_routes.js';
 import products from './Data/products.js';
 import user_routes from './Routes/user_routes.js';
 import order_routes from './Routes/order_routes.js';
+import upload_routes from './Routes/upload_routes.js';
 
 
 
@@ -85,13 +93,19 @@ app.get('/api/products/:id', (req, res) => {
 app.use('/api/products', product_routes);
 app.use('/api/users', user_routes);
 app.use('/api/orders', order_routes);
+app.use('/api/upload', upload_routes);
+
 
 app.get('/api/config/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID)
 })
 
 
+const __dirname = path.resolve();
 
+
+app.use('./uploads', express.static(path.join(__dirname, './uploads'))); // __dirname ----> is available in express with common JS,but as we are using ES^ so we have to make that
+console.log("path = ", (path.join(__dirname, './uploads')))
 app.use(notFound);
 app.use(errorHandler);
 // app.use()

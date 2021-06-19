@@ -44,18 +44,6 @@ const Introscreen = () => {
 
     return (
         <div className="main-cls">
-            {/*   <Container >   border around
-            <Link className="btn btn-danger my-3" to="/home" >  GO BACK  </Link>
-            {{<div className="bubble" >
-                    <img src={bubble} />
-                    <img src={bubble} />
-                    <img src={bubble} />
-                    <img src={bubble} />
-                    <img src={bubble} />
-                    <img src={bubble} />
-                    <img src={bubble} />
-                </div>}}
-            </Container> */}
 
             {/*  <Link className="btn btn-danger my-3" to="/home">
                 GO BACK{" "}
@@ -77,7 +65,7 @@ const Introscreen = () => {
                         <h3 className="title">Chocolatey</h3>
                         <p className="subtitle">
                             ------- Made with Love Unique Chocolates for gourmet -------
-                    </p>
+                        </p>
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -181,7 +169,7 @@ const Introscreen = () => {
                         <p>A brand new Valentines Day's Collection on your way ....</p>
                         <a className="parallax-btn" href="/home">
                             SHOP NOW
-                         </a>
+                        </a>
                     </div>
                 </div>
             </section>
