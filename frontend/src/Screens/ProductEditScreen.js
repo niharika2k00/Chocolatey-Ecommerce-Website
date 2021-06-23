@@ -107,8 +107,8 @@ const UserEditScreen = ({ history, match }) => {
             }
 
             const { data } = await axios.post(`${backend_URL}/api/upload`, formData, config);
-            console.log(data)
-            setImage(data);
+            console.log("DATA : ", `${backend_URL}` + data);
+            setImage(`${backend_URL}` + data);
             setImgUploading(false);
         }
         catch (e) {

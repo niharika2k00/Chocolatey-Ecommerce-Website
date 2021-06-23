@@ -42,7 +42,12 @@ const upload = multer({
 
 
 router.post('/', upload.single('image'), (req, res) => {
-    res.send(`/${req.file.path}`)
+    console.log(req.file);
+    res.send(`/${req.file.filename}`);
+    // http://localhost:8090/image-1624453584772.jpg ---> write in the browser it will work
 })
+
+
+
 
 export default router;

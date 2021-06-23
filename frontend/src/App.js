@@ -20,6 +20,7 @@ import USERS_LIST from './Screens/UsersListScreen.js';
 import USER_EDIT from './Screens/UserEditScreen.js';
 import PRODUCTS_LIST from './Screens/ProductsListScreen.js';
 import PRODUCT_EDIT from './Screens/ProductEditScreen.js';
+import ORDERS_LIST from './Screens/Orders_ListScreen.jsx';
 
 
 
@@ -38,6 +39,7 @@ function App() {
             <Route path='/admin/product/:id/edit' component={PRODUCT_EDIT} />
             <Route path='/admin/productsList' component={PRODUCTS_LIST} />
             <Route path='/admin/user/:id/edit' component={USER_EDIT} />
+            <Route path='/admin/ordersList' component={ORDERS_LIST} />
             <Route path='/admin/usersList' component={USERS_LIST} />
             <Route path='/order/:id' component={ORDER_SCREEN} />
             <Route path='/placeorder' component={PLACEORDERSCREEN} />

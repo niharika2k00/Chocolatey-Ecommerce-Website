@@ -103,9 +103,9 @@ app.get('/api/config/paypal', (req, res) => {
 
 const __dirname = path.resolve();
 
-
-app.use('./uploads', express.static(path.join(__dirname, './uploads'))); // __dirname ----> is available in express with common JS,but as we are using ES^ so we have to make that
-console.log("path = ", (path.join(__dirname, './uploads')))
+app.use(express.static(path.join(__dirname, './uploads')))
+// app.use('./uploads', express.static(path.join(__dirname, './uploads'))); // __dirname ----> is available in express with common JS,but as we are using ES^ so we have to make that
+// console.log("path = ", (path.join(__dirname, './uploads')))
 app.use(notFound);
 app.use(errorHandler);
 // app.use()

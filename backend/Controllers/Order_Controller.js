@@ -110,4 +110,20 @@ const getAllMyOrders = asyncHandler(async (req, res) => {
 })
 
 
-export { AddOrderItems, GetOrderById, Update_OrderToPay, getAllMyOrders };
+
+
+
+// @desc        All Orders of all users
+// @Route       GET/api/orders
+// @access      private
+
+const getOrders = asyncHandler(async (req, res) => {
+    const OrdersFull = await ORDER.find({}).populate('user', 'id name');  // reference documents in other collection
+    console.log(OrdersFull)
+    res.json(OrdersFull);
+})
+
+
+
+
+export { AddOrderItems, GetOrderById, Update_OrderToPay, getAllMyOrders, getOrders };

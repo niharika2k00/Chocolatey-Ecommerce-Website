@@ -25,3 +25,10 @@ export const ORDER_ALL_MY_REQUEST = 'ORDER_ALL_MY_REQUEST';
 export const ORDER_ALL_MY_SUCCESS = 'ORDER_ALL_MY_SUCCESS';
 export const ORDER_ALL_MY_FAIL = 'ORDER_ALL_MY_FAIL';
 export const ORDER_ALL_MY_RESET = 'ORDER_ALL_MY_RESET';
+
+
+// For Admin  Only ....
+export const ORDERS_REQUEST = 'ORDERS_REQUEST';
+export const ORDERS_SUCCESS = 'ORDERS_SUCCESS';
+export const ORDERS_FAIL = 'ORDERS_FAIL';
+export const ORDERS_RESET = 'ORDERS_RESET';

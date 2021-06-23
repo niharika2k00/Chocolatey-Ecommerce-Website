@@ -12,6 +12,10 @@ import {
     ORDER_ALL_MY_REQUEST,
     ORDER_ALL_MY_SUCCESS,
     ORDER_ALL_MY_FAIL,
+    ORDERS_REQUEST,
+    ORDERS_SUCCESS,
+    ORDERS_FAIL,
+    ORDERS_RESET,
 } from '../Constants/Order_constant.js';
 import backend_URL from '../backend_URL.js';
 
@@ -146,6 +150,38 @@ export const OrderMyAll_Action = () => async (dispatch, getState) => {
     catch (error) {
         dispatch({
             type: ORDER_ALL_MY_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
+
+
+
+
+
+export const Order_All_Action = () => async (dispatch, getState) => {
+    try {
+        dispatch({ type: ORDERS_REQUEST });
+        const { user_Login: { UserInfo } } = getState();
+        const config = {
+            headers: { Authorization: ` Bearer ${UserInfo.token}` },
+        };
+
+
+        const { data } = await axios.get(`${backend_URL}/api/orders`, config); // from user_controller backend
+        console.log(data);    //  [{} {} {} {}]
+
+        dispatch({
+            type: ORDERS_SUCCESS,
+            payload: data,
+        });
+    }
+    catch (error) {
+        dispatch({
+            type: ORDERS_FAIL,
             payload:
                 error.response && error.response.data.message
                     ? error.response.data.message

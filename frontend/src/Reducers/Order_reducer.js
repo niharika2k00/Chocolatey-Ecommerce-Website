@@ -16,6 +16,10 @@ import {
     ORDER_ALL_MY_SUCCESS,
     ORDER_ALL_MY_FAIL,
     ORDER_ALL_MY_RESET,
+    ORDERS_REQUEST,
+    ORDERS_SUCCESS,
+    ORDERS_FAIL,
+    ORDERS_RESET,
 } from '../Constants/Order_constant.js';
 
 
@@ -112,6 +116,30 @@ export const myAllOrders_reducer = (state = { allMyOrders: [] }, action) => {
 
         case ORDER_ALL_MY_RESET:
             return { allMyOrders: [] }
+        default:
+            return state;
+    }
+}
+
+
+
+
+
+export const ORDER_All_reducer = (state = { Order_All: [] }, action) => {
+    switch (action.type) {
+        case ORDERS_REQUEST:
+            return { loading: true }
+
+        case ORDERS_SUCCESS:
+            return {
+                loading: false,
+                success: true,
+                Order_All: action.payload
+            }
+
+        case ORDERS_FAIL:
+            return { loading: false, error: action.payload }
+
         default:
             return state;
     }

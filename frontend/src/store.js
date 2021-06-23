@@ -5,7 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { product_Listreducer, product_Detailsreducer, productDeleteReducer, productCreateReducer, productUpdateReducer } from './Reducers/Product_reducer.js';
 import { cartReducer } from './Reducers/Cart_reducer.js';
 import { User_Loginreducer, User_Registerreducer, User_Detailsreducer, User_ProfileReducer, allUsers_List, userDelete_Reducer, userUpdate_Reducer } from './Reducers/User_reducer.js';
-import { orderCreate_reducer, OrderDetails_Full_reducer, OrderPay_reducer, myAllOrders_reducer } from './Reducers/Order_reducer.js';
+import { orderCreate_reducer, OrderDetails_Full_reducer, OrderPay_reducer, myAllOrders_reducer, ORDER_All_reducer } from './Reducers/Order_reducer.js';
 
 
 
@@ -29,7 +29,8 @@ const Reducer = combineReducers({
     order_Create: orderCreate_reducer,
     order_Details: OrderDetails_Full_reducer,
     order_Pay: OrderPay_reducer,
-    listOfAllMyOrders: myAllOrders_reducer
+    listOfAllMyOrders: myAllOrders_reducer,
+    orders_all: ORDER_All_reducer       // for admin to see all the orders
 })
 
 
