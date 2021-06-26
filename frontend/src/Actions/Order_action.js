@@ -16,6 +16,14 @@ import {
     ORDERS_SUCCESS,
     ORDERS_FAIL,
     ORDERS_RESET,
+    ORDER_PAY_REQUEST,
+    ORDER_PAY_SUCCESS,
+    ORDER_PAY_FAIL,
+    ORDER_PAY_RESET,
+    ORDER_DELIVER_REQUEST,
+    ORDER_DELIVER_SUCCESS,
+    ORDER_DELIVER_FAIL,
+    ORDER_DELIVER_RESET,
 } from '../Constants/Order_constant.js';
 import backend_URL from '../backend_URL.js';
 
@@ -94,10 +102,10 @@ export const GetOrderDetails_ByID = (ID) => async (dispatch, getState) => {
 
 
 
-
+// For payment handling Action
 export const OrderPay_Action = (ORDER_ID, paymentResult) => async (dispatch, getState) => {
     try {
-        dispatch({ type: ORDER_CREATE_REQUEST });
+        dispatch({ type: ORDER_PAY_REQUEST });
         const { user_Login: { UserInfo } } = getState();
         const config = {
             headers: {
@@ -107,17 +115,17 @@ export const OrderPay_Action = (ORDER_ID, paymentResult) => async (dispatch, get
         };
 
 
-        const { data } = await axios.put(`${backend_URL}/api/orders/${ORDER_ID}`, paymentResult, config); // from user_controller backend
+        const { data } = await axios.put(`${backend_URL}/api/orders/${ORDER_ID}/pay`, paymentResult, config); // from user_controller backend
         console.log(data);
 
         dispatch({
-            type: ORDER_CREATE_SUCCESS,
+            type: ORDER_PAY_SUCCESS,
             payload: data,
         });
     }
     catch (error) {
         dispatch({
-            type: ORDER_CREATE_FAIL,
+            type: ORDER_PAY_FAIL,
             payload:
                 error.response && error.response.data.message
                     ? error.response.data.message
@@ -125,6 +133,42 @@ export const OrderPay_Action = (ORDER_ID, paymentResult) => async (dispatch, get
         });
     }
 };
+
+
+
+
+// For Delivery Products handling Action  ---  by the ADMIN 
+export const OrderDeliver_Action = (ORDER) => async (dispatch, getState) => {
+    try {
+        dispatch({ type: ORDER_DELIVER_REQUEST });
+        const { user_Login: { UserInfo } } = getState();
+        const config = {
+            headers: {
+                "Content-Type": "application/json",   // data will be send in the form of json
+                Authorization: ` Bearer ${UserInfo.token}`
+            },
+        };
+
+
+        const { data } = await axios.put(`${backend_URL}/api/orders/${ORDER._id}/deliver`, {}, config); // from user_controller backend
+        console.log(data);
+
+        dispatch({
+            type: ORDER_DELIVER_SUCCESS,
+            payload: data,
+        });
+    }
+    catch (error) {
+        dispatch({
+            type: ORDER_DELIVER_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
+
 
 
 

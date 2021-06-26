@@ -5,38 +5,48 @@ import axios from 'axios';
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckoutSteps from "../Components/CheckoutSteps.js";
-import { GetOrderDetails_ByID, OrderPay_Action } from '../Actions/Order_action.js';
+import { GetOrderDetails_ByID, OrderPay_Action, OrderDeliver_Action } from '../Actions/Order_action.js';
 import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
 import "../STYLES/placeOrderScreen.css";
 import backend_URL from '../backend_URL.js';
 import { PayPalButton } from "react-paypal-button-v2";
-import { ORDER_PAY_RESET } from "../Constants/Order_constant.js";
+import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from "../Constants/Order_constant.js";
 
 
 
 
 
 
-const OrderScreen = ({ match }) => {
+const OrderScreen = ({ match, history }) => {
 
     const [sdkReady, setsdkReady] = useState(false)
     const ORDER_ID = match.params.id;
     const dispatch = useDispatch();
 
 
+    // USER LOGIN ---- User authentication 
+    const user_Login = useSelector(state => state.user_Login);  //user_Login -> from the store
+    const { UserInfo } = user_Login;
+
+    // ORDER DETAILS
     const order_Details = useSelector(state => state.order_Details);
     const { Order, success, loading, error } = order_Details;
     console.log(order_Details);                                      // {loading,succes,Order}
 
 
-
+    // ORDER PAYMENT 
     const order_Pay = useSelector(state => state.order_Pay);
     const { success: successPay, loading: loadingPay } = order_Pay;
 
 
+    // ORDER DELIVER 
+    const order_Deliver = useSelector(state => state.order_Deliver);
+    const { success: successDeliver, loading: loadingDeliver } = order_Deliver;
 
-    //   Calculatint Items Price
+
+
+    //   Calculatint Items Price                
     if (!loading) {
         const Till_2_Decimals = (num) => {
             return (Math.round(num * 100) / 100).toFixed(2)
@@ -48,38 +58,46 @@ const OrderScreen = ({ match }) => {
 
 
 
+    // -----  SCRIPT FOR PAYPAL INTEGRATION USING SANDBOX  -------
     useEffect(() => {
 
-        const addPayPalScript = async () => {
-            const { data: clientID } = await axios.get(`${backend_URL}/api/config/paypal`);
-            console.log("CLIENT-ID = ", clientID);
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            // https://developer.paypal.com/docs/checkout/reference/customize-sdk/
-            script.src = `https://www.paypal.com/sdk/js?client-id=${clientID}`;
-            script.async = true
-            script.onload = () => {
-                setsdkReady(true)
+        if (!UserInfo)
+            history.push('/login');
+
+        else {
+            const addPayPalScript = async () => {
+                const { data: clientID } = await axios.get(`${backend_URL}/api/config/paypal`);
+                console.log("CLIENT-ID = ", clientID);
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                // https://developer.paypal.com/docs/checkout/reference/customize-sdk/
+                script.src = `https://www.paypal.com/sdk/js?client-id=${clientID}`;
+                script.async = true
+                script.onload = () => {
+                    setsdkReady(true)
+                }
+                document.body.appendChild(script)
             }
-            document.body.appendChild(script)
-        }
-        // addPayPalScript();
+            // addPayPalScript();
 
 
-        if (!Order || successPay) {
-            dispatch({ type: ORDER_PAY_RESET });
-            dispatch(GetOrderDetails_ByID(ORDER_ID));
-        }
-        else if (!Order.isPaid)   // Not Paid === (!false) === true
-        {
-            if (!window.paypal) {
-                addPayPalScript();
-                console.log(window.paypal)
+            if (!Order || successPay || successDeliver) {
+                dispatch({ type: ORDER_PAY_RESET });
+                dispatch({ type: ORDER_DELIVER_RESET });
+                dispatch(GetOrderDetails_ByID(ORDER_ID));
             }
-            else
-                setsdkReady(true);
+            else if (!Order.isPaid)   // Not Paid === (!false) === true
+            {
+                if (!window.paypal) {
+                    addPayPalScript();
+                    console.log(window.paypal)
+                }
+                else
+                    setsdkReady(true);
+            }
         }
-    }, [dispatch, ORDER_ID, successPay, Order])
+
+    }, [dispatch, ORDER_ID, successPay, successDeliver, Order])
 
 
 
@@ -89,6 +107,10 @@ const OrderScreen = ({ match }) => {
         dispatch(OrderPay_Action(ORDER_ID, paymentResult));
     }
 
+
+    const deliverHandler = () => {
+        dispatch(OrderDeliver_Action(Order))
+    }
 
 
 
@@ -224,6 +246,23 @@ const OrderScreen = ({ match }) => {
                                                     )}
                                             </ListGroup.Item>
                                         )}
+
+
+
+                                        {loadingDeliver && <Load />}
+                                        {
+                                            UserInfo && UserInfo.isAdmin && Order.isPaid && !Order.isDelivered && (
+                                                <ListGroup.Item>
+                                                    <Button
+                                                        type="button"
+                                                        onClick={deliverHandler}
+                                                        className="btn btn-block"
+                                                    >
+                                                        Mark As Delivered
+                                                    </Button>
+                                                </ListGroup.Item>
+                                            )
+                                        }
 
                                     </ListGroup>
                                 </div>

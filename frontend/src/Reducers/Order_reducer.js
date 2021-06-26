@@ -152,6 +152,7 @@ export const ORDER_All_reducer = (state = { Order_All: [] }, action) => {
 
 
 
+// For deliver materials to the customer -----------    admin can handle the delivery option
 export const OrderDeliver_reducer = (state = {}, action) => {
     switch (action.type) {
         case ORDER_DELIVER_REQUEST:
