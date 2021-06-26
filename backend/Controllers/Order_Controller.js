@@ -76,7 +76,7 @@ const Update_OrderToPay = asyncHandler(async (req, res) => {
     const Order = await ORDER.findById(req.params.id).populate('user', 'name email');  // reference documents in other collection
     console.log(Order)
     if (Order) {
-        Order.isPid = true;
+        Order.isPaid = true;
         Order.paid_at = Date.now();
         Order.paymentResult = {
             id: req.body.id,
@@ -84,6 +84,32 @@ const Update_OrderToPay = asyncHandler(async (req, res) => {
             email_id: req.body.payer.email_id,
             update_time: req.body.update_time
         }
+
+        const UpdatedOrder_forPayment = await Order.save();
+        res.json(UpdatedOrder_forPayment);
+    }
+    else {
+        res.status(404)
+        throw new Error('Order Not Found');
+    }
+})
+
+
+
+
+
+
+
+// @desc        Delivery Method
+// @Route       GET/api/orders/:id/deliver
+// @access      private
+
+const Update_OrderForDeliver = asyncHandler(async (req, res) => {
+    const Order = await ORDER.findById(req.params.id);
+    console.log(Order)
+    if (Order) {
+        Order.isDelivered = true;
+        Order.Delivered_at = Date.now();
 
         const UpdatedOrder_forPayment = await Order.save();
         res.json(UpdatedOrder_forPayment);
@@ -126,4 +152,4 @@ const getOrders = asyncHandler(async (req, res) => {
 
 
 
-export { AddOrderItems, GetOrderById, Update_OrderToPay, getAllMyOrders, getOrders };
+export { AddOrderItems, GetOrderById, Update_OrderToPay, Update_OrderForDeliver, getAllMyOrders, getOrders };
