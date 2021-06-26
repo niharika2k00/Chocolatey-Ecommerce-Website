@@ -56,10 +56,14 @@ app.use(
 
 app.use(express.json());                           //allows json data in the body
 
-// SYNTAX: app.get( path, callback )
-app.get('/', (req, res) => {                       //ES6 FUNCTION    
-  res.send('API is running succesfully');
-})
+
+/*
+  // SYNTAX: app.get( path, callback )
+  app.get('/', (req, res) => {                       //ES6 FUNCTION    
+    res.send('API is running succesfully');
+  })
+*/
+
 
 
 // http://localhost:8090/users/getUser/userid11/postid22
@@ -106,6 +110,22 @@ const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, './uploads')))
 // app.use('./uploads', express.static(path.join(__dirname, './uploads'))); // __dirname ----> is available in express with common JS,but as we are using ES^ so we have to make that
 // console.log("path = ", (path.join(__dirname, './uploads')))
+
+
+
+// FOR DEPLOYMENT  ______________-  LAST STEP  ______________
+if (process.env.NODE_ENV === "production purpose") {
+  app.use(express.static(path.join(__dirname, '/frontend/build')))  // make build as a static folder
+  app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
+}
+else {
+  app.get('/', (req, res) => {
+    res.send('API is running succesfully');
+  })
+}
+// __________________________________________________________
+
+
 app.use(notFound);
 app.use(errorHandler);
 // app.use()
