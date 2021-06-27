@@ -33,6 +33,7 @@ import { notFound, errorHandler } from './Middleware/Error_middleware.js';
 import colors from 'colors';
 import cors from 'cors';
 import path from 'path';
+import morgan from 'morgan';
 import product_routes from './Routes/product_routes.js';
 import products from './Data/products.js';
 import user_routes from './Routes/user_routes.js';
@@ -55,6 +56,11 @@ app.use(
 );
 
 app.use(express.json());                           //allows json data in the body
+
+
+if (process.env.NODE_ENV === "development purpose") {
+  app.use(morgan('dev'))
+}
 
 
 /*

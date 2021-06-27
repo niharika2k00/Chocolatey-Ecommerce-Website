@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder.js",
     "data:des": "node backend/seeder.js -d",
-    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION = false  npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION = false  npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Niharika Dutta",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.14",
+    "morgan": "^1.10.0",
     "multer": "^1.4.2"
   },
   "devDependencies": {
