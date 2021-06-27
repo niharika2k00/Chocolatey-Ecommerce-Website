@@ -6,10 +6,10 @@ import Rating from '../Components/Rating.js';
 import '../index.css';
 import "../STYLES/product_style.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { Detailsproducts } from '../Actions/product_action.js';
+import { Detailsproducts, createProductReviewAction } from '../Actions/product_action.js';
 import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
-
+import { PRODUCT_CREATE_REVIEW_RESET } from '../Constants/Product_constant.js';
 
 
 const Productscreen = ({ history, match, filling, setFilling }) => {
@@ -19,15 +19,25 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
     // < ------  Shopping Cart ------>
     const [qty, setqty] = useState(1);
+    const [rating, setRating] = useState(0);
+    const [comment, setComment] = useState('');
 
     console.log(filling)
 
 
+    // USER LOGIN ---- User authentication 
+    const user_Login = useSelector(state => state.user_Login);  //user_Login -> from the store
+    const { UserInfo } = user_Login;
 
-    // OBJECT 
+
     const product_details = useSelector(state => state.product_details); // <--- Allows to extract data from the Reducer fn frm Store
     const { loading, error, product } = product_details;                 // product --> product {} that comes from BACKEND find by ID from params
     console.log(product_details)
+
+
+    const product_ReviewCreate = useSelector(state => state.product_ReviewCreate);
+    const { loading: prodRev_loading, error: prodRev_error, success: prodRev_success } = product_ReviewCreate;
+
 
 
     useEffect(() => {
@@ -55,7 +65,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                 error ? < Mess variant="danger" > {error}</Mess> :
                     product ?
 
-                        (<Row>
+                        (<><Row>
                             <Col md={4} id="proimg" sm={12} >
                                 <img src={product.image} fluid />
                             </Col>
@@ -161,7 +171,49 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
                                 </Card>
                             </Col>
-                        </Row>)
+                        </Row>
+
+
+                            <Row>
+
+                                {prodRev_loading && <Load />}
+                                {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
+
+                                <Col md={6} xs={12}>
+                                    <h2 style={{ color: '#f8edeb' }}>REVIEWS</h2>
+
+                                    <hr style={{ border: "1px solid red !important" }}> </hr>
+
+                                    {product.reviews.length === 0 && <Mess> No Reviews </Mess>}
+
+                                    <ListGroup variant="flush">
+                                        {
+                                            product.reviews.map((rev) => (
+                                                <ListGroup key={rev._id} >
+
+                                                    <div className="commentHead" ><strong> {rev.name} </strong> | <span>{rev.createdAt.substring(0, 10)}</span></div>
+                                                    <p className="comment" >{rev.comment}</p>
+                                                    <Rating
+                                                        value={rev.rating}
+                                                        color='gold'
+                                                    />
+
+                                                </ListGroup>
+                                            ))
+                                        }
+                                    </ListGroup>
+
+
+
+                                </Col>
+                            </Row>
+
+
+
+
+
+
+                        </>)
 
                         : <h3>Cant fetch product obj</h3>
             }

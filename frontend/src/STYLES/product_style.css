@@ -74,6 +74,23 @@
     background-color: #f8edeb;
 }
 
+.commentHead {
+    color: #e9dfdd;
+    font-size: 1.2rem;
+}
+
+.comment {
+    color: #e9dfdd;
+    font-size: 1.03rem;
+}
+
+#review hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid red !important;
+}
+
 @media (max-width: 450px) {
     #proimg img {
         width: 92vw;
