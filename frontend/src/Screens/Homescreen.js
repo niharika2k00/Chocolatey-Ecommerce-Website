@@ -166,7 +166,7 @@ const Homescreen = () => {
                 error ? < Mess variant="danger" > {error}</Mess> :       //<h3>{error}</h3> 
                     <Row style={{ paddingBottom: "2rem" }} >
                         {currCartItems && currCartItems.map(product => (
-                            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                            <Col key={product._id} sm={12} md={6} lg={4} xl={3} style={{ padding: "0px" }} >
                                 {/* <h3>{product.name}</h3> */}
                                 <PROD
                                     pro={product}

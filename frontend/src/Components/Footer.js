@@ -8,8 +8,7 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col className="text-center py-3 mx-2">
-                        Copyright &copy; ECOMMERCE
-
+                        <p style={{ color: "#e5e5e5" }} > Copyright &copy; Developed By Niharika Dutta</p>
                     </Col>
                 </Row>
             </Container>

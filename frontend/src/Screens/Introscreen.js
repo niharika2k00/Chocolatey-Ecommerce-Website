@@ -107,7 +107,7 @@ const Introscreen = () => {
                         {" "}
                         <span>Trending Chocolates</span>{" "}
                     </h2> */}
-                    <h1>Trending Chocolates</h1>
+                    <h1 id="trendSize" >Trending Chocolates</h1>
                 </div>
 
                 <Row className="HOVER" >

@@ -31,7 +31,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App" style={{ backgroundColor: "#222022ef"  /*  "#0a9396" */ }}>
+      <div style={{ backgroundColor: "#262626" }}>
         <NAVIGATION_BAR />
 
         <main >

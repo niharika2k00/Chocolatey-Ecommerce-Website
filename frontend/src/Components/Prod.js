@@ -8,7 +8,7 @@ import '../index.css';
 // props can be passed orelse we can do DESTRUCTURING
 const Prod = (/*props*/  { pro }) => {
     return (
-        <div>
+        <>
             {/* <p>Left arrow: <i class="arrow left"></i></p> */}
             {/* <Link className="btn btn-success my-3" to="/home" >  GO BACK  </Link> */}
             <Card className='my-4 p-3 rounded  card_css' >
@@ -39,7 +39,7 @@ const Prod = (/*props*/  { pro }) => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-        </div>
+        </>
     )
 }
 

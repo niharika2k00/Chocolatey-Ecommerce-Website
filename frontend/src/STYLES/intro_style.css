@@ -308,6 +308,9 @@ body, html {
         font-size: 18px;
     }
     #intoImg {
-        width: 100vw;
+        width: 95vw;
+    }
+    #trendSize {
+        font-size: 1.6rem;
     }
 }

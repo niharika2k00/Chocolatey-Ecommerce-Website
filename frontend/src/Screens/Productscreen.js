@@ -216,7 +216,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                         }
 
                                         < ListGroup.Item style={{ paddingTop: "5rem" }} >
-                                            <h5 style={{ color: "" }} >WRITE A CUSTOMER REVIEW TO THIS PRODUCT </h5>
+                                            <h5 style={{ color: "" }} >WRITE A CUSTOMER REVIEW OF THIS PRODUCT </h5>
                                             {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
                                             {UserInfo ?
                                                 (
