@@ -73,7 +73,6 @@ const Header = () => {
                                 )
                             }
 
-
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
