@@ -73,15 +73,15 @@ const PlaceOrderScreen = ({ history }) => {
     }
 
 
-
+    /* 141314 */
 
     return (
         <div>
             <CheckoutSteps step1 step2 step3 step4 />
             <Row>
-                <Col md={7} sm={12} xs={12} className="Orderbkgrnd"  >
-                    <ListGroup variant='flush' className="Orderbkgrnd" >
-                        <ListGroup.Item style={{ backgroundColor: "#141314", padding: "0rem" }} >
+                <Col md={7} sm={12} xs={12} /* className="Orderbkgrnd" */ >
+                    <ListGroup variant='flush'>
+                        <ListGroup.Item style={{ backgroundColor: "#262626", padding: "0rem" }} >
                             <h2 className="orderHead" > Shipping</h2>
                             <p>
                                 <strong style={{ fontSize: "1.05rem " }} >Address: </strong>
@@ -95,7 +95,7 @@ const PlaceOrderScreen = ({ history }) => {
                             </p>
                         </ListGroup.Item>
 
-                        <ListGroup.Item style={{ backgroundColor: "#141314", padding: "0rem" }}>
+                        <ListGroup.Item style={{ backgroundColor: "#262626", padding: "0rem" }}>
                             <h2 className="orderHead" >Payment Method</h2>
                             <strong style={{ fontSize: "1.05rem " }}>Method: </strong>
                             <span id="Ordersubhead">
@@ -103,7 +103,7 @@ const PlaceOrderScreen = ({ history }) => {
                             </span>
                         </ListGroup.Item>
 
-                        <ListGroup.Item style={{ backgroundColor: "#141314", padding: "0rem" }}>
+                        <ListGroup.Item style={{ backgroundColor: "#262626", padding: "0rem" }}>
                             <h2 className="orderHead">Ordered Items</h2>
                             {CART.cartItems.length === 0 ? (
                                 <Mess>Your cart is empty</Mess>
@@ -143,7 +143,7 @@ const PlaceOrderScreen = ({ history }) => {
 
                 <Col md={4}>
                     <div className="Orderbox" >
-                        <ListGroup variant='flush' style={{ backgroundColor: "#141314", padding: "0 0 12px 0" }} >
+                        <ListGroup variant='flush' style={{ backgroundColor: "#262626", padding: "0 0 12px 0" }} >
                             <ListGroup.Item>
                                 <h2 className="orderHead" style={{ textAlign: "center" }} >Order Summary</h2>
                             </ListGroup.Item>
