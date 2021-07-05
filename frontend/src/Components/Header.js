@@ -4,6 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Nav, Navbar, Button, Form, FormControl, NavDropdown } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { LogOUT } from '../Actions/User_action.js';
+import { useHistory } from 'react-router-dom';
 
 
 const Header = () => {
@@ -11,6 +12,7 @@ const Header = () => {
     const user_Login = useSelector(state => state.user_Login);
     const { UserInfo } = user_Login;
 
+    const history = useHistory();
     const dispatch = useDispatch();
 
     const Logout_Handler = () => {
@@ -28,13 +30,6 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
-
-                            <LinkContainer to="/cart">
-                                <Nav.Link className="navBig">Cart{''}
-                                    <i class="fas fa-cart-arrow-down"></i>
-                                </Nav.Link>
-                            </LinkContainer>
-
 
                             {/*CREATED LATER AFTER THE LOGIN PART(frontend + backend)*/}
                             {UserInfo ? (
@@ -73,11 +68,12 @@ const Header = () => {
                                 )
                             }
 
+
+                            <Button variant="danger" onClick={() => history.push('/cart')} >
+                                Cart{''}
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </Button>
                         </Nav>
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
