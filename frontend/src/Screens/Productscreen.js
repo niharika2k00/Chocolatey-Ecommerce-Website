@@ -52,6 +52,12 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
     }
 
 
+    const submitReviewHandler = (e) => {
+        e.preventDefault();
+        dispatch(createProductReviewAction(match.params.id, { rating, comment }))
+        console.log(match.params.id);
+    }
+
 
     return (
         <div>
@@ -174,33 +180,75 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                         </Row>
 
 
-                            <Row>
 
+                            {/* -----------------------------     CUSTOMER  REVIEW  PART   -------------------------------- */}
+                            <Row>
                                 {prodRev_loading && <Load />}
                                 {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
 
                                 <Col md={6} xs={12}>
                                     <h2 style={{ color: '#f8edeb' }}>REVIEWS</h2>
 
-                                    <hr style={{ border: "1px solid red !important" }}> </hr>
+                                    <hr style={{ borderTop: "1px solid gold" }}></hr>
 
                                     {product.reviews.length === 0 && <Mess> No Reviews </Mess>}
 
                                     <ListGroup variant="flush">
                                         {
                                             product.reviews.map((rev) => (
-                                                <ListGroup key={rev._id} >
-
+                                                <ListGroup.Item key={rev._id} >
                                                     <div className="commentHead" ><strong> {rev.name} </strong> | <span>{rev.createdAt.substring(0, 10)}</span></div>
                                                     <p className="comment" >{rev.comment}</p>
                                                     <Rating
                                                         value={rev.rating}
                                                         color='gold'
                                                     />
-
-                                                </ListGroup>
+                                                </ListGroup.Item>
                                             ))
                                         }
+
+                                        < ListGroup.Item >
+                                            <h5>WRITE A CUSTOMER REVIEW TO THIS PRODUCT </h5>
+                                            {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
+                                            {UserInfo ?
+                                                (
+                                                    <Form onSubmit={submitReviewHandler}>
+                                                        <Form.Group controlId="rating">
+                                                            <Form.Label> Rating </Form.Label>
+                                                            <Form.Control
+                                                                as='select'
+                                                                value={rating}
+                                                                onChange={(e) => setRating(e.target.value)}
+                                                            >
+                                                                <option value='' > Select... </option>
+                                                                <option value='1' > 1 - Poor </option>
+                                                                <option value='2' > 2 - Fair </option>
+                                                                <option value='2.5' > 2.5 - Moderate</option>
+                                                                <option value='3' >3 - Good</option>
+                                                                <option value='4' > 4 - Very Good</option>
+                                                                <option value='5' > 5 - Excellent</option>
+                                                            </Form.Control>
+                                                        </Form.Group>
+
+                                                        <Form.Group controlId="comment" >
+                                                            <Form.Label>Comment</Form.Label>
+                                                            <Form.Control
+                                                                as='textarea'
+                                                                row='3'
+                                                                value={comment}
+                                                                onChange={(e) => setComment(e.target.value)}
+                                                            >
+                                                            </Form.Control>
+                                                        </Form.Group>
+                                                        <Button type="submit" variant="primary">
+                                                            Submit
+                                                        </Button>
+                                                    </Form>
+                                                )
+                                                :
+                                                (<Mess> Please <Link to="/login">login</Link> to write a review </Mess>)
+                                            }
+                                        </ListGroup.Item>
                                     </ListGroup>
 
 

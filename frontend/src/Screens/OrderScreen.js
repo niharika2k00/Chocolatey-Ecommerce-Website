@@ -60,7 +60,6 @@ const OrderScreen = ({ match, history }) => {
 
     // -----  SCRIPT FOR PAYPAL INTEGRATION USING SANDBOX  -------
     useEffect(() => {
-
         if (!UserInfo)
             history.push('/login');
 
