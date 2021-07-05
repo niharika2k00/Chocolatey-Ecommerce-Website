@@ -42,15 +42,16 @@ const Introscreen = () => {
         }
     }, [width]);
 
+
+
+
+
+
     return (
         <div className="main-cls">
 
-            {/*  <Link className="btn btn-danger my-3" to="/home">
-                GO BACK{" "}
-            </Link> */}
-
             {/* -----------  CAROUSEL  --------- */}
-            <Carousel fade>
+            <Carousel interval={2000}>
                 <Carousel.Item className="mycarou">
                     <div className="overlay-image">
                         {" "}
@@ -74,10 +75,10 @@ const Introscreen = () => {
                         <img className="d-block w-100" src={cday} alt="Second slide" />
                     </div>
                     <Carousel.Caption className="carou_center">
-                        <h3 className="subtitle">DARK CHOCOLATES</h3>
+                        {/* <h3 className="subtitle">DARK CHOCOLATES</h3>
                         <p className="subtitle">
                             ------- A healthy alternatives for Chocolate Lovers -------{" "}
-                        </p>
+                        </p> */}
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -91,16 +92,109 @@ const Introscreen = () => {
                     </div>
 
                     <Carousel.Caption className="carou_center">
-                        <h3 className="subtitle">DARK CHOCOLATES</h3>
+                        {/*  <h3 className="subtitle">DARK CHOCOLATES</h3>
                         <p className="subtitle">
                             ------- A healthy alternatives for Chocolate Lovers -------{" "}
-                        </p>
+                        </p> */}
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
 
 
-            <Container className="container_self">
+            <Container className="container_self" style={{ paddingTop: "3rem" }}>
+                <div className="minihead">
+                    {/* <h2 className="subheading">
+                        {" "}
+                        <span>Trending Chocolates</span>{" "}
+                    </h2> */}
+                    <h1>Trending Chocolates</h1>
+                </div>
+
+                <Row className="HOVER" >
+                    <Col md={3} sm={6} xs={6} className="choco" >
+                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/shop-04-800x800.png" alt="lost" />
+                        <div className="choco_name" > <h4>Choco Vanilla Truffle</h4></div>
+                    </Col>
+
+                    <Col md={3} sm={6} xs={6} className="choco" >
+                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/candies_prod.png" alt="lost" />
+                        <div className="choco_name" > <h4>Ferrero Rocher</h4></div>
+                    </Col>
+
+                    <Col md={3} sm={6} xs={6} className="choco" >
+                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/shop-05-768x768.png" alt="lost" />
+                        <div className="choco_name" > <h4>Almond Dark Chocolate</h4></div>
+                    </Col>
+
+                    <Col md={3} sm={6} xs={6} className="choco" >
+                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/choco_prod.png" alt="lost" />
+                        <div className="choco_name" > <h4>Dark Chocolate</h4></div>
+                    </Col>
+                </Row>
+
+                {/* <Row>
+                    <section className="my-3 Button" style={{ marginLeft: "3rem" }}>
+                        <a className="Button-btn" href="/home"> SHOP NOW </a>
+                    </section>
+                </Row> */}
+            </Container>
+
+
+            <section id="parallax" className="parallax">
+                <div className="container" data-aos="zoom-in">
+                    <div className="text-center">
+                        <h2>Valentines Day</h2>
+                        <p>A brand new Valentines Day's Collection on your way ....</p>
+                        <a className="parallax-btn" href="/home">
+                            SHOP NOW
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <Container>
+                {/* <div class="d-flex justify-content-around"> */}
+                <Row>
+                    <Col md={8} sm={12} lg={8} xs={12}>
+                        <img
+                            src="http://crems.like-themes.com/wp-content/uploads/2020/07/section-about-bg.png"
+                            alt="First slide"
+                            id="intoImg"
+                        />
+                    </Col>
+
+                    <Col md={4} sm={12} lg={4} xs={12}>
+                        <div id="item">
+                            <h5 className="itemhead"><i class="fab fa-pagelines icoo"></i> Natural Organic Products</h5>
+                            <p className="item_subhead">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+
+                        <div id="item">
+                            <h5 className="itemhead"> <i class="fas fa-gift icoo"></i>Designing</h5>
+                            <p className="item_subhead">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+
+                        <div id="item">
+                            <h5 className="itemhead"><i class="fas fa-candy-cane icoo"></i>Best Quality Cocoa</h5>
+                            <p className="item_subhead">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis aute irure dolor in reprehenderit
+                            </p>
+                        </div>
+
+                    </Col>
+                </Row>
+                {/* </div> */}
+            </Container>
+
+
+
+            {/* ----------  SLIDER PART DONE WITH REACT SLIDER  ----------- */}
+            {/* <Container className="container_self">
                 <div className="minihead">
                     <h2 className="subheading">
                         {" "}
@@ -108,8 +202,7 @@ const Introscreen = () => {
                     </h2>
                 </div>
 
-                {/* -----------  CARD - SLIDDER   --------- */}
-                <div>
+               <div>
                     <Slider {...slider}>
                         <div className="minislider">
                             <img
@@ -159,97 +252,7 @@ const Introscreen = () => {
                         </div>
                     </Slider>
                 </div>
-            </Container>
-
-
-            <section id="parallax" className="parallax">
-                <div className="container" data-aos="zoom-in">
-                    <div className="text-center">
-                        <h2>Valentines Day</h2>
-                        <p>A brand new Valentines Day's Collection on your way ....</p>
-                        <a className="parallax-btn" href="/home">
-                            SHOP NOW
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-
-            <Container>
-                {/* <div class="d-flex justify-content-around"> */}
-                <Row>
-                    <Col md={8} >
-                        <img
-                            src="http://crems.like-themes.com/wp-content/uploads/2020/07/section-about-bg.png"
-                            alt="First slide"
-                        />
-                    </Col>
-
-                    <Col md={4} >
-                        <div id="item">
-                            <h5 className="itemhead"><i class="fab fa-pagelines icoo"></i> Natural Organic Products</h5>
-                            <p className="item_subhead">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </p>
-                        </div>
-
-                        <div id="item">
-                            <h5 className="itemhead"> <i class="fas fa-gift icoo"></i>Designing</h5>
-                            <p className="item_subhead">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </p>
-                        </div>
-
-                        <div id="item">
-                            <h5 className="itemhead"><i class="fas fa-candy-cane icoo"></i>Best Quality Cocoa</h5>
-                            <p className="item_subhead">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis aute irure dolor in reprehenderit
-                            </p>
-                        </div>
-
-                    </Col>
-                </Row>
-                {/* </div> */}
-            </Container>
-
-
-            <Container className="container_self">
-                <div className="minihead">
-                    <h2 className="subheading">
-                        {" "}
-                        <span>Trending Chocolates</span>{" "}
-                    </h2>
-                </div>
-                <Row className="HOVER" >
-                    <Col md={3} sm={6} xs={6} className="choco" >
-                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/shop-04-800x800.png" alt="lost" />
-                        <div className="choco_name" > <h4>Choco Vanilla Truffle</h4></div>
-                    </Col>
-
-                    <Col md={3} sm={6} xs={6} className="choco" >
-                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/candies_prod.png" alt="lost" />
-                        <div className="choco_name" > <h4>Ferrero Rocher</h4></div>
-                    </Col>
-
-                    <Col md={3} sm={6} xs={6} className="choco" >
-                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/shop-05-768x768.png" alt="lost" />
-                        <div className="choco_name" > <h4>Almond Dark Chocolate</h4></div>
-                    </Col>
-
-                    <Col md={3} sm={6} xs={6} className="choco" >
-                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/choco_prod.png" alt="lost" />
-                        <div className="choco_name" > <h4>Dark Chocolate</h4></div>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <section className="my-3 Button" style={{ marginLeft: "3rem" }}>
-                        <a className="Button-btn" href="/home"> SHOP NOW </a>
-                    </section>
-                </Row>
-
-            </Container>
-
+            </Container> */}
 
         </div >
     );

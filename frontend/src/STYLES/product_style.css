@@ -91,6 +91,12 @@
     border-top: 1px solid red !important;
 }
 
+/* list item background color  */
+
+.bgcolor {
+    background-color: #302E30;
+}
+
 @media (max-width: 450px) {
     #proimg img {
         width: 92vw;

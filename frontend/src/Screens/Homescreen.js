@@ -123,7 +123,7 @@ const Homescreen = () => {
                         <p><i class="fas fa-candy-cane px-2"></i>Delight in Every Bite. Lets Chocolate makes your day ........  </p>
                         <a className="parallax2-btn" href="/cart">
                             SHOP
-                         </a>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -134,11 +134,11 @@ const Homescreen = () => {
                     <Link to="/"> <i className="arrow left"></i></Link>
                 </div>
 
-                <div className="p-2 bd-highlight sorttitle" ><h5>Sort By :</h5></div>
+                {/* <div className="p-2 bd-highlight sorttitle" ><h5>Sort By :</h5></div> */}
 
                 <div className="p-2 bd-highlight py-3">
                     <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic" style={{ fontSize: "1.18rem", padding: ".4rem .7rem", borderRadius: ".6rem" }} >
+                        <Dropdown.Toggle id="dropdown-basic" style={{ backgroundColor: "#005f73", fontSize: "1.18rem", padding: ".4rem .7rem", borderRadius: ".6rem" }} >
                             Filter <i className="fas fa-filter"></i>
                         </Dropdown.Toggle>
 

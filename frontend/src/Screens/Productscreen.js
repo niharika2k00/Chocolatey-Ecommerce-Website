@@ -41,8 +41,15 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
 
     useEffect(() => {
+        if (prodRev_success) {
+            alert("Review Submitted Sucessfully...");
+            setRating(0);
+            setComment('');
+            dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
+        }
+
         dispatch(Detailsproducts(match.params.id));
-    }, [dispatch, match])
+    }, [dispatch, match, prodRev_success])
 
 
 
@@ -71,144 +78,145 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                 error ? < Mess variant="danger" > {error}</Mess> :
                     product ?
 
-                        (<><Row>
-                            <Col md={4} id="proimg" sm={12} >
-                                <img src={product.image} fluid />
-                            </Col>
+                        (<>
+                            <Row className="topGap">
+                                <Col md={4} id="proimg" sm={12} >
+                                    <img src={product.image} fluid />
+                                </Col>
 
-                            <Col md={5} sm={12} xs={12} className='colGap' >
-                                <ListGroup variant="flush" >
-                                    <ListGroup.Item  ><h3 id="prohead"> {product.name} </h3></ListGroup.Item>
-
-                                    <ListGroup.Item className='listy1'>
-                                        <Rating
-                                            value={product.rating}
-                                            text={` ${product.numReviews} reviews`}
-                                            color='crimson'
-                                        />
-                                    </ListGroup.Item >
-
-                                    <ListGroup.Item className='listy1'><b> Brand :  {' '}</b>{product.brand}  </ListGroup.Item>
-                                    <ListGroup.Item className='listy1' style={{ fontSize: "1.6rem" }}><b> Price : </b>₹{product.price}  </ListGroup.Item>
-                                    <ListGroup.Item className='listy1'><b> Description :  {' '}</b>{product.description}  </ListGroup.Item>
-
-                                    <ListGroup.Item className='listy1'><b> Filling :  {' '}</b>
-                                        <Row>
-                                            <Col>
-                                                <Form>
-                                                    <Form.Group controlId="exampleForm.ControlSelect1">
-                                                        <Form.Control
-                                                            as="select"
-                                                            className="filling" onChange={(e) => setFilling(e.target.value)}
-                                                            variant="success"
-                                                            value={filling}
-                                                        >
-                                                            <option>None</option>
-                                                            <option>Nuts</option>
-                                                            <option>Fudge </option>
-                                                            <option>Choco Chips </option>
-                                                            <option>Caramel </option>
-                                                            <option>50% Dark </option>
-                                                            <option>75% Dark</option>
-                                                            <option> 99% Dark</option>
-                                                            <option>White Chocolate </option>
-                                                            <option>Truffle </option>
-                                                        </Form.Control>
-                                                    </Form.Group>
-                                                </Form>
-                                            </Col>
-
-                                            <Col>   <p>{filling}</p></Col>
-                                        </Row>
-                                    </ListGroup.Item>
-
-                                </ListGroup>
-                            </Col>
-
-
-
-                            <Col md={3} sm={12} xs={12} className='colGap'>
-                                <Card>
+                                <Col md={5} sm={12} xs={12} className='colGap' >
                                     <ListGroup variant="flush" >
-                                        <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem", color: 'black' }} >
+                                        <ListGroup.Item className="bgcolor"><h3 id="prohead"> {product.name} </h3></ListGroup.Item>
+
+                                        <ListGroup.Item className='listy1 bgcolor'>
+                                            <Rating
+                                                value={product.rating}
+                                                text={` ${product.numReviews} reviews`}
+                                                color='crimson'
+                                            />
+                                        </ListGroup.Item >
+
+                                        <ListGroup.Item className='listy1 bgcolor'><b> Brand :  {' '}</b>{product.brand}  </ListGroup.Item>
+                                        <ListGroup.Item className='listy1 bgcolor' style={{ fontSize: "1.6rem" }}><b> Price : </b>₹{product.price}  </ListGroup.Item>
+                                        <ListGroup.Item className='listy1 bgcolor'><b> Description :  {' '}</b>{product.description}  </ListGroup.Item>
+
+                                        <ListGroup.Item className='listy1 bgcolor'><b> Filling :  {' '}</b>
                                             <Row>
-                                                <Col> <b> PRICE -:</b> </Col>
-                                                <Col><strong>₹{product.price}</strong></Col>
+                                                <Col>
+                                                    <Form>
+                                                        <Form.Group controlId="exampleForm.ControlSelect1">
+                                                            <Form.Control
+                                                                as="select"
+                                                                className="filling" onChange={(e) => setFilling(e.target.value)}
+                                                                variant="success"
+                                                                value={filling}
+                                                            >
+                                                                <option>None</option>
+                                                                <option>Nuts</option>
+                                                                <option>Fudge </option>
+                                                                <option>Choco Chips </option>
+                                                                <option>Caramel </option>
+                                                                <option>50% Dark </option>
+                                                                <option>75% Dark</option>
+                                                                <option> 99% Dark</option>
+                                                                <option>White Chocolate </option>
+                                                                <option>Truffle </option>
+                                                            </Form.Control>
+                                                        </Form.Group>
+                                                    </Form>
+                                                </Col>
+
+                                                <Col>   <p>{filling}</p></Col>
                                             </Row>
                                         </ListGroup.Item>
 
-                                        <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem", color: 'black' }} >
-                                            <Row>
-                                                <Col> <b>STATUS -: </b> </Col>
-                                                <Col> {product.countInStock > 0 ? "In Stock" : "Out of Stock"} </Col>
-                                            </Row>
-                                        </ListGroup.Item>
+                                    </ListGroup>
+                                </Col>
 
-                                        {/* QUantity of the product */}
-                                        {product.countInStock > 0 && (
-                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem ", color: 'black' }} >
+
+
+                                <Col md={3} sm={12} xs={12} className='colGap'>
+                                    <Card>
+                                        <ListGroup variant="flush" >
+                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem", color: 'black' }} >
                                                 <Row>
-                                                    <Col><strong>Quantity -: </strong> </Col>
-                                                    <Col>
-                                                        <Form.Control as='select' value={qty} onChange={(e) => { setqty(e.target.value) }}>
-                                                            {[...Array(product.countInStock).keys()].map((x) => (
-                                                                <option key={x + 1} value={x + 1} >
-                                                                    {x + 1}
-                                                                </option>
-                                                            ))}
-                                                        </Form.Control>
-                                                    </Col>
+                                                    <Col> <b> PRICE -:</b> </Col>
+                                                    <Col><strong>₹{product.price}</strong></Col>
                                                 </Row>
                                             </ListGroup.Item>
-                                        )}
 
-                                        <ListGroup.Item>
-                                            <Button
-                                                onClick={addToCart_Handler}
-                                                variant="danger"
-                                                className='btn-block '
-                                                type='button'
-                                                disabled={product.countInStock === 0}
-                                            >
-                                                <strong><i class="fas fa-cart-arrow-down"></i> ADD TO CART</strong>
-                                            </Button>
-                                        </ListGroup.Item>
-                                    </ListGroup>
+                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem", color: 'black' }} >
+                                                <Row>
+                                                    <Col> <b>STATUS -: </b> </Col>
+                                                    <Col> {product.countInStock > 0 ? "In Stock" : "Out of Stock"} </Col>
+                                                </Row>
+                                            </ListGroup.Item>
 
-                                </Card>
-                            </Col>
-                        </Row>
+                                            {/* QUantity of the product */}
+                                            {product.countInStock > 0 && (
+                                                <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem ", color: 'black' }} >
+                                                    <Row>
+                                                        <Col><strong>Quantity -: </strong> </Col>
+                                                        <Col>
+                                                            <Form.Control as='select' value={qty} onChange={(e) => { setqty(e.target.value) }}>
+                                                                {[...Array(product.countInStock).keys()].map((x) => (
+                                                                    <option key={x + 1} value={x + 1} >
+                                                                        {x + 1}
+                                                                    </option>
+                                                                ))}
+                                                            </Form.Control>
+                                                        </Col>
+                                                    </Row>
+                                                </ListGroup.Item>
+                                            )}
+
+                                            <ListGroup.Item>
+                                                <Button
+                                                    onClick={addToCart_Handler}
+                                                    variant="danger"
+                                                    className='btn-block '
+                                                    type='button'
+                                                    disabled={product.countInStock === 0}
+                                                >
+                                                    <strong><i class="fas fa-cart-arrow-down"></i> ADD TO CART</strong>
+                                                </Button>
+                                            </ListGroup.Item>
+                                        </ListGroup>
+
+                                    </Card>
+                                </Col>
+                            </Row>
 
 
 
                             {/* -----------------------------     CUSTOMER  REVIEW  PART   -------------------------------- */}
-                            <Row>
+                            <Row className="topGap">
                                 {prodRev_loading && <Load />}
                                 {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
 
-                                <Col md={6} xs={12}>
+                                <Col md={8} lg={8} sm={12} xs={12}>
                                     <h2 style={{ color: '#f8edeb' }}>REVIEWS</h2>
 
                                     <hr style={{ borderTop: "1px solid gold" }}></hr>
 
-                                    {product.reviews.length === 0 && <Mess> No Reviews </Mess>}
+                                    {product.reviews.length === 0 && <Mess variant='success'> No Reviews. Be the first Reviewer.</Mess>}
 
                                     <ListGroup variant="flush">
                                         {
                                             product.reviews.map((rev) => (
                                                 <ListGroup.Item key={rev._id} >
-                                                    <div className="commentHead" ><strong> {rev.name} </strong> | <span>{rev.createdAt.substring(0, 10)}</span></div>
+                                                    <div className="commentHead" ><strong> {rev.name} </strong> | <span style={{ fontSize: ".9rem" }} >{rev.createdAt.substring(0, 10)}</span></div>
                                                     <p className="comment" >{rev.comment}</p>
                                                     <Rating
                                                         value={rev.rating}
-                                                        color='gold'
+                                                        color='#ef233c'
                                                     />
                                                 </ListGroup.Item>
                                             ))
                                         }
 
-                                        < ListGroup.Item >
-                                            <h5>WRITE A CUSTOMER REVIEW TO THIS PRODUCT </h5>
+                                        < ListGroup.Item style={{ paddingTop: "5rem" }} >
+                                            <h5 style={{ color: "" }} >WRITE A CUSTOMER REVIEW TO THIS PRODUCT </h5>
                                             {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
                                             {UserInfo ?
                                                 (
@@ -235,12 +243,14 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                             <Form.Control
                                                                 as='textarea'
                                                                 row='3'
+                                                                placeholder="write your review..."
                                                                 value={comment}
                                                                 onChange={(e) => setComment(e.target.value)}
                                                             >
                                                             </Form.Control>
                                                         </Form.Group>
-                                                        <Button type="submit" variant="primary">
+                                                        <br></br>
+                                                        <Button type="submit" variant="success">
                                                             Submit
                                                         </Button>
                                                     </Form>

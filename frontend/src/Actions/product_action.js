@@ -190,7 +190,7 @@ export const createProductReviewAction = (productId, reviewObj) => async (dispat
             },
         };
 
-        await axios.post(`${backend_URL}/api/products/${productId}/review`, reviewObj, config);
+        await axios.post(`${backend_URL}/api/products/${productId}/reviews`, reviewObj, config);
 
         dispatch({
             type: PRODUCT_CREATE_REVIEW_SUCCESS,

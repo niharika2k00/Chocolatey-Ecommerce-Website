@@ -8,8 +8,15 @@ main {
 }
 
 .self_containerFull {
-    margin: 1rem 2rem;
-    padding: .2rem 1.8rem;
+    margin: 0rem 2rem;
+    padding: 0rem 1.8rem;
+}
+
+.topGap {
+    padding-top: 2rem;
+    margin-top: .6rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 a:hover {
@@ -167,7 +174,7 @@ a:hover {
         padding: .2rem .7rem;
     }
     .parallax2 {
-        padding: 90px 0;
+        padding: 8rem 0;
     }
     .parallax2 p {
         font-size: .9rem;
