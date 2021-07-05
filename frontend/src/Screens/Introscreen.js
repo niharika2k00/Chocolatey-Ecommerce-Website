@@ -57,7 +57,7 @@ const Introscreen = () => {
                         {" "}
                         {/* hazy in the background using OPACITY */}
                         <img
-                            className="d-block w-100"
+                            className="d-block w-100 image"
                             src="https://images.unsplash.com/photo-1526081715791-7c538f86060e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8Y2hvY29sYXRlJTIwZ2lmdCUyMGJveHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
                             alt="Third slide"
                         />
@@ -72,7 +72,7 @@ const Introscreen = () => {
 
                 <Carousel.Item className="mycarou">
                     <div className="overlay-image">
-                        <img className="d-block w-100" src={cday} alt="Second slide" />
+                        <img className="d-block w-100 image" src={cday} alt="Second slide" />
                     </div>
                     <Carousel.Caption className="carou_center">
                         {/* <h3 className="subtitle">DARK CHOCOLATES</h3>
@@ -85,8 +85,8 @@ const Introscreen = () => {
                 <Carousel.Item className="mycarou">
                     <div className="overlay-image">{" "}
                         <img
-                            className="d-block w-100 "
-                            src="https://images.unsplash.com/photo-1526823127573-0fda76b6c24f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fGNob2NvbGF0ZXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=600&q=60"
+                            className="d-block w-100 image "
+                            src="https://images.unsplash.com/photo-1559715745-e1b33a271c8f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODB8fGNob2NvbGF0ZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                             alt="First slide"
                         />
                     </div>
