@@ -48,12 +48,15 @@ ConnectDB();
 const app = express();
 
 app.use(express.json());
-app.use(
+app.use(cors());
+
+
+/* app.use(
   cors({
     origin: "*", // <-- location of the react app were connecting to      
     credentials: true,
   })
-);
+); */
 
 app.use(express.json());                           //allows json data in the body
 
