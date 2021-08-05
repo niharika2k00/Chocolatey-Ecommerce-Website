@@ -86,7 +86,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
                                 <Col md={5} sm={12} xs={12} className='colGap' >
                                     <ListGroup variant="flush" >
-                                        <ListGroup.Item className="bgcolor"><h3 id="prohead"> {product.name} </h3></ListGroup.Item>
+                                        <ListGroup.Item className="bgcolor"><h2 id="prohead"> {product.name} </h2></ListGroup.Item>
 
                                         <ListGroup.Item className='listy1 bgcolor'>
                                             <Rating
@@ -96,8 +96,8 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                             />
                                         </ListGroup.Item >
 
-                                        <ListGroup.Item className='listy1 bgcolor'><b> Brand :  {' '}</b>{product.brand}  </ListGroup.Item>
                                         <ListGroup.Item className='listy1 bgcolor' style={{ fontSize: "1.6rem" }}><b> Price : </b>₹{product.price}  </ListGroup.Item>
+                                        <ListGroup.Item className='listy1 bgcolor'><b> Brand :  {' '}</b>{product.brand}  </ListGroup.Item>
                                         <ListGroup.Item className='listy1 bgcolor'><b> Description :  {' '}</b>{product.description}  </ListGroup.Item>
 
                                         <ListGroup.Item className='listy1 bgcolor'><b> Filling :  {' '}</b>
@@ -126,7 +126,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                     </Form>
                                                 </Col>
 
-                                                <Col>   <p>{filling}</p></Col>
+                                                <Col> <p>{filling}</p></Col>
                                             </Row>
                                         </ListGroup.Item>
 
@@ -195,7 +195,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                 {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
 
                                 <Col md={8} lg={8} sm={12} xs={12}>
-                                    <h2 style={{ color: '#f8edeb' }}>REVIEWS</h2>
+                                    <h2 style={{ color: '#f8edeb' }}>Reviews</h2>
 
                                     <hr style={{ borderTop: "1px solid gold" }}></hr>
 
@@ -227,6 +227,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                                 as='select'
                                                                 value={rating}
                                                                 onChange={(e) => setRating(e.target.value)}
+                                                                style={{ borderRadius: ".36rem" }}
                                                             >
                                                                 <option value='' > Select... </option>
                                                                 <option value='1' > 1 - Poor </option>
@@ -242,6 +243,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                             <Form.Label>Comment</Form.Label>
                                                             <Form.Control
                                                                 as='textarea'
+                                                                style={{ borderRadius: ".36rem" }}
                                                                 row='3'
                                                                 placeholder="write your review..."
                                                                 value={comment}
@@ -250,7 +252,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                             </Form.Control>
                                                         </Form.Group>
                                                         <br></br>
-                                                        <Button type="submit" variant="success">
+                                                        <Button type="submit" variant="success" style={{ borderRadius: ".36rem" }}>
                                                             Submit
                                                         </Button>
                                                     </Form>
@@ -265,11 +267,6 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
                                 </Col>
                             </Row>
-
-
-
-
-
 
                         </>)
 

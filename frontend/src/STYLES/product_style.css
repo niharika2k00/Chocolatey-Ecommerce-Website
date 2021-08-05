@@ -43,8 +43,8 @@
     /* TEXT GRADIENT */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 2.6rem;
+    font-weight: 600;
     padding-bottom: 4px;
 }
 
@@ -69,7 +69,7 @@
 
 .filling {
     padding: 1px 1rem;
-    border-radius: 1rem;
+    border-radius: .5rem;
     font-size: 17px;
     background-color: #f8edeb;
 }

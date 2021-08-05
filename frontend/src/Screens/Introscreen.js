@@ -18,6 +18,7 @@ import choco2 from '../images/choco2.png';
 import choco3 from '../images/choco3.png';
 import choco4 from '../images/choco4.png';
 import bg1 from '../images/bg1.png';
+import heart from '../images/download-removebg-preview.png';
 
 
 
@@ -151,7 +152,7 @@ const Introscreen = () => {
             <section id="parallax" className="parallax">
                 <div className="container" data-aos="zoom-in">
                     <div className="text-center">
-                        <h2>Valentines Day</h2>
+                        <h2><img src={heart} alt="aa" id="png" /> Valentines Day  <img src={heart} alt="aa" id="png" />  </h2>
                         <p>A brand new Valentines Day's Collection on your way ....</p>
                         <a className="parallax-btn" href="/home">
                             SHOP NOW

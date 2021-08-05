@@ -27,7 +27,7 @@ const Homescreen = () => {
 
 
     // ---------------------------------           FILTER AND SORTING METHODS      -------------------------------
-    const [currCartItems, setcurrCartItems] = useState([]);
+    const [currCartItems, setcurrCartItems] = useState([]);   // data from redux
     const [activee, setActivee] = useState("");
 
 
@@ -120,7 +120,7 @@ const Homescreen = () => {
                 <div className="container" data-aos="zoom-in">
                     <div className="text-center">
                         <h2>Featured Chocolates Products</h2>
-                        <p><i class="fas fa-candy-cane px-2"></i>Delight in Every Bite. Lets Chocolate makes your day ........  </p>
+                        <p><i className="fas fa-candy-cane px-2"></i>Delight in Every Bite. Lets Chocolate makes your day ........  </p>
                         <a className="parallax2-btn" href="/cart">
                             SHOP
                         </a>
@@ -138,7 +138,7 @@ const Homescreen = () => {
 
                 <div className="p-2 bd-highlight py-3">
                     <Dropdown>
-                        <Dropdown.Toggle id="dropdown-basic" style={{ backgroundColor: "#005f73", fontSize: "1.18rem", padding: ".4rem .7rem", borderRadius: ".6rem" }} >
+                        <Dropdown.Toggle id="dropdown-basic" style={{ color: "#000", fontWeight: "500", backgroundColor: "#fff1e6", fontSize: "1.18rem", padding: ".4rem .7rem", borderRadius: ".6rem" }} >
                             Filter <i className="fas fa-filter"></i>
                         </Dropdown.Toggle>
 
@@ -166,7 +166,7 @@ const Homescreen = () => {
                 error ? < Mess variant="danger" > {error}</Mess> :       //<h3>{error}</h3> 
                     <Row style={{ paddingBottom: "2rem" }} >
                         {currCartItems && currCartItems.map(product => (
-                            <Col key={product._id} sm={12} md={6} lg={4} xl={3} style={{ padding: "0px" }} >
+                            <Col key={product._id} xs={12} sm={12} md={6} lg={4} xl={3} style={{ padding: "1rem" }} >
                                 {/* <h3>{product.name}</h3> */}
                                 <PROD
                                     pro={product}

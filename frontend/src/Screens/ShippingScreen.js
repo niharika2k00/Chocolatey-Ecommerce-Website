@@ -16,7 +16,7 @@ const ShippingScreen = ({ history }) => {
     const CART = useSelector(state => state.CART);
     const { shippingAddress } = CART;
 
-    // NAME SHOULD BE GIVEN ACCOEDING TO THE MODEL
+    // NAME SHOULD BE GIVEN ACCOEDING TO THE MODELS
     const [address, setAddress] = useState(shippingAddress.address);
     const [city, setCity] = useState(shippingAddress.city);
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);

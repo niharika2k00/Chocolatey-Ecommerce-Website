@@ -46,7 +46,7 @@ a:hover {
 }
 
 .parallax2 {
-    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.shopify.com/s/files/1/0436/0932/5722/files/img-4_1920X.jpg?v=1595920250") fixed center center;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("./images/parallax2.jpg") fixed center center;
     background-size: cover;
     padding: 130px 0;
     /* width of the parallax2 */
@@ -58,7 +58,7 @@ a:hover {
     background: linear-gradient(160deg, #c6f3e5, #fcd80c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 34px;
+    font-size: 50px;
     font-weight: 700;
 }
 
@@ -67,6 +67,7 @@ a:hover {
     font-family: 'Cormorant', serif;
     font-size: 20px;
     /* font-family: 'Kiwi Maru', serif; */
+    letter-spacing: 1px;
     font-weight: 300;
 }
 
@@ -87,7 +88,7 @@ a:hover {
 
 .parallax2 .parallax2-btn:hover {
     background: rgba(0, 0, 0, 0.575);
-    border: 5px double #d90429;
+    border: 4px double #ffb703;
 }
 
 #sortby {
@@ -117,7 +118,7 @@ a:hover {
 
 .card_css {
     border-radius: 4px;
-    background: #0f0e0f31;
+    background: #49464958;
     /* ACTUALLY CARD IS THERE BUT OPACITY LESSSS */
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);

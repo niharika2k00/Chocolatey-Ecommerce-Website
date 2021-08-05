@@ -3,7 +3,7 @@ const products = [
   {
     // _id: '1',
     name: 'Creamy Choco',
-    image: 'https://st2.depositphotos.com/4278641/6348/i/600/depositphotos_63486511-stock-photo-sweet-chocolates-background.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628188830/Ecommerce_Chocolatey/prod2_gzdarw.jpg',
     brand: 'Galaxy',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -18,7 +18,7 @@ const products = [
   {
     // _id: '2',
     name: 'Little Choco Hearts',
-    image: 'https://us.123rf.com/450wm/karandaev/karandaev1801/karandaev180100079/93066020-valentines-day-greeting-card-with-heart-chocolate-box-on-wooden-table-top-view.jpg?ver=6',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189017/Ecommerce_Chocolatey/heart_k4g8y3.jpg',
     brand: 'Apple',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -33,7 +33,7 @@ const products = [
   {
     // _id: '03',
     name: 'Choco Lattee',
-    image: 'https://cdn.dribbble.com/users/2214836/screenshots/14254786/media/226b6b55ee28d0ca27bd65621b6676ee.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189036/Ecommerce_Chocolatey/prod3_bjgl6i.webp',
     brand: 'Lattee',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -48,7 +48,7 @@ const products = [
   {
     // _id: '4',
     name: 'Nuts & Caramel Truffles',
-    image: 'https://images.unsplash.com/photo-1610230285329-a8f410716d3e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGNob2NvbGF0ZXN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189041/Ecommerce_Chocolatey/prod4_yozi0o.jpg',
     brand: 'Nutilics',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -62,7 +62,7 @@ const products = [
   {
     // _id: '5',
     name: 'Bournville Dark Chocolate',
-    image: 'https://images-na.ssl-images-amazon.com/images/I/816AEzIJYyL._SX569_.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628188976/Ecommerce_Chocolatey/bournville2_nfe6zd.jpg',
     brand: 'Bournville',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -77,7 +77,7 @@ const products = [
   {
     // _id: '06',
     name: 'Bunny Cake',
-    image: 'https://i.pinimg.com/564x/68/83/ec/6883ec9ed5e94ae4226cdeecbed46599.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189053/Ecommerce_Chocolatey/bunny_uitpca.jpg',
     brand: 'Lattee',
     catagory: 'Cup Cakes',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -92,7 +92,7 @@ const products = [
   {
     // _id: '7',
     name: 'Gift Pack',
-    image: 'https://4.imimg.com/data4/NH/DL/MY-27356866/chocolate-gift-box-500x500.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189029/Ecommerce_Chocolatey/prod1_duivnz.jpg',
     brand: 'Gifty',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -107,7 +107,7 @@ const products = [
   {
     // _id: '08',
     name: 'Ferrero Rocher Gold',
-    image: 'https://www.disko-agency.com/wp-content/uploads/2016/01/ferrero-rocher.png',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189001/Ecommerce_Chocolatey/ferrero-rocher_qpqupj.png',
     brand: 'Ferrero Rocher',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -122,7 +122,7 @@ const products = [
   {
     // _id: '09',
     name: 'Amul Dark Chocolate',
-    image: 'https://www.kolkataonlineflorists.com/images/CHCSUUN429_big.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628188996/Ecommerce_Chocolatey/dairymilk_eo1ce5.jpg',
     brand: 'Amul',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -137,7 +137,7 @@ const products = [
   {
     // _id: '10',
     name: 'Heart Cake',
-    image: 'https://www.karachibakery.com/images/valentine2021/big/valentine45.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189043/Ecommerce_Chocolatey/valentine45_gysmxo.jpg',
     brand: 'Lattee',
     catagory: 'Cup Cakes',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -152,7 +152,7 @@ const products = [
   {
     // _id: '11',
     name: 'Choco Chef Fantasy',
-    image: 'http://crems.like-themes.com/wp-content/uploads/2019/06/shop-04-768x768.png',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189336/Ecommerce_Chocolatey/choco4_lsfw4n.png',
     brand: 'Fantasy World',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -167,7 +167,7 @@ const products = [
   {
     // _id: '12',
     name: 'Bournville Cranberry',
-    image: 'https://cdn.igp.com/f_auto,q_auto,t_prodm/products/p-cadbury-bournville-cranberry-80g-110158-m.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628188816/Ecommerce_Chocolatey/bournville_bfebpu.webp',
     brand: 'Bournville',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -183,7 +183,7 @@ const products = [
   {
     // _id: '13',
     name: 'Brownie',
-    image: 'https://pixelz.cc/wp-content/uploads/2018/12/chocolate-brownies-uhd-4k-wallpaper.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628188995/Ecommerce_Chocolatey/brownies_a2gtxg.jpg',
     brand: 'Pillsbury ',
     catagory: 'Brownie',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -198,7 +198,7 @@ const products = [
   {
     // _id: '14',
     name: 'Gift for Her',
-    image: 'https://images-na.ssl-images-amazon.com/images/I/71u8QnmRzXL._SL1500_.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628189026/Ecommerce_Chocolatey/pinkBox_dedqss.jpg',
     brand: 'Gifty',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
@@ -214,7 +214,7 @@ const products = [
   {
     // _id: '15',
     name: 'Dairy Milk',
-    image: 'https://wallpaperaccess.com/full/3518159.jpg',
+    image: 'https://res.cloudinary.com/doc0bmmew/image/upload/v1628188998/Ecommerce_Chocolatey/Dmilk_js3a3x.jpg',
     brand: 'Dairy Milk',
     catagory: 'Chocolate',
     description: 'Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.',
