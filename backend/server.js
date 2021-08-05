@@ -146,6 +146,11 @@ app.listen(port, console.log(`Server Connected in ${port} for ${process.env.NODE
 
 /*
 
+ADMIN
+admin@gmail.com
+12345
+
+
 STEPS ::
 
 1) npm i                  ----> /

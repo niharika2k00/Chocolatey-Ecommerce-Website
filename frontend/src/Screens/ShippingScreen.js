@@ -92,7 +92,7 @@ const ShippingScreen = ({ history }) => {
                         ></Form.Control>
                     </Form.Group>
 
-                    <Button type='submit' variant='success'>
+                    <Button type='submit' variant='success' style={{ marginTop: "1.6rem", marginBottom: "2rem", borderRadius: ".3rem" }} >
                         <b style={{ fontSize: "18px" }}>Continue</b>
                     </Button>
                 </Form>

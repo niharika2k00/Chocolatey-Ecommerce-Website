@@ -69,7 +69,7 @@ const Header = () => {
                             }
 
 
-                            <Button variant="danger" onClick={() => history.push('/cart')} >
+                            <Button onClick={() => history.push('/cart')} style={{ background: "#fff3b0", color: "black", borderRadius: ".3rem" }} >
                                 Cart{''}
                                 <i class="fas fa-cart-arrow-down"></i>
                             </Button>
