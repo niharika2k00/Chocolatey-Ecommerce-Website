@@ -13,6 +13,14 @@ import cday from "../Pics/img2.jfif";
 import gifts from "../Pics/gifts.jfif";
 import party from "../Pics/party.jfif";
 
+import choco1 from '../images/choco1.png';
+import choco2 from '../images/choco2.png';
+import choco3 from '../images/choco3.png';
+import choco4 from '../images/choco4.png';
+import bg1 from '../images/bg1.png';
+
+
+
 
 
 const Introscreen = () => {
@@ -65,7 +73,7 @@ const Introscreen = () => {
                     <Carousel.Caption className="carou_center">
                         <h3 className="title">Chocolatey</h3>
                         <p className="subtitle">
-                            ------- Made with Love Unique Chocolates for gourmet -------
+                            <i className="fas fa-quote-left" style={{ paddingRight: ".4rem" }} ></i>   A day without chocolate is a day without sunshine.   <i className="fas fa-quote-right" style={{ paddingleft: ".4rem" }}></i>
                         </p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -86,7 +94,7 @@ const Introscreen = () => {
                     <div className="overlay-image">{" "}
                         <img
                             className="d-block w-100 image "
-                            src="https://images.unsplash.com/photo-1559715745-e1b33a271c8f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODB8fGNob2NvbGF0ZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                             alt="First slide"
                         />
                     </div>
@@ -112,22 +120,22 @@ const Introscreen = () => {
 
                 <Row className="HOVER" >
                     <Col md={3} sm={6} xs={6} className="choco" >
-                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/shop-04-800x800.png" alt="lost" />
+                        <img className="choco_img" src={choco4} alt="lost" />
                         <div className="choco_name" > <h4>Choco Vanilla Truffle</h4></div>
                     </Col>
 
                     <Col md={3} sm={6} xs={6} className="choco" >
-                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/candies_prod.png" alt="lost" />
+                        <img className="choco_img" src={choco3} alt="lost" />
                         <div className="choco_name" > <h4>Ferrero Rocher</h4></div>
                     </Col>
 
                     <Col md={3} sm={6} xs={6} className="choco" >
-                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/shop-05-768x768.png" alt="lost" />
+                        <img className="choco_img" src={choco2} alt="lost" />
                         <div className="choco_name" > <h4>Almond Dark Chocolate</h4></div>
                     </Col>
 
                     <Col md={3} sm={6} xs={6} className="choco" >
-                        <img className="choco_img" src="http://crems.like-themes.com/wp-content/uploads/2019/06/choco_prod.png" alt="lost" />
+                        <img className="choco_img" src={choco1} alt="lost" />
                         <div className="choco_name" > <h4>Dark Chocolate</h4></div>
                     </Col>
                 </Row>
@@ -158,7 +166,7 @@ const Introscreen = () => {
                 <Row>
                     <Col md={8} sm={12} lg={8} xs={12}>
                         <img
-                            src="http://crems.like-themes.com/wp-content/uploads/2020/07/section-about-bg.png"
+                            src={bg1}
                             alt="First slide"
                             id="intoImg"
                         />

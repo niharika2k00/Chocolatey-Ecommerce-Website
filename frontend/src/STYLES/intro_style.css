@@ -1,5 +1,5 @@
 body, html {
-    height: 100vh;
+    height: cover;
     margin: 0;
     /* font-size: 10px; */
     /* setting 1rem = 10 px */
@@ -27,12 +27,14 @@ body, html {
 .title {
     font-family: 'Lobster', cursive;
     color: rgba(255, 255, 255, 0.945);
-    font-size: 6rem;
+    font-size: 7rem;
+    padding-bottom: 1.2rem;
 }
 
 .subtitle {
     font-size: 1.6rem;
     font-family: 'Cormorant', serif;
+    letter-spacing: 1px;
 }
 
 .overlay-image {
@@ -147,7 +149,7 @@ body, html {
 }
 
 .parallax {
-    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("http://crems.like-themes.com/wp-content/uploads/2019/06/parallax_02.jpg") fixed center center;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../images/parallax1.jpg") fixed center center;
     background-size: cover;
     padding: 100px 0;
     /* width of the parallax */
@@ -214,7 +216,7 @@ body, html {
 .icoo {
     color: gold;
     font-size: 36px;
-    padding: 4px;
+    padding: 8px;
 }
 
 /* ---------------------------    Chocolate Hover Effect        ----------------------------- */
