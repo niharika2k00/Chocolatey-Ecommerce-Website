@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "_comment1": "COMMENT --> ADD TEST,SERVER,CLIENT,DEV script in this file",
-    "test": "nodemon ./backend/server.js",
+    "test": "node ./backend/server.js",
     "start": "node ./backend/server.js ",  
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder.js",

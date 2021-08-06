@@ -116,7 +116,7 @@ a:hover {
 .dropdown-item:focus, .dropdown-item:hover {
     color: #fff !important;
     text-decoration: none;
-    background-color: #ff005c;
+    background-color: #ff595e;
 }
 
 #sortby option:hover {

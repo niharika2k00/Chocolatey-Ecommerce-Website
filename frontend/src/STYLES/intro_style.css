@@ -244,6 +244,14 @@ body, html {
     margin-top: 20px;
     transform: translateY(.5px);
     transition: .1s ease-in-out;
+    padding-left: 0;
+    padding: 10px;
+    /* justify-content: center; */
+    /* text-align: center; */
+    /* align-items: center; */
+    color: rgba(255, 255, 255, 0.877);
+    font-family: 'Cormorant', serif;
+    font-size: 24px;
 }
 
 .choco_name h4:hover {
@@ -259,16 +267,6 @@ body, html {
     padding-bottom: 20px;
     height: 14rem;
     width: 14rem;
-}
-
-.choco_name h4 {
-    padding: 10px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.877);
-    font-family: 'Cormorant', serif;
-    font-size: 24px;
 }
 
 /* -------------------------------   RESPONSIVE  STYLES ----------------------------------- */

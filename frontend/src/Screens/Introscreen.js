@@ -120,14 +120,14 @@ const Introscreen = () => {
                 </div>
 
                 <Row className="HOVER" >
-                    <Col md={3} sm={6} xs={6} className="choco" >
+                    <Col md={3} sm={6} xs={6} lg={3} className="choco" >
                         <img className="choco_img" src={choco4} alt="lost" />
                         <div className="choco_name" > <h4>Choco Vanilla Truffle</h4></div>
                     </Col>
 
                     <Col md={3} sm={6} xs={6} className="choco" >
                         <img className="choco_img" src={choco3} alt="lost" />
-                        <div className="choco_name" > <h4>Ferrero Rocher</h4></div>
+                        <div className="choco_name" > <h4>Ferrero Rocher Gold</h4></div>
                     </Col>
 
                     <Col md={3} sm={6} xs={6} className="choco" >

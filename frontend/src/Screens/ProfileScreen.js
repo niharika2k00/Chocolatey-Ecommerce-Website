@@ -90,7 +90,7 @@ const LoginScreen = ({ history }) => {
                         <Form.Control
                             className="form_box boxLength"
                             type='name'
-                            placeholder='Enter name'
+                            placeholder=' name'
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         ></Form.Control>
@@ -101,7 +101,7 @@ const LoginScreen = ({ history }) => {
                         <Form.Control
                             className="form_box boxLength"
                             type='email'
-                            placeholder='Enter email'
+                            placeholder=' email'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         ></Form.Control>
@@ -112,14 +112,14 @@ const LoginScreen = ({ history }) => {
                         <Form.Control
                             className="form_box boxLength "
                             type='password'
-                            placeholder='Enter password'
+                            placeholder=' password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         ></Form.Control>
                     </Form.Group>
 
                     <Form.Group controlId='confirmpassword'>
-                        <Form.Label><b>Confirm Password</b></Form.Label>
+                        <Form.Label> <i className="far fa-check-circle profileIcon" ></i> <b>Confirm Password</b></Form.Label>
                         <Form.Control
                             className="form_box boxLength"
                             type='password'

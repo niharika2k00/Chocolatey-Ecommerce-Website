@@ -143,19 +143,19 @@ const Homescreen = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item onClick={() => reset()}> <Link to="/home" >All </Link> </Dropdown.Item>
-                            <Dropdown.Item onClick={() => sortLowToHigh()}> <Link to="/home">Low to High</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sortHIghToLow()}> <Link to="/home">High to Low</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sortAscending()}><Link to="/home">A - Z</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sortLess100()}><Link to="/home">Price less than 100</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sortMore250()}><Link to="/home">Price more than 250</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sortBestSelling("Best Selling")}><Link to="/home">Best Selling</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Mother's Day")}><Link to="/home">Mother's Day</Link> </Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Valentines Day")}><Link to="/home">Valentines Day</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Christmas Special")}><Link to="/home">Christmas Special</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Gift Boxes")}><Link to="/home">Gift Boxes</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Brownies")}><Link to="/home">Brownies</Link></Dropdown.Item>
-                            <Dropdown.Item onClick={() => sort("Cup Cakes")}><Link to="/home">Cup Cakes</Link></Dropdown.Item>
+                            <Dropdown.Item onClick={() => reset()}>  All  </Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortLowToHigh()}>  Low to High</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortHIghToLow()}>  High to Low</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortAscending()}>A - Z</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortLess100()}>Price less than 100</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortMore250()}>Price more than 250</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sortBestSelling("Best Selling")}>Best Selling</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Mother's Day")}>Mother's Day </Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Valentines Day")}>Valentines Day</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Christmas Special")}>Christmas Special</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Gift Boxes")}>Gift Boxes</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Brownies")}>Brownies</Dropdown.Item>
+                            <Dropdown.Item onClick={() => sort("Cup Cakes")}>Cup Cakes</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
