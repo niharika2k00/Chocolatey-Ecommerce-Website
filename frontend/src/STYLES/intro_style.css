@@ -29,6 +29,11 @@ body, html {
     height: 4rem;
 }
 
+#png1 {
+    width: 6.2rem;
+    height: 5.2rem;
+}
+
 .title {
     font-family: 'Lobster', cursive;
     color: rgba(255, 255, 255, 0.945);
@@ -326,6 +331,10 @@ body, html {
     }
     #trendSize {
         font-size: 1.6rem;
+    }
+    #png, #png1 {
+        width: 3rem;
+        height: 2rem;
     }
     #png {
         width: 3rem;

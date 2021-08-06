@@ -46,7 +46,7 @@ const LoginScreen = ({ location, history }) => {
 
             <Form onSubmit={submitHandler} id="login_form" >
                 <Form.Group controlId='email'>
-                    <Form.Label><b>Email Address</b></Form.Label>
+                    <Form.Label><i className="fas fa-envelope profileIcon"  ></i><b>Email Address</b></Form.Label>
                     <Form.Control
                         className="form_box"
                         type='email'
@@ -58,7 +58,7 @@ const LoginScreen = ({ location, history }) => {
 
 
                 <Form.Group controlId='password'>
-                    <Form.Label><b>Password</b></Form.Label>
+                    <Form.Label> <i className="fas fa-lock profileIcon"></i> <b>Password</b></Form.Label>
                     <Form.Control
                         className="form_box"
                         type='password'
@@ -68,8 +68,9 @@ const LoginScreen = ({ location, history }) => {
                     ></Form.Control>
                 </Form.Group>
 
-                <Button type='submit' variant='danger'>
-                    <b style={{ fontSize: "18px" }}>Sign In</b>
+
+                <Button type='submit' variant='danger' style={{ marginTop: "1.6rem", marginBottom: "1rem", borderRadius: ".3rem" }} >
+                    <b style={{ fontSize: "16px" }}>Sign In</b>
                 </Button>
             </Form>
 
@@ -77,7 +78,7 @@ const LoginScreen = ({ location, history }) => {
                 <Col style={{ color: "rgba(255, 255, 255, 0.959)" }}>
                     New Customer?{' '}
                     <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-                        Register
+                        <b> Register</b>
                     </Link>
                 </Col>
             </Row>

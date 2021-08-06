@@ -52,7 +52,7 @@ const Cartscreen = ({ match, location, history, filling }) => {
 
 
     return (
-        <div>
+        <div style={{ minHeight: "100vh" }} >
 
             <div class="p-2 ">
                 <Link to="/home"> <i className="arrow left"></i></Link>

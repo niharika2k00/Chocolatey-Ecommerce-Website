@@ -19,6 +19,18 @@ main {
     margin-bottom: 1rem;
 }
 
+/*  _____________     NAVBAR    __________ */
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1350px;
+    }
+}
+
+a {
+    color: #fdffb6;
+}
+
 a:hover {
     color: white !important;
     text-decoration: none !important;
@@ -149,9 +161,11 @@ a:hover {
     padding: 0.1rem;
 }
 
-.navBig {
-    font-size: 0.9rem;
-    color: #0f0e0ffa
+.navBig, #username {
+    font-size: 1.1rem;
+    color: #faf3fafa;
+    letter-spacing: 1px;
+    padding-right: 1.5rem;
 }
 
 .paymentSub {
@@ -178,9 +192,9 @@ a:hover {
         padding: 8rem 0;
     }
     .parallax2 p {
-        font-size: .9rem;
+        font-size: .8rem;
     }
     .parallax2 h2 {
-        font-size: 1.3rem
+        font-size: 1.42rem
     }
 }

@@ -86,7 +86,7 @@ const LoginScreen = ({ history }) => {
 
                 <Form onSubmit={submitHandler} id="login_form" style={{ paddingBottom: "2rem" }}>
                     <Form.Group controlId='name'>
-                        <Form.Label><b>Name</b></Form.Label>
+                        <Form.Label><i className="far fa-user profileIcon"></i> <b>Name</b></Form.Label>
                         <Form.Control
                             className="form_box boxLength"
                             type='name'
@@ -97,7 +97,7 @@ const LoginScreen = ({ history }) => {
                     </Form.Group>
 
                     <Form.Group controlId='email'>
-                        <Form.Label><b>Email Address</b></Form.Label>
+                        <Form.Label><i className="fas fa-envelope profileIcon"  ></i> <b>Email Address</b></Form.Label>
                         <Form.Control
                             className="form_box boxLength"
                             type='email'
@@ -108,7 +108,7 @@ const LoginScreen = ({ history }) => {
                     </Form.Group>
 
                     <Form.Group controlId='password'>
-                        <Form.Label><b>Password</b></Form.Label>
+                        <Form.Label> <i className="fas fa-lock profileIcon"></i> <b>Password</b></Form.Label>
                         <Form.Control
                             className="form_box boxLength "
                             type='password'
@@ -129,9 +129,11 @@ const LoginScreen = ({ history }) => {
                         ></Form.Control>
                     </Form.Group>
 
-                    <Button type='submit' variant="success" style={{ fontSize: "16px" }} >
-                        Update
-                    </Button>{' '}
+
+                    <Button type='submit' variant='success' style={{ marginTop: "1.6rem", marginBottom: "1rem", borderRadius: ".3rem" }} >
+                        <b style={{ fontSize: "16px" }}>Update</b>
+                    </Button>
+
                 </Form>
             </Col>
 
@@ -180,7 +182,7 @@ const LoginScreen = ({ history }) => {
                                         <LinkContainer to={`/order/${odr._id}`}>
                                             <Button className='btn-sm' variant='success'>
                                                 Details
-                                             </Button>
+                                            </Button>
                                         </LinkContainer>
                                     </td>
                                 </tr>

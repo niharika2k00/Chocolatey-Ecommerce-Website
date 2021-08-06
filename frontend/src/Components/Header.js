@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <header>
             <Navbar bg="dark" variant="dark" expand="lg" style={{ padding: "10px", marginbottom: "40px" }} >
-                <Container>
+                <Container style={{ margin: "0 2rem" }} >
                     <LinkContainer to="/"><Navbar.Brand id="heading_nav">Chocolatey</Navbar.Brand></LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -41,9 +41,8 @@ const Header = () => {
                                     <NavDropdown.Item onClick={Logout_Handler} >Logout</NavDropdown.Item>
                                 </NavDropdown>)
                                 :
-                                (<LinkContainer to="/login">
-                                    <Nav.Link className="navBig" >  Sign In {''}
-                                        <i class="far fa-user"></i>
+                                (<LinkContainer to="/login" style={{ paddingRight: "1rem" }}>
+                                    <Nav.Link className="navBig" >  Sign In<i className="far fa-user"></i>
                                     </Nav.Link>
                                 </LinkContainer>)
                             }
@@ -69,10 +68,18 @@ const Header = () => {
                             }
 
 
-                            <Button onClick={() => history.push('/cart')} style={{ background: "#fff3b0", color: "black", borderRadius: ".3rem" }} >
+                            <div
+                                onClick={() => history.push('/cart')}
+                                style={{
+                                    color: "white",
+                                    fontSize: "1.2rem",
+                                    marginTop: ".5rem",
+                                    fontWeight: "500"
+                                }}
+                            >
                                 Cart{''}
                                 <i class="fas fa-cart-arrow-down"></i>
-                            </Button>
+                            </div>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

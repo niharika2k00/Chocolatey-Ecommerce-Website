@@ -19,7 +19,7 @@ import choco3 from '../images/choco3.png';
 import choco4 from '../images/choco4.png';
 import bg1 from '../images/bg1.png';
 import heart from '../images/download-removebg-preview.png';
-
+import img from '../images/image.png';
 
 
 
@@ -116,7 +116,7 @@ const Introscreen = () => {
                         {" "}
                         <span>Trending Chocolates</span>{" "}
                     </h2> */}
-                    <h1 id="trendSize" >Trending Chocolates</h1>
+                    <h1 id="trendSize"> <img src={img} alt="aa" id="png1" /> Trending Chocolates</h1>
                 </div>
 
                 <Row className="HOVER" >

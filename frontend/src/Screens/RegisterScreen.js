@@ -54,7 +54,7 @@ const LoginScreen = ({ location, history }) => {
 
             <Form onSubmit={submitHandler} id="login_form">
                 <Form.Group controlId='name'>
-                    <Form.Label><b>Name</b></Form.Label>
+                    <Form.Label> <i className="far fa-user profileIcon"></i> <b>Name</b></Form.Label>
                     <Form.Control
                         className="form_box"
                         type='name'
@@ -65,7 +65,7 @@ const LoginScreen = ({ location, history }) => {
                 </Form.Group>
 
                 <Form.Group controlId='email'>
-                    <Form.Label><b>Email Address</b></Form.Label>
+                    <Form.Label> <i className="fas fa-envelope profileIcon"  ></i> <b>Email Address</b></Form.Label>
                     <Form.Control
                         className="form_box"
                         type='email'
@@ -77,7 +77,7 @@ const LoginScreen = ({ location, history }) => {
 
 
                 <Form.Group controlId='password'>
-                    <Form.Label><b>Password</b></Form.Label>
+                    <Form.Label> <i className="fas fa-lock profileIcon"></i> <b>Password</b></Form.Label>
                     <Form.Control
                         className="form_box"
                         type='password'
@@ -98,16 +98,16 @@ const LoginScreen = ({ location, history }) => {
                     ></Form.Control>
                 </Form.Group>
 
-                <Button type='submit' variant='danger'>
-                    <b style={{ fontSize: "18px" }}>Register</b>
+                <Button type='submit' variant='danger' style={{ marginTop: "1.6rem", marginBottom: "1rem", borderRadius: ".3rem" }} >
+                    <b style={{ fontSize: "16px" }}> Register </b>
                 </Button>
             </Form>
 
             <Row className='py-3'>
                 <Col style={{ color: "rgba(255, 255, 255, 0.959)" }}>
-                    Have an Account ?{' '}
+                    Already have an Account ?{' '}
                     <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-                        Register
+                        <b> Login</b>
                     </Link>
                 </Col>
             </Row>
