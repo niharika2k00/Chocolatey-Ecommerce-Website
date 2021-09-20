@@ -183,7 +183,7 @@ const PlaceOrderScreen = ({ history }) => {
                             <ListGroup.Item id="boxsubitem">
                                 <Button
                                     type='button'
-                                    className='btn-block'
+                                    className='btn-block btnBasic'
                                     variant="success"
                                     disabled={CART.cartItems === 0}   //cartItems -> array of obj [{},{},{}]
                                     onClick={placeOrderHandler}

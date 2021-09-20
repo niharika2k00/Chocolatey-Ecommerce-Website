@@ -19,6 +19,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
     // < ------  Shopping Cart ------>
     const [qty, setqty] = useState(1);
+    // const [filling, setFilling] = useState("None");
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
 
@@ -30,8 +31,8 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
     const { UserInfo } = user_Login;
 
 
-    const product_details = useSelector(state => state.product_details); // <--- Allows to extract data from the Reducer fn frm Store
-    const { loading, error, product } = product_details;                 // product --> product {} that comes from BACKEND find by ID from params
+    const product_details = useSelector(state => state.product_details);   // <--- Allows to extract data from the Reducer fn frm Store
+    const { loading, error, product } = product_details;                    // product --> product {} that comes from BACKEND find by ID from params
     console.log(product_details)
 
 
@@ -104,6 +105,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                             <Row>
                                                 <Col>
                                                     <Form>
+                                                        <br />
                                                         <Form.Group controlId="exampleForm.ControlSelect1">
                                                             <Form.Control
                                                                 as="select"
@@ -126,7 +128,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                     </Form>
                                                 </Col>
 
-                                                <Col> <p>{filling}</p></Col>
+                                                <Col>  <br /> <p>{filling}</p></Col>
                                             </Row>
                                         </ListGroup.Item>
 
@@ -138,30 +140,31 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                 <Col md={3} sm={12} xs={12} className='colGap'>
                                     <Card>
                                         <ListGroup variant="flush" style={{ backgroundColor: "#1b1a1a" }}>
-                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#1b1a1a", padding: ".5rem 2rem", color: 'white' }} > {/* edf2f4 */}
+                                            <ListGroup.Item className="boxsm" >
                                                 <Row>
-                                                    <Col> <b> PRICE  -> </b> </Col>
-                                                    <Col><strong>₹{product.price}</strong></Col>
+                                                    <Col> <b> Price   {"  "} <i className="fas fa-arrow-right"></i> </b> </Col>
+                                                    <Col><strong> ₹  {"  "} {product.price}</strong></Col>
                                                 </Row>
                                             </ListGroup.Item>
 
-                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#1b1a1a", padding: ".5rem 2rem", color: 'white' }} >
+                                            <ListGroup.Item className="boxsm"  >
                                                 <Row>
-                                                    <Col> <b>STATUS  -> </b> </Col>
+                                                    <Col> <b>Status   {"  "}  <i className="fas fa-arrow-right"></i> </b> </Col>
                                                     <Col> {product.countInStock > 0 ? "In Stock" : "Out of Stock"} </Col>
                                                 </Row>
                                             </ListGroup.Item>
 
-                                            {/* QUantity of the product */}
+                                            {/* Quantity of the product */}
                                             {product.countInStock > 0 && (
-                                                <ListGroup.Item className="boxsm" style={{ backgroundColor: "#1b1a1a", padding: ".5rem 2rem ", color: 'white' }} >
+                                                <ListGroup.Item className="boxsm" >
                                                     <Row>
-                                                        <Col><strong>Quantity  -> </strong> </Col>
+                                                        <Col><strong>Quantity   {"  "} <i className="fas fa-arrow-right"></i> </strong> </Col>
                                                         <Col>
                                                             <Form.Control
                                                                 as='select'
-                                                                style={{ borderRadius: ".4rem" }}
-                                                                value={qty} onChange={(e) => { setqty(e.target.value) }}
+                                                                style={{ borderRadius: "2rem" }}
+                                                                value={qty}
+                                                                onChange={(e) => { setqty(e.target.value) }}
                                                             >
                                                                 {[...Array(product.countInStock).keys()].map((x) => (
                                                                     <option key={x + 1} value={x + 1} >
@@ -182,7 +185,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                     type='button'
                                                     disabled={product.countInStock === 0}
                                                 >
-                                                    <strong><i class="fas fa-cart-arrow-down"></i> ADD TO CART</strong>
+                                                    <strong><i className="fas fa-cart-arrow-down"></i> ADD TO CART</strong>
                                                 </Button>
                                             </ListGroup.Item>
                                         </ListGroup>
@@ -199,7 +202,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                 {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
 
                                 <Col md={8} lg={8} sm={12} xs={12}>
-                                    <h2 style={{ color: '#f8edeb' }}>Reviews</h2>
+                                    <h2 style={{ fontSize: "2.1rem" }} id="prohead" >Reviews</h2>
 
                                     <hr style={{ borderTop: "1px solid gold" }}></hr>
 
@@ -220,7 +223,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                         }
 
                                         < ListGroup.Item style={{ paddingTop: "5rem" }} >
-                                            <h5 style={{ color: "" }} >WRITE A CUSTOMER REVIEW OF THIS PRODUCT </h5>
+                                            <h5 style={{ fontSize: "1.25 rem", fontWeight: "600" }} id="prohead" > WRITE A CUSTOMER REVIEW OF THIS PRODUCT </h5>
                                             {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
                                             {UserInfo ?
                                                 (
@@ -248,7 +251,6 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                             <Form.Control
                                                                 as='textarea'
                                                                 style={{ borderRadius: ".36rem", height: '100px' }}
-                                                                row='5'
                                                                 placeholder="write your review..."
                                                                 value={comment}
                                                                 onChange={(e) => setComment(e.target.value)}

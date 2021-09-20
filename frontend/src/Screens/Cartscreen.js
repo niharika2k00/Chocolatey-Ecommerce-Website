@@ -86,7 +86,7 @@ const Cartscreen = ({ match, location, history, filling }) => {
                                             <Form.Control
                                                 className="cartitem_num"
                                                 as='select'
-                                                value={item.qty} // update in the redux devtools 
+                                                value={item.qty}                    // update in the redux devtools 
                                                 onChange={(e) =>
                                                     dispatch(
                                                         addToCart(item.product, Number(e.target.value))
@@ -134,12 +134,12 @@ const Cartscreen = ({ match, location, history, filling }) => {
                             <ListGroup.Item>
                                 <Button
                                     type='button'
-                                    variant='success'
-                                    className='btn-block'
+                                    // variant='success'
+                                    className='btn-block btnBasic'
                                     disabled={cartItems.length === 0}
                                     onClick={checkoutHandler}
                                 >
-                                    <b> PROCEED TO CHECKOUT</b>
+                                    <strong> PROCEED TO CHECKOUT </strong>
                                 </Button>
                             </ListGroup.Item>
                         </ListGroup>

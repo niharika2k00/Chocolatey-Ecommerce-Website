@@ -70,7 +70,7 @@
 
 .filling {
     padding: 1px 1rem;
-    border-radius: .5rem;
+    border-radius: 2rem;
     font-size: 17px;
     background-color: #f8edeb;
 }
@@ -93,34 +93,34 @@
 }
 
 /* list item background color  */
+
 .bgcolor {
     background-color: #252524;
 }
 
+/* COLOURFUL BUTTONS WITH GRADIENT  */
 
-  .btnBasic {
+.btnBasic {
     padding: .6rem;
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.024rem;
+    font-size: 1.02rem;
     transition: 0.5s;
     background-size: 200% auto;
     color: #000;
-   text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     /* box-shadow: 0 0 20px #eee; */
     border-radius: 2rem;
-   }
-  
- 
-  .btnBasic:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #000;
-  }
-  
-  .btnBasic {
-    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
-  }
+}
 
+.btnBasic:hover {
+    background-position: right center;
+    color: #000;
+}
+
+.btnBasic {
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
 
 @media (max-width: 450px) {
     #proimg img {

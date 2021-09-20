@@ -4,8 +4,14 @@
 }
 
 .boxsm {
+    font-family: 'PT Serif', serif;
     margin-top: 14px;
     padding: .6rem;
+    background-color: #1b1a1a;
+    padding: .5rem 2rem;
+    color: rgba(236, 231, 231, 0.932);
+    font-size: .96rem;
+    letter-spacing: .8px;
 }
 
 .boxsm_cart {
@@ -13,7 +19,7 @@
 }
 
 .cartitem_num {
-    border-radius: 10px;
+    border-radius: 2rem;
     background-color: #faf6f5;
 }
 
@@ -23,7 +29,7 @@
 }
 
 .cartbox_rgt h2 {
-    font-family: 'Cormorant', serif;
+    font-family: 'PT Serif', serif;
     font-size: 2.1rem;
     font-weight: 300;
     color: #000000;
@@ -46,7 +52,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #222022ef;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'PT Serif', serif;
     letter-spacing: 1px;
 }
 
@@ -54,7 +60,7 @@
     font-size: 1.2rem;
     color: #f7f7f7e3;
     font-weight: 700;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'PT Serif', serif;
     text-decoration: none;
 }
 
