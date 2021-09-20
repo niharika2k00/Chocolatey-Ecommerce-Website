@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Rating = ({ value, text, color }) => {
+
+
     return (
         <div className='rating' >
             <span>
@@ -50,7 +52,7 @@ const Rating = ({ value, text, color }) => {
                 />
             </span>
 
-            <span style = {{ color: "#d1eeba"}} > {text ? text : ''} </span>
+            <span style={{ color: "#d1eeba" }} > {text ? text : ''} </span>
         </div>
     )
 }

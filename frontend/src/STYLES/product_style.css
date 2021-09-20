@@ -38,13 +38,14 @@
 }
 
 #prohead {
-    /* font-family: 'Cormorant', serif; */
-    background: linear-gradient(160deg, #c6f3e5, #fcd80c);
+    font-family: 'PT Serif', serif;
+    background: linear-gradient(160deg, #e1cd68, #ffe66d);
+    /* background: linear-gradient(160deg, #c6f3e5, #fcd80c); */
     /* TEXT GRADIENT */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.6rem;
-    font-weight: 600;
+    font-weight: 500;
     padding-bottom: 4px;
 }
 
@@ -92,10 +93,34 @@
 }
 
 /* list item background color  */
-
 .bgcolor {
-    background-color: #262626;
+    background-color: #252524;
 }
+
+
+  .btnBasic {
+    padding: .6rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.024rem;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #000;
+   text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    /* box-shadow: 0 0 20px #eee; */
+    border-radius: 2rem;
+   }
+  
+ 
+  .btnBasic:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #000;
+  }
+  
+  .btnBasic {
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  }
+
 
 @media (max-width: 450px) {
     #proimg img {

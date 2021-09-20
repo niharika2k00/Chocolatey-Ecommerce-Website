@@ -138,11 +138,11 @@ const Homescreen = () => {
 
                 <div className="p-2 bd-highlight py-3">
                     <Dropdown>
-                        <Dropdown.Toggle id="dropdown-basic" style={{ color: "#000", fontWeight: "500", backgroundColor: "#fff1e6", fontSize: "1.18rem", padding: ".4rem .7rem", borderRadius: ".6rem" }} >
+                        <Dropdown.Toggle id="dropdown-basic" style={{ color: "#621708", fontWeight: "500", backgroundColor: "#fff1e6", fontSize: "1.18rem", padding: ".4rem .7rem", borderRadius: ".6rem" }} >
                             Filter <i className="fas fa-filter"></i>
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
+                        <Dropdown.Menu style={{ backgroundColor: "#474448" }} >
                             <Dropdown.Item onClick={() => reset()}> <Link to="/home" >All </Link> </Dropdown.Item>
                             <Dropdown.Item onClick={() => sortLowToHigh()}> <Link to="/home">Low to High</Link></Dropdown.Item>
                             <Dropdown.Item onClick={() => sortHIghToLow()}> <Link to="/home">High to Low</Link></Dropdown.Item>

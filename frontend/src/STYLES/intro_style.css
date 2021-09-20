@@ -9,7 +9,7 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #262626;
+    background-color: #1b1a1a;
 }
 
 .mycarou {
@@ -70,7 +70,7 @@ body, html {
 
 .minihead {
     padding: 2.5rem;
-    font-family: 'Cormorant', serif;
+      font-family: 'PT Serif', serif;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.932);
     font-weight: bolder;
@@ -86,7 +86,7 @@ body, html {
     font-size: 1.8rem;
 }
 
-.subheading span:before, .subheading span:after {
+/* .subheading span:before, .subheading span:after {
     content: "";
     position: absolute;
     height: 2.5px;
@@ -119,20 +119,20 @@ body, html {
 
 .minislider {
     padding: 10px;
-    /* margin: 4px; */
+    margin: 4px;
     position: relative;
     cursor: pointer;
-    /* border-radius: 4px; */
+    border-radius: 4px;
     background: #262626;
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-    /* padding: 14px 80px 18px 36px; */
+
 }
 
 .minislider:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
-}
+} */
 
 .htset {
     height: 200px;
@@ -257,6 +257,7 @@ body, html {
 
 .choco_img {
     padding-bottom: 20px;
+    margin-left: 2rem;
     height: 14rem;
     width: 14rem;
 }
@@ -270,6 +271,12 @@ body, html {
     font-family: 'Cormorant', serif;
     font-size: 24px;
 }
+
+#trendSize {
+    /* font-size: 1.6rem; */
+    color : "#FFD7700"
+}
+
 
 /* -------------------------------   RESPONSIVE  STYLES ----------------------------------- */
 
@@ -309,8 +316,9 @@ body, html {
     .parallax {
         padding: 6rem 0;
         margin-bottom: 35px;
+        margin-top: 1.6rem;
     }
-    .parallax h2 {
+  .parallax h2 {
         font-size: 30px;
         font-weight: 700;
     }
@@ -319,6 +327,7 @@ body, html {
     }
     .choco_img {
         padding-bottom: 2px;
+        margin-left: 0rem;
         height: 10rem;
         width: 10rem;
     }
@@ -331,6 +340,7 @@ body, html {
     }
     #trendSize {
         font-size: 1.6rem;
+        color : "#FFD7700"
     }
     #png, #png1 {
         width: 3rem;

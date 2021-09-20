@@ -137,26 +137,26 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
                                 <Col md={3} sm={12} xs={12} className='colGap'>
                                     <Card>
-                                        <ListGroup variant="flush" >
-                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem", color: 'black' }} >
+                                        <ListGroup variant="flush" style={{ backgroundColor: "#1b1a1a" }}>
+                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#1b1a1a", padding: ".5rem 2rem", color: 'white' }} > {/* edf2f4 */}
                                                 <Row>
-                                                    <Col> <b> PRICE -:</b> </Col>
+                                                    <Col> <b> PRICE  -> </b> </Col>
                                                     <Col><strong>₹{product.price}</strong></Col>
                                                 </Row>
                                             </ListGroup.Item>
 
-                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem", color: 'black' }} >
+                                            <ListGroup.Item className="boxsm" style={{ backgroundColor: "#1b1a1a", padding: ".5rem 2rem", color: 'white' }} >
                                                 <Row>
-                                                    <Col> <b>STATUS -: </b> </Col>
+                                                    <Col> <b>STATUS  -> </b> </Col>
                                                     <Col> {product.countInStock > 0 ? "In Stock" : "Out of Stock"} </Col>
                                                 </Row>
                                             </ListGroup.Item>
 
                                             {/* QUantity of the product */}
                                             {product.countInStock > 0 && (
-                                                <ListGroup.Item className="boxsm" style={{ backgroundColor: "#edf2f4", padding: ".8rem 2rem ", color: 'black' }} >
+                                                <ListGroup.Item className="boxsm" style={{ backgroundColor: "#1b1a1a", padding: ".5rem 2rem ", color: 'white' }} >
                                                     <Row>
-                                                        <Col><strong>Quantity -: </strong> </Col>
+                                                        <Col><strong>Quantity  -> </strong> </Col>
                                                         <Col>
                                                             <Form.Control
                                                                 as='select'
@@ -177,9 +177,8 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                             <ListGroup.Item>
                                                 <Button
                                                     onClick={addToCart_Handler}
-                                                    variant="danger"
-                                                    // style={{ borderRadius: ".4rem" }}
-                                                    className='btn-block '
+                                                    // variant="danger"
+                                                    className='btn-block btnBasic'
                                                     type='button'
                                                     disabled={product.countInStock === 0}
                                                 >
@@ -248,8 +247,8 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                                             <Form.Label>Comment</Form.Label>
                                                             <Form.Control
                                                                 as='textarea'
-                                                                style={{ borderRadius: ".36rem" }}
-                                                                row='3'
+                                                                style={{ borderRadius: ".36rem", height: '100px' }}
+                                                                row='5'
                                                                 placeholder="write your review..."
                                                                 value={comment}
                                                                 onChange={(e) => setComment(e.target.value)}

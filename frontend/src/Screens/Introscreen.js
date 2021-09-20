@@ -116,7 +116,7 @@ const Introscreen = () => {
                         {" "}
                         <span>Trending Chocolates</span>{" "}
                     </h2> */}
-                    <h1 id="trendSize"> <img src={img} alt="aa" id="png1" /> Trending Chocolates</h1>
+                    <h1 id="trendSize" > <img src={img} alt="aa" id="png1" /> Trending Chocolates</h1>
                 </div>
 
                 <Row className="HOVER" >

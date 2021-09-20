@@ -31,7 +31,7 @@ function App() {
 
   return (
     <Router>
-      <div style={{ backgroundColor: "#262626" }}>
+      <div style={{ backgroundColor: "#1b1a1a" }}>   {/* bc3908   for cards backgrnd  */}
         <NAVIGATION_BAR />
 
         <main >
