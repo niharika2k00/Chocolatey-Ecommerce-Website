@@ -12,6 +12,10 @@ import Mess from '../Components/Message.js';
 import Load from '../Components/Loading.js';
 
 
+
+
+
+
 const LoginScreen = ({ history }) => {
 
     const dispatch = useDispatch();
@@ -20,7 +24,6 @@ const LoginScreen = ({ history }) => {
     const [password, setPassword] = useState('');
     const [confirmpass, setConfirmpass] = useState('');
     const [msg, setMsg] = useState(null);
-
 
 
 
@@ -75,7 +78,7 @@ const LoginScreen = ({ history }) => {
 
     return (
         <Row>
-            <Col md={4} xs={12} sm={11} >
+            <Col md={4} xs={12} sm={12} >
                 <h1 className="cartHead headingGap" >Profile</h1>
 
                 {msg && <Mess variant='danger'>{msg}</Mess>}
@@ -130,8 +133,8 @@ const LoginScreen = ({ history }) => {
                     </Form.Group>
 
 
-                    <Button type='submit' variant='success' style={{ marginTop: "1.6rem", marginBottom: "1rem", borderRadius: ".3rem" }} >
-                        <b style={{ fontSize: "16px" }}>Update</b>
+                    <Button type='submit' style={{ marginTop: "1.6rem", marginBottom: "3.2rem", borderRadius: "1rem" }} className="customButton neonBtn " >
+                        <div style={{ fontSize: "16px" }}>Update</div>
                     </Button>
 
                 </Form>
@@ -159,29 +162,32 @@ const LoginScreen = ({ history }) => {
                         </thead>
                         <tbody>
                             {/*        allMyOrders --------->   [{} , {},  {} ] array of objects    */}
-                            {allMyOrders.map((odr) => (
+                            {allMyOrders && allMyOrders.map((odr) => (
                                 <tr key={odr._id}>
                                     <td>{odr._id}</td>
                                     <td>{odr.createdAt.substring(0, 10)}</td>
                                     <td>₹ {odr.total_price}</td>
                                     <td>
-                                        {odr.isPaid ? (
-                                            odr.paidAt.substring(0, 10)
+                                        {odr.isPaid && odr.isPaid ? (
+                                            odr.paid_at.substring(0, 10)
                                         ) : (
                                             <i className='fas fa-times' style={{ color: 'red' }}></i>
                                         )}
                                     </td>
                                     <td>
                                         {odr.isDelivered ? (
-                                            odr.deliveredAt.substring(0, 10)
+                                            odr.Delivered_at.substring(0, 10)
                                         ) : (
                                             <i className='fas fa-times' style={{ color: 'red' }}></i>
                                         )}
                                     </td>
                                     <td>
                                         <LinkContainer to={`/order/${odr._id}`}>
-                                            <Button className='btn-sm' variant='success'>
+                                            {/* <Button className='btn-sm' variant='success'>
                                                 Details
+                                            </Button> */}
+                                            <Button style={{ marginTop: "1.6rem", marginBottom: "3.0rem", borderRadius: "10rem" }} className="customButton neonBtn" >
+                                                <div style={{ fontSize: "14px" }}>Details</div>
                                             </Button>
                                         </LinkContainer>
                                     </td>

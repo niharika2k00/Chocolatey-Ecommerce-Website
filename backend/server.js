@@ -145,7 +145,6 @@ app.listen(port, console.log(`Server Connected in ${port} for ${process.env.NODE
 // MONGODB_COMPASS :: mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce
 
 /*
-
 ADMIN
 admin@gmail.com
 12345
@@ -165,8 +164,6 @@ PORT = 8090
 NODE_ENV = "development purpose"
 MONGODB_URI = mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce?retryWrites=true&w=majority
 JWT_TOKEN = abc@123
-
-
 
 */
 

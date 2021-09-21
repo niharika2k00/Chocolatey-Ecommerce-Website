@@ -77,7 +77,7 @@ const Update_OrderToPay = asyncHandler(async (req, res) => {
     console.log(Order)
     if (Order) {
         Order.isPaid = true;
-        Order.paid_at = Date.now();
+        Order.paid_at = (Date.now()).toDateString();
         Order.paymentResult = {
             id: req.body.id,
             status: req.body.status,
@@ -94,6 +94,10 @@ const Update_OrderToPay = asyncHandler(async (req, res) => {
     }
 })
 
+/* 
+  let a  = new Date('2015-02-10T10:12:50.5000z');
+    a.toDateString();'Tue Feb 10 2015';
+*/
 
 
 
