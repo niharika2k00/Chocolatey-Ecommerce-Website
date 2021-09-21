@@ -102,7 +102,7 @@ const OrderScreen = ({ match, history }) => {
 
 
     const PaymentSucces_Handler = (paymentResult) => {
-        console.log(paymentResult)
+        console.log(paymentResult);
         dispatch(OrderPay_Action(ORDER_ID, paymentResult));
     }
 
@@ -123,9 +123,10 @@ const OrderScreen = ({ match, history }) => {
                     <>
                         <h1 id="orderNum" >ORDER {Order._id}</h1>
                         <Row>
-                            <Col md={7} className="Orderbkgrnd"  >
-                                <ListGroup variant='flush' className="Orderbkgrnd" >
-                                    <ListGroup.Item style={{ backgroundColor: "#141314" }} >
+                            <Col md={7} >
+                                <ListGroup variant='flush'  >
+                                    <ListGroup.Item className="Orderbkgrnd" >
+
                                         <h2 className="orderHead" >Shipping</h2>
                                         <p style={{ margin: "0 0 3px 0" }} ><strong style={{ fontSize: "1.05rem " }}>Name : </strong> <span id="Ordersubhead">{Order.user.name}</span></p>
                                         <p style={{ margin: "0 0 3px 0" }}><strong style={{ fontSize: "1.05rem " }}>Email : </strong> <span id="Ordersubhead">{Order.user.email}</span></p>
@@ -133,19 +134,20 @@ const OrderScreen = ({ match, history }) => {
                                         <p >
                                             <strong style={{ fontSize: "1.05rem " }}>Address: </strong>
                                             <span id="Ordersubhead">
-                                                {Order.shippingAddress.address},
+                                                {Order.shippingAddress.address}, {' '}
                                                 {Order.shippingAddress.city}{' '}
                                                 {Order.shippingAddress.postalCode},{' '}
-                                                {Order.shippingAddress.country}
+                                                {Order.shippingAddress.country} {' '}.
                                             </span>
                                         </p>
-                                        {Order.isDelivered ? <Mess variant="success" >Delivered At {Order.Delivered_at} </Mess>
+                                        {Order.isDelivered ? <Mess variant="success" > Delivered At {Order.Delivered_at} </Mess>
                                             :
-                                            <Mess variant="danger">Not Delivered</Mess>}
+                                            <Mess variant="danger"> Not Delivered </Mess>}
                                     </ListGroup.Item>
 
-                                    <ListGroup.Item style={{ backgroundColor: "#141314" }}>
+                                    <ListGroup.Item className="Orderbkgrnd" >
                                         <h2 className="orderHead">Payment Method</h2>
+
                                         <p style={{ margin: "0 0 1.2rem 0" }}>
                                             <strong>Method: </strong>
                                             <span id="Ordersubhead" >
@@ -159,7 +161,7 @@ const OrderScreen = ({ match, history }) => {
                                             <Mess variant="danger">Not Paid</Mess>}
                                     </ListGroup.Item>
 
-                                    <ListGroup.Item style={{ backgroundColor: "#141314" }}>
+                                    <ListGroup.Item className="Orderbkgrnd" >
                                         <h2 className="orderHead">Ordered Items</h2>
                                         {Order.orderItems.length === 0 ? (
                                             <Mess>Your cart is empty</Mess>
@@ -193,8 +195,11 @@ const OrderScreen = ({ match, history }) => {
                                 </ListGroup>
                             </Col>
 
+
                             <Col md={1}></Col>
 
+
+                            {/*   PAYMENT BOX  */}
                             <Col md={4}>
                                 <div className="Orderbox">
                                     <ListGroup variant='flush' >
@@ -240,7 +245,12 @@ const OrderScreen = ({ match, history }) => {
                                                     (
                                                         <PayPalButton
                                                             amount={Order.total_price}
+                                                            currency="USD"               //  INR for Indian Rupees but unfortunately not working 
                                                             onSuccess={PaymentSucces_Handler}
+                                                        // options={{
+                                                        // currency: currency.toUpperCase(),
+                                                        // clientId: PAYPAL_CLIENT_ID,
+                                                        //   }}
                                                         />
                                                     )}
                                             </ListGroup.Item>

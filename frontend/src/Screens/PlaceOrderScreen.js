@@ -90,7 +90,7 @@ const PlaceOrderScreen = ({ history }) => {
                                     {CART.shippingAddress.address},{' '}
                                     {CART.shippingAddress.city}{' '}
                                     {CART.shippingAddress.postalCode},{' '}
-                                    {CART.shippingAddress.country}{' '}
+                                    {CART.shippingAddress.country}{' '} .
                                 </span>
 
                             </p>

@@ -107,7 +107,6 @@ const updatedProduct = asyncHandler(async (req, res) => {
         product.description = description;
         product.brand = brand;
         product.catagory = catagory;
-        // product.filling = filling;
         // product.numReviews = numReviews;
         product.countInStock = countInStock;
 

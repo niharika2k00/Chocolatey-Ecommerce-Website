@@ -128,7 +128,7 @@ export const myAllOrders_reducer = (state = { allMyOrders: [] }, action) => {
 
 
 
-// ------------      For th4 order list       -------------
+// ------------      For the order list       -------------
 export const ORDER_All_reducer = (state = { Order_All: [] }, action) => {
     switch (action.type) {
         case ORDERS_REQUEST:

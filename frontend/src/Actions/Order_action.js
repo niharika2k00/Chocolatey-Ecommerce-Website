@@ -101,8 +101,9 @@ export const GetOrderDetails_ByID = (ID) => async (dispatch, getState) => {
 
 
 
-
-// For payment handling Action
+// ---------------------------------------
+// For PAYMENT - PAYPAL HANDLING ACTION ----->
+// ---------------------------------------
 export const OrderPay_Action = (ORDER_ID, paymentResult) => async (dispatch, getState) => {
     try {
         dispatch({ type: ORDER_PAY_REQUEST });
