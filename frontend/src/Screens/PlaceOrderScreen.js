@@ -78,24 +78,25 @@ const PlaceOrderScreen = ({ history }) => {
     return (
         <div>
             <CheckoutSteps step1 step2 step3 step4 />
+
             <Row>
-                <Col md={7} sm={12} xs={12} /* className="Orderbkgrnd" */ >
+                <Col md={7} sm={12} xs={12}  >
                     <ListGroup variant='flush'>
-                        <ListGroup.Item style={{ backgroundColor: "#262626", padding: "0rem" }} >
+                        <ListGroup.Item style={{ backgroundColor: "#1b1a1a", padding: "0rem" }} >
                             <h2 className="orderHead" > Shipping</h2>
                             <p>
                                 <strong style={{ fontSize: "1.05rem " }} >Address: </strong>
                                 <span id="Ordersubhead">
-                                    {CART.shippingAddress.address},
+                                    {CART.shippingAddress.address},{' '}
                                     {CART.shippingAddress.city}{' '}
                                     {CART.shippingAddress.postalCode},{' '}
-                                    {CART.shippingAddress.country}
+                                    {CART.shippingAddress.country}{' '}
                                 </span>
 
                             </p>
                         </ListGroup.Item>
 
-                        <ListGroup.Item style={{ backgroundColor: "#262626", padding: "0rem" }}>
+                        <ListGroup.Item style={{ backgroundColor: "#1b1a1a", padding: "0rem" }}>
                             <h2 className="orderHead" >Payment Method</h2>
                             <strong style={{ fontSize: "1.05rem " }}>Method: </strong>
                             <span id="Ordersubhead">
@@ -103,7 +104,7 @@ const PlaceOrderScreen = ({ history }) => {
                             </span>
                         </ListGroup.Item>
 
-                        <ListGroup.Item style={{ backgroundColor: "#262626", padding: "0rem" }}>
+                        <ListGroup.Item style={{ backgroundColor: "#1b1a1a", padding: "0rem" }}>
                             <h2 className="orderHead">Ordered Items</h2>
                             {CART.cartItems.length === 0 ? (
                                 <Mess>Your cart is empty</Mess>
@@ -143,7 +144,7 @@ const PlaceOrderScreen = ({ history }) => {
 
                 <Col md={4}>
                     <div className="Orderbox" >
-                        <ListGroup variant='flush' style={{ backgroundColor: "#262626", padding: "0 0 12px 0" }} >
+                        <ListGroup variant='flush' style={{ backgroundColor: "#1b1a1a", padding: "0 0 12px 0" }} >
                             <ListGroup.Item>
                                 <h2 className="orderHead" style={{ textAlign: "center" }} >Order Summary</h2>
                             </ListGroup.Item>
@@ -184,11 +185,11 @@ const PlaceOrderScreen = ({ history }) => {
                                 <Button
                                     type='button'
                                     className='btn-block btnBasic'
-                                    variant="success"
+                                    // variant="success"
                                     disabled={CART.cartItems === 0}   //cartItems -> array of obj [{},{},{}]
                                     onClick={placeOrderHandler}
                                 >
-                                    Place Order
+                                    <b>   Place Order  <i className="fas fa-biking"></i>  </b>
                                 </Button>
                             </ListGroup.Item>
                         </ListGroup>

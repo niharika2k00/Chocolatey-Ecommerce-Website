@@ -196,6 +196,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
 
 
+
                             {/* -----------------------------     CUSTOMER  REVIEW  PART   -------------------------------- */}
                             <Row className="topGap">
                                 {prodRev_loading && <Load />}
@@ -223,7 +224,8 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                                         }
 
                                         < ListGroup.Item style={{ paddingTop: "5rem" }} >
-                                            <h5 style={{ fontSize: "1.25 rem", fontWeight: "600" }} id="prohead" > WRITE A CUSTOMER REVIEW OF THIS PRODUCT </h5>
+                                            <h2 style={{ fontSize: "1.4rem" }} id="prohead" > WRITE  A  CUSTOMER  REVIEW  OF  THIS  PRODUCT </h2>
+
                                             {prodRev_error && <Mess variant='danger'>{prodRev_error}</Mess>}
                                             {UserInfo ?
                                                 (

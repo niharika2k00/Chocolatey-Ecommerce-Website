@@ -80,7 +80,7 @@ const Cartscreen = ({ match, location, history, filling }) => {
                                         </Col>
 
 
-                                        <Col md={2} sm={2} xs={2} className="cart_subHead">₹{item.price}</Col>
+                                        <Col md={2} sm={2} xs={2} className="cart_subHead"> Rs {item.price}</Col>
 
                                         <Col md={2} sm={3} xs={3} >
                                             <Form.Control
@@ -118,7 +118,7 @@ const Cartscreen = ({ match, location, history, filling }) => {
                 </Col>
 
 
-                <Col md={4} sm={12} xs={12} className="procart" style={{ paddingTop: "1.7rem" }}>
+                <Col md={4} sm={12} xs={12} className="procart" >
                     <Card>
                         <ListGroup variant='flush' >
                             <ListGroup.Item className="cartbox_rgt" >

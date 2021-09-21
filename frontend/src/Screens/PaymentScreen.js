@@ -40,7 +40,7 @@ const PaymentScreen = ({ history }) => {
             <h1 className="cartHead" style={{ paddingBottom: "1.5rem" }} >Payment Method</h1>
 
             <Form onSubmit={submitHandler}>
-                <Form.Group>
+                <Form.Group >
                     <Form.Label as='h2' className="paymentSub" >Select Method</Form.Label>
                     <Col>
                         <Form.Check
@@ -67,11 +67,12 @@ const PaymentScreen = ({ history }) => {
                     </Col>
                 </Form.Group>
 
-                <Button type='submit' variant='success' style={{ marginTop: "1.6rem", marginBottom: "2rem", borderRadius: ".3rem" }} >
-                    <b style={{ fontSize: "16px" }}>Continue</b>
+
+                <Button type='submit' style={{ marginTop: "1.6rem", marginBottom: "3.2rem", borderRadius: "1rem" }} className="customButton neonBtn " >
+                    <div style={{ fontSize: "16px" }}>Continue..</div>
                 </Button>
             </Form>
-        </Loginform_Container>
+        </Loginform_Container >
     )
 }
 

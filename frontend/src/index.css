@@ -66,8 +66,8 @@ a:hover {
 }
 
 .parallax2 h2 {
-      font-family: 'PT Serif', serif;
-      background: linear-gradient(160deg, #e1cd68, #ffe66d);
+    font-family: 'PT Serif', serif;
+    background: linear-gradient(160deg, #e1cd68, #ffe66d);
     /* background: linear-gradient(160deg, #c6f3e5, #fcd80c); */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -131,7 +131,8 @@ a:hover {
 
 .card_css {
     border-radius: 4px;
-    background: /* #49464958 */  #252524 ;
+    background: /* #49464958 */
+    #252524;
     /* ACTUALLY CARD IS THERE BUT OPACITY LESSSS */
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
@@ -154,13 +155,10 @@ a:hover {
 
 #img_product {
     object-fit: cover;
-
-    width : 100%;
+    width: 100%;
     /* height : 40%; */
-
     /* width : 20vw; */
     /* height : 30vh; */
-
     /* width: 18rem; */
     height: 14rem;
 }
@@ -174,16 +172,6 @@ a:hover {
     color: #faf3fafa;
     letter-spacing: 1px;
     padding-right: 1.5rem;
-}
-
-.paymentSub {
-    color: #fff;
-}
-
-.paymentSub1 {
-    padding: .2rem;
-    color: #fff;
-    font-size: 1rem;
 }
 
 @media (max-width: 450px) {

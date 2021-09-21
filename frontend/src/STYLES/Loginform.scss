@@ -18,7 +18,7 @@
 #login_form {
   color: rgba(255, 255, 255, 0.959);
   font-size: 1.1rem;
-  font-family: "Cormorant", serif;
+  font-family: "PT Serif", serif;
 }
 
 .form_box {
@@ -49,6 +49,63 @@
 .profileIcon {
   padding-right: 0.5rem;
   font-size: 1.2rem;
+}
+
+.paymentSub {
+  font-family: "PT Serif", serif;
+  color: #fff;
+}
+
+.paymentSub1 {
+  padding: 0.2rem;
+  font-family: "PT Serif", serif;
+  color: #fff;
+  font-size: 1rem;
+}
+
+// --------------------------------
+// NEON BUTTON
+// --------------------------------
+.customButton {
+  color: #fff;
+  padding: 6px 19px;
+  font-family: "PT Serif", serif;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.neonBtn {
+  color: #f6d365;
+  border: 1px solid #f6d365;
+  box-shadow: 0 0 5px #f6d365, 0 0 5px #f6d365 inset;
+  z-index: 2;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.neonBtn:after {
+  position: absolute;
+  content: " ";
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.neonBtn:hover {
+  color: #000;
+}
+.neonBtn:hover:after {
+  background: #f6d365;
+  -webkit-transform: scale(2) rotate(180deg);
+  transform: scale(2) rotate(180deg);
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 1),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 1),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
 }
 
 @media (max-width: 450px) {
