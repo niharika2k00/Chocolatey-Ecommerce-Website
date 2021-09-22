@@ -88,7 +88,7 @@ const LoginScreen = ({ location, history }) => {
                 </Form.Group>
 
                 <Form.Group controlId='confirmpassword'>
-                    <Form.Label><b>Confirm Password</b></Form.Label>
+                    <Form.Label><i className="far fa-check-circle profileIcon" ></i><b>Confirm Password</b></Form.Label>
                     <Form.Control
                         className="form_box"
                         type='password'
