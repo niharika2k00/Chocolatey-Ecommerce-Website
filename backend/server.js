@@ -144,7 +144,7 @@ app.listen(port, console.log(`Server Connected in ${port} for ${process.env.NODE
 
 
 
-// port change if needed ---> server.js ,.env,frontend - backendurl 
+// port change if needed ---> server.js , .env, frontend - backendurl 
 // MONGODB_COMPASS :: mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce
 
 /*
