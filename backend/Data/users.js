@@ -11,21 +11,21 @@ const users = [
 
     {
         name: "Jack doe",
-        email: "jk@gmail.com",
+        email: "jack@gmail.com",
         password: bcrypt.hashSync('12345', 10),
         isAdmin: false
     },
 
     {
         name: "Harry Potter",
-        email: "hp@gmail.com",
+        email: "harry@gmail.com",
         password: bcrypt.hashSync('12345', 10),
         isAdmin: false
     },
 
     {
         name: "Hermione",
-        email: "her@gmail.com",
+        email: "hermione@gmail.com",
         password: bcrypt.hashSync('44', 10),
         isAdmin: false
     },

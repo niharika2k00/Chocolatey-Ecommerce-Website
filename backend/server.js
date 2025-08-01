@@ -1,6 +1,5 @@
-
 /*
-req.params ---> contains route parameters (in the path portion of the URL), 
+req.params ---> contains route parameters (in the path portion of the URL),
                 If route is /user/:id, then request to http://localhost:3200/user/5 - req.params would yield {id: "5"}
 
 req.query --->  contains the URL query parameters (after the ? in the URL).
@@ -8,7 +7,7 @@ req.query --->  contains the URL query parameters (after the ? in the URL).
 
 req.query is an object containing the property for each query string parameter in the route.
 req.params will return parameters in the matched route. If your req.param is a function that peels
-parameters out of the request. 
+parameters out of the request.
 
 
 Content-Type Header ----->  tells the client what the content type of the returned content .
@@ -19,29 +18,21 @@ Content-Type Header ----->  tells the client what the content type of the return
 
 /* const express = require('express');
 const dotenv = require('dotenv');
-const cors = require('cors');
-const products = require('./Data/products.js'); */
-
-
-
+const cors = require('cors'); */
 
 // syntax using ESSCRIPT
-import express from 'express';
-import dotenv from 'dotenv';
-import ConnectDB from './config/DB.js';
-import { notFound, errorHandler } from './Middleware/Error_middleware.js';
-import colors from 'colors';
-import cors from 'cors';
-import path from 'path';
-import morgan from 'morgan';
-import product_routes from './Routes/product_routes.js';
-import products from './Data/products.js';
-import user_routes from './Routes/user_routes.js';
-import order_routes from './Routes/order_routes.js';
-import upload_routes from './Routes/upload_routes.js';
-
-
-
+import express from "express";
+import dotenv from "dotenv";
+import ConnectDB from "./config/DB.js";
+import { notFound, errorHandler } from "./Middleware/Error_middleware.js";
+import colors from "colors";
+import cors from "cors";
+import path from "path";
+import morgan from "morgan";
+import product_routes from "./Routes/product_routes.js";
+import user_routes from "./Routes/user_routes.js";
+import order_routes from "./Routes/order_routes.js";
+import upload_routes from "./Routes/upload_routes.js";
 
 dotenv.config();
 ConnectDB();
@@ -51,27 +42,23 @@ app.use(express.json());
 app.use(cors());
 /* app.use(
   cors({
-    origin: "*", // <-- location of the react app were connecting to      
+    origin: "*", // <-- location of the react app were connecting to
     credentials: true,
   })
 ); */
 
-app.use(express.json());                           //allows json data in the body
-
+app.use(express.json()); // allows json data in the body
 
 if (process.env.NODE_ENV === "development purpose") {
-  app.use(morgan('dev'))
+  app.use(morgan("dev"));
 }
-
 
 /*
   // SYNTAX: app.get( path, callback )
-  app.get('/', (req, res) => {                       //ES6 FUNCTION    
+  app.get('/', (req, res) => {                       //ES6 FUNCTION
     res.send('API is running succesfully');
   })
 */
-
-
 
 // http://localhost:8090/users/getUser/userid11/postid22
 /* app.get('/users/getUser/:userid/:postid', (req, res) => {
@@ -89,7 +76,6 @@ app.get('/user', (req, res) => {
   res.send();
 }) */
 
-
 // GET method Route  --- shifted to product_routes
 /* app.get('/api/products', function (req, res) {
   console.log("Triggered route");
@@ -101,50 +87,44 @@ app.get('/api/products/:id', (req, res) => {
   res.send(prod);
 }) */
 // SYNTAX: app.use(path, callback)
-app.use('/api/products', product_routes);
-app.use('/api/users', user_routes);
-app.use('/api/orders', order_routes);
-app.use('/api/upload', upload_routes);
+app.use("/api/products", product_routes);
+app.use("/api/users", user_routes);
+app.use("/api/orders", order_routes);
+app.use("/api/upload", upload_routes);
 
-
-app.get('/api/config/paypal', (req, res) => {
-  res.send(process.env.PAYPAL_CLIENT_ID)
-})
-
+app.get("/api/config/paypal", (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID);
+});
 
 const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname, './uploads')))
+app.use(express.static(path.join(__dirname, "./uploads")));
 // app.use('./uploads', express.static(path.join(__dirname, './uploads'))); // __dirname ----> is available in express with common JS,but as we are using ES^ so we have to make that
 // console.log("path = ", (path.join(__dirname, './uploads')))
 
-
-
 // FOR DEPLOYMENT  ______________-  LAST STEP  ______________
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, '/frontend/build')))  // make build as a static folder
-  app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
-}
-else {
-  app.get('/', (req, res) => {
-    res.send('API is running succesfully');
-  })
+  app.use(express.static(path.join(__dirname, "/frontend/build"))); // make build as a static folder
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running succesfully");
+  });
 }
 // ___________________________________________________________
-
 
 app.use(notFound);
 app.use(errorHandler);
 // app.use()
-const port = process.env.PORT || 8090
-app.listen(port, console.log(`Server Connected in ${port} for ${process.env.NODE_ENV}`));
+const port = process.env.PORT || 8090;
+app.listen(
+  port,
+  console.log(`Server Connected in ${port} for ${process.env.NODE_ENV}`)
+);
 
-
-
-
-
-
-// port change if needed ---> server.js , .env, frontend - backendurl 
+// port change if needed ---> server.js , .env, frontend - backendurl
 // MONGODB_COMPASS :: mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce
 
 /*
@@ -158,9 +138,10 @@ STEPS ::
 1) npm i                  ----> /
 2) npm i                  ----> cd frontend
 3) npm start              ----> start only frontend (cd frontend)
-4) npm run server         ----> start only Backend(SERVER)
+4) npm start || npm run start         ----> start only Backend(SERVER)
 5) npm run dev            ----> start both Frontend(CLIENT SIDE) & Backend(SERVER SIDE)
-6) Add .env file  :
+6) npm run data:import    ----> for importing into the Database
+7) Add .env file :
 
 
 PORT = 8090
@@ -168,15 +149,22 @@ NODE_ENV = "development purpose"
 MONGODB_URI = mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce?retryWrites=true&w=majority
 JWT_TOKEN = abc@123
 
+
+
 */
-
-
-
 
 /* const middleware = (req, res, next) => {
   // code...
   next();
   }
   app.use(middleware());
+
+
+  223.223.138.236
+
+  niharika
+  dbpassword123
+
+  mongodb+srv://niharika:dbpassword123@cluster0.0njtlop.mongodb.net/
 
 */
