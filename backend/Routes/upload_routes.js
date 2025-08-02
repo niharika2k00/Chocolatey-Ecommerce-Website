@@ -21,14 +21,20 @@ const storage = multer.diskStorage({
 
 // cb ---> null (for the error)
 function checkFileType(file, cb) {
-  const filetypes = /jpg|jpeg|png/;
+  const filetypes = /jpg|jpeg|png|avif|webp/;
   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-  const mimetype = filetypes.test(file.mimetype);
+
+  const mimetype =
+    file.mimetype.startsWith("image/") &&
+    (file.mimetype === "image/jpeg" ||
+      file.mimetype === "image/png" ||
+      file.mimetype === "image/avif" ||
+      file.mimetype === "image/webp");
 
   if (extname && mimetype) {
     return cb(null, true);
   } else {
-    cb("Images only!"); // passes error
+    cb("Images only! Supported formats: jpg, jpeg, png, avif, webp"); // passes error
   }
 }
 
@@ -41,7 +47,13 @@ const upload = multer({
 });
 
 router.post("/", upload.single("image"), (req, res) => {
-  console.log(req.file);
+  console.log("Upload request received");
+  console.log("File:", req.file);
+
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
+
   res.send(`/${req.file.filename}`);
   // http://localhost:8090/image-1624453584772.jpg ---> write in the browser it will work
 });
