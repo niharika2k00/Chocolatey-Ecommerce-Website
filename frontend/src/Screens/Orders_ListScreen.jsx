@@ -38,6 +38,7 @@ const Orders_ListScreen = ({ history }) => {
               <th>USER</th>
               <th>DATE</th>
               <th>TOTAL</th>
+              <th>PAYMENT</th>
               <th>PAID</th>
               <th>DELIVERED</th>
               <th>DETAILS</th>
@@ -52,6 +53,25 @@ const Orders_ListScreen = ({ history }) => {
                 <td>{order.user && order.user.name}</td>
                 <td> {order.createdAt.substring(0, 10)} </td>
                 <td> ₹ {order.total_price} </td>
+                <td>
+                  <span
+                    style={{
+                      fontSize: "0.9rem",
+                      padding: "0.2rem 0.5rem",
+                      borderRadius: "0.3rem",
+                      backgroundColor:
+                        order.paymentMethod === "Cash on Delivery"
+                          ? "#ffc107"
+                          : "#28a745",
+                      color:
+                        order.paymentMethod === "Cash on Delivery"
+                          ? "#000"
+                          : "#fff",
+                    }}
+                  >
+                    {order.paymentMethod}
+                  </span>
+                </td>
                 <td>
                   {order.isPaid ? (
                     order.isPaid.substring(0, 10)
