@@ -8,22 +8,21 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 // Images
-import carousel1 from "../images/carousel1.avif";
-import carousel2 from "../images/carousel2.jfif";
-// import carousel3 from "../images/carousel3.jpg";
-// import carousel4 from "../images/carousel4.jpg";
-// import carousel5 from "../images/carousel5.jpg";
+import carousel1 from "@images/carousel1.avif";
+import carousel2 from "@images/carousel2.avif";
+import carousel3 from "@images/carousel3.avif";
+import carousel4 from "@images/carousel4.avif";
 
-import gifts from "../images/gifts.jfif";
-import party from "../images/party.jfif";
+import gifts from "@images/gifts.jfif";
+import party from "@images/party.jfif";
 
-import choco1 from "../images/choco1.png";
-import choco2 from "../images/choco2.png";
-import choco3 from "../images/choco3.png";
-import choco4 from "../images/choco4.png";
-import choco5 from "../images/choco5.png";
-import bg1 from "../images/bg1.png";
-import heart from "../images/heart.png";
+import choco1 from "@images/choco1.png";
+import choco2 from "@images/choco2.png";
+import choco3 from "@images/choco3.png";
+import choco4 from "@images/choco4.png";
+import choco5 from "@images/choco5.png";
+import bg1 from "@images/bg1.png";
+import heart from "@images/heart.png";
 
 const Introscreen = () => {
   var settings;
@@ -63,7 +62,6 @@ const Introscreen = () => {
         <Carousel.Item className="mycarou">
           <div className="overlay-image">
             {" "}
-            {/* hazy in the background using OPACITY */}
             <img
               className="d-block w-100 image"
               src={carousel1}
@@ -71,7 +69,7 @@ const Introscreen = () => {
             />
           </div>
           <Carousel.Caption className="carou_center">
-            <h3 className="title">Chocolatey</h3>
+            <h3 className="title maintitle">Chocolatey</h3>
             <p className="subtitle">
               <i
                 className="fas fa-quote-left"
@@ -95,9 +93,17 @@ const Introscreen = () => {
             />
           </div>
           <Carousel.Caption className="carou_center">
-            <h3 className="subtitle">DARK CHOCOLATES</h3>
+            <h3 className="title">Dark Chocolates</h3>
             <p className="subtitle">
-              ------- A healthy alternatives for Chocolate Lovers -------{" "}
+              <i
+                className="fas fa-quote-left"
+                style={{ paddingRight: ".4rem" }}
+              ></i>{" "}
+              Indulge in the rich, pure taste of nature's finest cocoa.{" "}
+              <i
+                className="fas fa-quote-right"
+                style={{ paddingLeft: ".4rem" }}
+              ></i>
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -105,14 +111,47 @@ const Introscreen = () => {
         <Carousel.Item className="mycarou">
           <div className="overlay-image">
             {" "}
-            <img
-              className="d-block w-100 image "
-              src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              alt="First slide"
-            />
+            <img className="d-block w-100 image " src={carousel3} />
           </div>
 
-          <Carousel.Caption className="carou_center"></Carousel.Caption>
+          <Carousel.Caption
+            className="carou_center"
+            style={{
+              left: "10%",
+              transform: "translateY(-50%)",
+              textAlign: "left",
+              width: "60%",
+            }}
+          >
+            <h3 className="title">Premium Chocolates</h3>
+            <p
+              className="subtitle"
+              style={{
+                justifyContent: "left",
+                textAlign: "left",
+              }}
+            >
+              <i
+                className="fas fa-quote-left"
+                style={{ paddingRight: ".4rem" }}
+              ></i>{" "}
+              Every bite tells a story of passion and perfection.{" "}
+              <i
+                className="fas fa-quote-right"
+                style={{ paddingLeft: ".4rem" }}
+              ></i>
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item className="mycarou">
+          <div className="overlay-image">
+            <img
+              className="d-block w-100 image"
+              src={carousel4}
+              alt="Second slide"
+            />
+          </div>
         </Carousel.Item>
       </Carousel>
 

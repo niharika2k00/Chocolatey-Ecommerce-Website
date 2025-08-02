@@ -1,89 +1,133 @@
-body, html {
-    height: cover;
-    margin: 0;
-    /* font-size: 10px; */
-    /* setting 1rem = 10 px */
+body,
+html {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* font-size: 10px; */
+  /* setting 1rem = 10 px */
 }
 
 .main-cls {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #1b1a1a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #1b1a1a;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Override Bootstrap carousel styles for full-screen */
+.carousel {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: calc(100vh - 70px) !important;
+}
+
+.carousel-inner {
+  width: 100vw !important;
+  height: calc(100vh - 70px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .mycarou {
-    height: 39rem;
-    position: relative;
-    background-position: center;
-    background-size: cover;
+  height: calc(100vh - 70px);
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .carou_center {
-    bottom: 200px;
-    left: 15%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
 }
 
 #png {
-    width: 6rem;
-    height: 4rem;
+  width: 6rem;
+  height: 4rem;
 }
 
 #png1 {
-    width: 6.2rem;
-    height: 5.2rem;
+  width: 6.2rem;
+  height: 5.2rem;
 }
 
 .title {
-    font-family: 'Lobster', cursive;
-    color: rgba(255, 255, 255, 0.945);
-    font-size: 7rem;
-    padding-bottom: 1.2rem;
+  font-family: "Lobster", cursive;
+  color: rgba(255, 255, 255, 0.945);
+  font-size: 6rem;
+  padding-bottom: 1.2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.maintitle {
+  font-size: 8rem;
 }
 
 .subtitle {
-    font-size: 1.6rem;
-    font-family: 'Cormorant', serif;
-    letter-spacing: 1px;
+  font-size: 1.6rem;
+  font-family: "Cormorant", serif;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  font-weight: 400;
 }
 
 .overlay-image {
-    position: absolute;
-    height: 30rem;
-    width: 100%;
-    opacity: 0.7;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
+  position: absolute;
+  height: calc(100vh - 70px);
+  width: 100vw;
+  opacity: 0.6;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .image {
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
+  height: calc(100vh - 70px);
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
 }
 
 .container_self {
-    margin-bottom: 15px;
-    padding-bottom: 50px;
+  margin-bottom: 15px;
+  padding-bottom: 50px;
 }
 
 .minihead {
-    padding: 2.5rem;
-    font-family: 'PT Serif', serif;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.932);
-    font-weight: bolder;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  padding: 2.5rem;
+  font-family: "PT Serif", serif;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.932);
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .subheading span {
-    display: inline-block;
-    position: relative;
-    font-weight: 500;
-    font-size: 1.8rem;
+  display: inline-block;
+  position: relative;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 /* .subheading span:before, .subheading span:after {
@@ -135,226 +179,255 @@ body, html {
 } */
 
 .htset {
-    height: 200px;
-    object-fit: cover;
+  height: 200px;
+  object-fit: cover;
 }
 
 .minisli_box {
-    background: rgba(38, 10, 2, 0.9);
-    padding: 6px;
-    position: absolute;
-    /* top: 0; */
-    bottom: 7px;
-    left: 4px;
-    right: 0px;
-    width: 100%;
-    text-align: center;
+  background: rgba(38, 10, 2, 0.9);
+  padding: 6px;
+  position: absolute;
+  /* top: 0; */
+  bottom: 7px;
+  left: 4px;
+  right: 0px;
+  width: 100%;
+  text-align: center;
 }
 
 .minisli_box h4 {
-    color: rgba(255, 255, 255, 0.849);
-    font-weight: 300;
-    font-size: 20px;
-    font-family: 'Kiwi Maru', serif;
+  color: rgba(255, 255, 255, 0.849);
+  font-weight: 300;
+  font-size: 20px;
+  font-family: "Kiwi Maru", serif;
 }
 
 .parallax {
-    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../images/parallax1.jpg") fixed center center;
-    background-size: cover;
-    padding: 100px 0;
-    /* width of the parallax */
-    margin-bottom: 50px;
-    margin-top: 4rem;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../images/parallax1.jpg") fixed center center;
+  background-size: cover;
+  padding: 100px 0;
+  /* width of the parallax */
+  margin-bottom: 50px;
+  margin-top: 4rem;
 }
 
 .parallax h2 {
-    color: #fff;
-    font-size: 34px;
-    font-weight: 700;
+  color: #fff;
+  font-size: 34px;
+  font-weight: 700;
 }
 
 .parallax p {
-    color: #fff;
-    /* font-family: 'Cormorant', serif;  */
-    font-size: 24px;
-    font-family: 'Kiwi Maru', serif;
-    font-weight: 300;
+  color: #fff;
+  /* font-family: 'Cormorant', serif;  */
+  font-size: 24px;
+  font-family: "Kiwi Maru", serif;
+  font-weight: 300;
 }
 
 .parallax .parallax-btn {
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 8px 28px;
-    border-radius: 4px;
-    transition: 0.5s;
-    margin-top: 10px;
-    text-decoration: none;
-    border: 2px solid #fff;
-    color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 10px;
+  text-decoration: none;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
 .parallax .parallax-btn:hover {
-    background: rgba(0, 0, 0, 0.575);
-    border-color: #ffb703;
-    /* color: #151515; */
+  background: rgba(0, 0, 0, 0.575);
+  border-color: #ffb703;
+  /* color: #151515; */
 }
 
 #item {
-    padding: 12px;
-    margin: 12px;
+  padding: 12px;
+  margin: 12px;
 }
 
 .itemhead {
-    color: rgba(255, 255, 255, 0.932);
-    /* text-transform: uppercase; */
-    font-family: 'Cormorant', serif;
-    font-size: 20px;
-    font-weight: 700;
-    background: linear-gradient(160deg, #c6f3e5, #fcd80c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  color: rgba(255, 255, 255, 0.932);
+  /* text-transform: uppercase; */
+  font-family: "Cormorant", serif;
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(160deg, #c6f3e5, #fcd80c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .item_subhead {
-    color: rgba(255, 255, 255, 0.438);
-    font-size: .9rem;
+  color: rgba(255, 255, 255, 0.438);
+  font-size: 0.9rem;
 }
 
 .icoo {
-    color: gold;
-    font-size: 36px;
-    padding: 8px;
+  color: gold;
+  font-size: 36px;
+  padding: 8px;
 }
 
 /* ---------------------------    Chocolate Hover Effect        ----------------------------- */
 
 .HOVER img {
-    transform: scale(1);
-    transition: .3s ease-in-out;
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
 }
 
 .HOVER img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .choco_name h4 {
-    margin-top: 20px;
-    transform: translateY(.5px);
-    transition: .1s ease-in-out;
-    padding-left: 0;
-    padding: 10px;
-    /* justify-content: center; */
-    /* text-align: center; */
-    /* align-items: center; */
-    color: rgba(255, 255, 255, 0.877);
-    font-family: 'Cormorant', serif;
-    font-size: 24px;
+  margin-top: 20px;
+  transform: translateY(0.5px);
+  transition: 0.1s ease-in-out;
+  padding-left: 0;
+  padding: 10px;
+  /* justify-content: center; */
+  /* text-align: center; */
+  /* align-items: center; */
+  color: rgba(255, 255, 255, 0.877);
+  font-family: "Cormorant", serif;
+  font-size: 24px;
 }
 
 .choco_name h4:hover {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .choco {
-    padding: 15px;
-    justify-content: center;
+  padding: 15px;
+  justify-content: center;
 }
 
 .choco_img {
-    padding-bottom: 20px;
-    margin-left: 2rem;
-    height: 14rem;
-    width: 14rem;
+  padding-bottom: 20px;
+  margin-left: 2rem;
+  height: 14rem;
+  width: 14rem;
 }
 
 .choco_name h4 {
-    padding: 10px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.877);
-    font-family: 'Cormorant', serif;
-    font-size: 24px;
+  padding: 10px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.877);
+  font-family: "Cormorant", serif;
+  font-size: 24px;
 }
 
 #trendSize {
-    /* font-size: 1.6rem; */
-    color: "#FFD7700"
+  /* font-size: 1.6rem; */
+  color: "#FFD7700";
 }
 
 /* -------------------------------   RESPONSIVE  STYLES ----------------------------------- */
 
 @media (max-width: 450px) {
-    .mycarou {
-        height: 16rem;
-    }
-    .carou_center {
-        bottom: 60px;
-        left: 15%;
-    }
-    .title {
-        font-size: 2.5rem;
-    }
-    .subtitle {
-        font-size: 1rem;
-    }
-    .minihead {
-        padding: 1.5rem;
-    }
-    .subheading span {
-        font-size: 22px;
-    }
-    .minislider {
-        padding: 6px;
-    }
-    .htset {
-        height: 145px;
-        object-fit: cover;
-    }
-    .minisli_box {
-        bottom: 7px;
-    }
-    .minisli_box h4 {
-        font-size: 12px;
-    }
-    .parallax {
-        padding: 6rem 0;
-        margin-bottom: 35px;
-        margin-top: 1.6rem;
-    }
-    .parallax h2 {
-        font-size: 30px;
-        font-weight: 700;
-    }
-    .parallax p {
-        font-size: 16px;
-    }
-    .choco_img {
-        padding-bottom: 2px;
-        margin-left: 0rem;
-        height: 10rem;
-        width: 10rem;
-    }
-    .choco_name h4 {
-        padding: 6px;
-        font-size: 18px;
-    }
-    #intoImg {
-        width: 95vw;
-    }
-    #trendSize {
-        font-size: 1.6rem;
-        color: "#FFD7700"
-    }
-    #png, #png1 {
-        width: 3rem;
-        height: 2rem;
-    }
-    #png {
-        width: 3rem;
-        height: 2rem;
-    }
+  .carousel {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 70px) !important;
+  }
+
+  .carousel-inner {
+    width: 100vw !important;
+    height: calc(100vh - 70px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .mycarou {
+    height: calc(100vh - 70px);
+    width: 100vw;
+  }
+  .overlay-image {
+    height: calc(100vh - 70px);
+    width: 100vw;
+  }
+  .image {
+    height: calc(100vh - 70px);
+    width: 100vw;
+  }
+  .carou_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .minihead {
+    padding: 1.5rem;
+  }
+  .subheading span {
+    font-size: 22px;
+  }
+  .minislider {
+    padding: 6px;
+  }
+  .htset {
+    height: 145px;
+    object-fit: cover;
+  }
+  .minisli_box {
+    bottom: 7px;
+  }
+  .minisli_box h4 {
+    font-size: 12px;
+  }
+  .parallax {
+    padding: 6rem 0;
+    margin-bottom: 35px;
+    margin-top: 1.6rem;
+  }
+  .parallax h2 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .parallax p {
+    font-size: 16px;
+  }
+  .choco_img {
+    padding-bottom: 2px;
+    margin-left: 0rem;
+    height: 10rem;
+    width: 10rem;
+  }
+  .choco_name h4 {
+    padding: 6px;
+    font-size: 18px;
+  }
+  #intoImg {
+    width: 95vw;
+  }
+  #trendSize {
+    font-size: 1.6rem;
+    color: "#FFD7700";
+  }
+  #png,
+  #png1 {
+    width: 3rem;
+    height: 2rem;
+  }
+  #png {
+    width: 3rem;
+    height: 2rem;
+  }
 }

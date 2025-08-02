@@ -1,196 +1,204 @@
 main {
-    min-height: 85vh;
+  min-height: 85vh;
 }
 
 .container_self {
-    margin-bottom: 15px;
-    padding-bottom: 50px;
+  margin-bottom: 15px;
+  padding-bottom: 50px;
 }
 
 .self_containerFull {
-    margin: 0rem 2rem;
-    padding: 0rem 1.8rem;
+  margin: 0rem 2rem;
+  padding: 0rem 1.8rem;
 }
 
 .topGap {
-    padding-top: 2rem;
-    margin-top: .6rem;
-    padding-bottom: 2rem;
-    margin-bottom: 1rem;
+  padding-top: 2rem;
+  margin-top: 0.6rem;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /*  _____________     NAVBAR    __________ */
 
 @media (min-width: 1200px) {
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 1350px;
-    }
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1350px;
+  }
 }
 
 a {
-    color: #fdffb6;
+  color: #fdffb6;
 }
 
 a:hover {
-    color: white !important;
-    text-decoration: none !important;
+  color: white !important;
+  text-decoration: none !important;
 }
 
 #heading_nav {
-    font-family: 'Lobster', cursive;
-    font-size: 32px;
-    font-weight: 500;
+  font-family: "Lobster", cursive;
+  font-size: 32px;
+  font-weight: 500;
 }
 
 .arrow {
-    border: solid #ffc8dd;
-    border-width: 0 4px 4px 0;
-    display: inline-block;
-    padding: 6px;
+  border: solid #ffc8dd;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 6px;
 }
 
 .left:hover {
-    border: solid #90be6d;
+  border: solid #90be6d;
 }
 
 .left {
-    transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .parallax2 {
-    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("./images/parallax2.jpg") fixed center center;
-    background-size: cover;
-    padding: 130px 0;
-    /* width of the parallax2 */
-    margin-bottom: 50px;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../images/parallax2.jpg") fixed center center;
+  background-size: cover;
+  padding: 130px 0;
+  /* width of the parallax2 */
+  margin-bottom: 50px;
 }
 
 .parallax2 h2 {
-    font-family: 'PT Serif', serif;
-    background: linear-gradient(160deg, #e1cd68, #ffe66d);
-    /* background: linear-gradient(160deg, #c6f3e5, #fcd80c); */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 50px;
-    font-weight: 700;
+  font-family: "PT Serif", serif;
+  background: linear-gradient(160deg, #e1cd68, #ffe66d);
+  /* background: linear-gradient(160deg, #c6f3e5, #fcd80c); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  font-weight: 700;
 }
 
 .parallax2 p {
-    color: #fff;
-    font-family: 'Cormorant', serif;
-    font-size: 20px;
-    /* font-family: 'Kiwi Maru', serif; */
-    letter-spacing: 1px;
-    font-weight: 300;
+  color: #fff;
+  font-family: "Cormorant", serif;
+  font-size: 20px;
+  /* font-family: 'Kiwi Maru', serif; */
+  letter-spacing: 1px;
+  font-weight: 300;
 }
 
 .parallax2 .parallax2-btn {
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 6px 24px;
-    border-radius: 4px;
-    transition: 0.5s;
-    margin-top: 10px;
-    text-decoration: none;
-    border: 2px solid #fff;
-    color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 6px 24px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 10px;
+  text-decoration: none;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
 .parallax2 .parallax2-btn:hover {
-    background: rgba(0, 0, 0, 0.575);
-    border: 4px double #ffb703;
+  background: rgba(0, 0, 0, 0.575);
+  border: 4px double #ffb703;
 }
 
 #sortby {
-    padding: 6px 8px;
-    font-size: 16px;
-    font-family: 'Cormorant', serif;
-    font-weight: 700;
-    border-radius: 4px;
-    background-color: #fff3b0;
-    margin: 5px;
+  padding: 6px 8px;
+  font-size: 16px;
+  font-family: "Cormorant", serif;
+  font-weight: 700;
+  border-radius: 4px;
+  background-color: #fff3b0;
+  margin: 5px;
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
-    color: #fff !important;
-    text-decoration: none;
-    background-color: #621708;
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: #fff !important;
+  text-decoration: none;
+  background-color: #621708;
 }
 
 #sortby option:hover {
-    background-color: rgb(235, 57, 57)
+  background-color: rgb(235, 57, 57);
 }
 
 .sorttitle {
-    color: rgba(255, 255, 255, 0.884);
-    font-size: 18px;
+  color: rgba(255, 255, 255, 0.884);
+  font-size: 18px;
 }
 
 .card_css {
-    border-radius: 4px;
-    background: /* #49464958 */
-    #252524;
-    /* ACTUALLY CARD IS THERE BUT OPACITY LESSSS */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-    padding: 14px 80px 8rem 36px;
-    cursor: pointer;
+  border-radius: 4px;
+  background: /* #49464958 */ #252524;
+  /* ACTUALLY CARD IS THERE BUT OPACITY LESSSS */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 14px 80px 8rem 36px;
+  cursor: pointer;
 }
 
 .card_css:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
 #link_css {
-    color: #f7f7f7de;
-    font-weight: 700;
-    font-size: 1.4rem;
-    font-family: 'Cormorant', serif;
-    text-decoration: none;
+  color: #f7f7f7de;
+  font-weight: 700;
+  font-size: 1.4rem;
+  font-family: "Cormorant", serif;
+  text-decoration: none;
 }
 
 #img_product {
-    object-fit: cover;
-    width: 100%;
-    /* height : 40%; */
-    /* width : 20vw; */
-    /* height : 30vh; */
-    /* width: 18rem; */
-    height: 14rem;
+  object-fit: cover;
+  width: 100%;
+  /* height : 40%; */
+  /* width : 20vw; */
+  /* height : 30vh; */
+  /* width: 18rem; */
+  height: 14rem;
 }
 
 .rating span {
-    padding: 0.1rem;
+  padding: 0.1rem;
 }
 
-.navBig, #username {
-    font-size: 1.1rem;
-    color: #faf3fafa;
-    letter-spacing: 1px;
-    padding-right: 1.5rem;
+.navBig,
+#username {
+  font-size: 1.1rem;
+  color: #faf3fafa;
+  letter-spacing: 1px;
+  padding-right: 1.5rem;
 }
 
 @media (max-width: 450px) {
-    #img_product {
-        object-fit: cover;
-        width: 81.5vw;
-        height: 12rem;
-    }
-    .self_containerFull {
-        margin: .3rem .4rem;
-        padding: .2rem .7rem;
-    }
-    .parallax2 {
-        padding: 8rem 0;
-    }
-    .parallax2 p {
-        font-size: .8rem;
-    }
-    .parallax2 h2 {
-        font-size: 1.42rem
-    }
+  #img_product {
+    object-fit: cover;
+    width: 81.5vw;
+    height: 12rem;
+  }
+  .self_containerFull {
+    margin: 0.3rem 0.4rem;
+    padding: 0.2rem 0.7rem;
+  }
+  .parallax2 {
+    padding: 8rem 0;
+  }
+  .parallax2 p {
+    font-size: 0.8rem;
+  }
+  .parallax2 h2 {
+    font-size: 1.42rem;
+  }
 }

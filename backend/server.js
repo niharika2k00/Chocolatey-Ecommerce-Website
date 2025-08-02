@@ -49,7 +49,7 @@ app.use(cors());
 
 app.use(express.json()); // allows json data in the body
 
-if (process.env.NODE_ENV === "development purpose") {
+if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
@@ -143,11 +143,13 @@ STEPS ::
 6) npm run data:import    ----> for importing into the Database
 7) Add .env file :
 
+npm run build -> for craco build
 
 PORT = 8090
 NODE_ENV = "development purpose"
 MONGODB_URI = mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce?retryWrites=true&w=majority
 JWT_TOKEN = abc@123
+
 
 
 
