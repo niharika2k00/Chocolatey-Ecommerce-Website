@@ -66,6 +66,7 @@ const products = [
     topic: "Christmas Special",
     bestSelling: "NO",
   },
+
   {
     // _id: '5',
     name: "Bournville Dark Chocolate",
@@ -80,8 +81,9 @@ const products = [
     price: 200,
     countInStock: 7,
     topic: "general",
-    bestSelling: "NO",
+    bestSelling: "Best Selling",
   },
+
   {
     // _id: '06',
     name: "Bunny Cake",
@@ -250,6 +252,23 @@ const products = [
     countInStock: 18,
     topic: "general",
     bestSelling: "NO",
+  },
+
+  {
+    // _id: '16',
+    name: "Macarons",
+    image:
+      "https://res.cloudinary.com/doc0bmmew/image/upload/v1754157396/Ecommerce_Chocolatey/macarons_n3nr9s.avif",
+    brand: "Macarons",
+    catagory: "Cup Cakes",
+    description:
+      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+    rating: 4,
+    numReviews: 0,
+    price: 145,
+    countInStock: 18,
+    topic: "Cup Cakes",
+    bestSelling: "Best Selling",
   },
 ];
 

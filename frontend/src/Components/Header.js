@@ -35,7 +35,13 @@ const Header = () => {
       >
         <Container style={{ margin: "0 2rem" }}>
           <LinkContainer to="/">
-            <Navbar.Brand id="heading_nav">Chocolatey</Navbar.Brand>
+            <Navbar.Brand id="heading_nav">
+              Chocolatey{" "}
+              <img
+                src="./chocolate.png"
+                style={{ width: "36px", height: "36px", marginLeft: "8px" }}
+              />
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
