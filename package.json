@@ -6,12 +6,12 @@
   "type": "module",
   "scripts": {
     "_comment1": "COMMENT --> ADD TEST,SERVER,CLIENT,DEV script in this file",
-    "start": "node ./backend/server.js",
-    "test": "node ./backend/server.js",
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder.js",
-    "data:destroy": "node backend/seeder.js -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false  npm install --prefix frontend && npm run build --prefix frontend"
+    "data:destroy": "node backend/seeder.js -d"
   },
   "author": "Niharika Dutta",
   "license": "ISC",

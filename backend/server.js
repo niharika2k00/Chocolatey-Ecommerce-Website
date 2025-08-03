@@ -125,7 +125,6 @@ app.listen(
 );
 
 // port change if needed ---> server.js , .env, frontend - backendurl
-// MONGODB_COMPASS :: mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce
 
 /*
 ADMIN
@@ -145,12 +144,22 @@ STEPS ::
 
 npm run build -> for craco build
 
-PORT = 8090
-NODE_ENV = "development purpose"
-MONGODB_URI = mongodb+srv://niharika_28:niharika_28@niharika-dutta.oot45.mongodb.net/Ecommerce?retryWrites=true&w=majority
-JWT_TOKEN = abc@123
+For building the frontend, we need to run the following command:
+cd frontend && npm run build
 
 
+
+PORT=8090
+NODE_ENV=production
+MONGODB_URI=mongodb+srv://niharika:dbpassword123@cluster0.0njtlop.mongodb.net/Ecommerce?retryWrites=true&w=majority
+JWT_TOKEN=abc@123
+PAYPAL_CLIENT_ID=AceHkmmupJasiEWdEUthEPJQSlLfDXD1aTQuxzQQ3VD15DD-I6IdyuxJPtQgFw_cOhFik-IrHZ87or41
+PAYPAL_SECRET_ID=EIZqtLuiEhgnMfV3WTwHRePwwfs1804ORJbHJQnNn0m6aBl1Irw0Ts7EVHmP0gcCEzIrFsYBWL2HDdNA
+
+
+
+sb-e147tu45057405@personal.example.com
+Q!&bDA6M
 
 
 */
@@ -166,7 +175,5 @@ JWT_TOKEN = abc@123
 
   niharika
   dbpassword123
-
-  mongodb+srv://niharika:dbpassword123@cluster0.0njtlop.mongodb.net/
 
 */
