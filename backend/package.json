@@ -6,12 +6,12 @@
   "type": "module",
   "scripts": {
     "_comment1": "COMMENT --> ADD TEST,SERVER,CLIENT,DEV script in this file",
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
-    "client": "npm start --prefix frontend",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ../frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seeder.js",
-    "data:destroy": "node backend/seeder.js -d"
+    "data:import": "node seeder.js",
+    "data:destroy": "node seeder.js -d"
   },
   "author": "Niharika Dutta",
   "license": "ISC",

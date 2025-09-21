@@ -48,26 +48,21 @@ app.use(cors());
 ); */
 
 app.use(express.json()); // allows json data in the body
+// process.env.NODE_ENV === "development" && app.use(morgan("dev")); // popular HTTP request logger middleware for nodejs
 
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
+// SYNTAX: app.get( path, callback )
+/* app.get("/", (req, res) => {
+  res.send("API is running succesfully");
+}); */
 
-/*
-  // SYNTAX: app.get( path, callback )
-  app.get('/', (req, res) => {                       //ES6 FUNCTION
-    res.send('API is running succesfully');
-  })
-*/
-
-// http://localhost:8090/users/getUser/userid11/postid22
+// http://localhost:5050/users/getUser/userid11/postid22
 /* app.get('/users/getUser/:userid/:postid', (req, res) => {
   console.log(req.params); // {userid: userid11, postid: postid22}
   res.send({});
 })
 
-// http://localhost:8090/users/getUser?userid=userid11&postid=postid22 ----- /users/getUser?userid&postid
-// http://localhost:8090/user?name=Niharika&age=11
+// http://localhost:5050/users/getUser?userid=userid11&postid=postid22 ----- /users/getUser?userid&postid
+// http://localhost:5050/user?name=Niharika&age=11
 app.get('/user', (req, res) => {
   console.log("Name: ", req.query.name);
   console.log("Age:", req.query.age);
@@ -86,6 +81,9 @@ app.get('/api/products/:id', (req, res) => {
   const prod = products.find((p) => p._id === req.params.id);
   res.send(prod);
 }) */
+
+// Express processes routes in the order they're defined:
+
 // SYNTAX: app.use(path, callback)
 app.use("/api/products", product_routes);
 app.use("/api/users", user_routes);
@@ -102,23 +100,31 @@ app.use(express.static(path.join(__dirname, "./uploads")));
 // app.use('./uploads', express.static(path.join(__dirname, './uploads'))); // __dirname ----> is available in express with common JS,but as we are using ES^ so we have to make that
 // console.log("path = ", (path.join(__dirname, './uploads')))
 
-// FOR DEPLOYMENT  ______________-  LAST STEP  ______________
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/build"))); // make build as a static folder
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running succesfully");
-  });
-}
-// ___________________________________________________________
+// Serve React build files for both development and production
+// For development: serve from ../frontend/build
+// For production: serve from ./public (Docker container)
+const buildPath =
+  process.env.NODE_ENV === "production"
+    ? path.join(__dirname, "./public")
+    : path.join(__dirname, "../frontend/build");
+
+// Serve static files from React build
+app.use(express.static(buildPath));
+
+// Handle React Router - return index.html for all non-API routes
+app.get("*", (req, res) => {
+  if (req.path.startsWith("/api/")) {
+    return res.status(404).json({ message: "API route not found" });
+  }
+
+  // Serve React frontend for all other routes
+  res.sendFile(path.join(buildPath, "index.html"));
+});
 
 app.use(notFound);
 app.use(errorHandler);
 // app.use()
-const port = process.env.PORT || 8090;
+const port = process.env.PORT || 5050;
 app.listen(
   port,
   console.log(`Server Connected in ${port} for ${process.env.NODE_ENV}`)
@@ -137,7 +143,7 @@ STEPS ::
 1) npm i                  ----> /
 2) npm i                  ----> cd frontend
 3) npm start              ----> start only frontend (cd frontend)
-4) npm start || npm run start         ----> start only Backend(SERVER)
+4) npm start || npm run start         ----> start only Backend(cd backend SERVER)
 5) npm run dev            ----> start both Frontend(CLIENT SIDE) & Backend(SERVER SIDE)
 6) npm run data:import    ----> for importing into the Database
 7) Add .env file :
@@ -149,7 +155,7 @@ cd frontend && npm run build
 
 
 
-PORT=8090
+PORT=5050
 NODE_ENV=production
 MONGODB_URI=mongodb+srv://niharika:dbpassword123@cluster0.0njtlop.mongodb.net/Ecommerce?retryWrites=true&w=majority
 JWT_TOKEN=abc@123
@@ -176,4 +182,15 @@ Q!&bDA6M
   niharika
   dbpassword123
 
+http://115.187.34.234:5050/
+
+
+  If get Atlas cluster IP whitelist error, then add the IP address in the Atlas cluster > Network Access tab
+
+  Now I've set it to 0.0.0.0/0
+
+
+https://chocolatey.raspberryip.com/
+
+http://videohub.raspberryip.com/
 */

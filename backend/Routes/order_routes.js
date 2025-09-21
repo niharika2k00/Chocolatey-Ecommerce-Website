@@ -7,7 +7,7 @@ import {
   Update_OrderForDeliver,
   getAllMyOrders,
   getOrders,
-} from "../Controllers/Order_Controller.js";
+} from "../Controllers/order_controller.js";
 import { protect, ISAdmin } from "../Middleware/Auth_middleware.js";
 
 router.route("/").post(protect, AddOrderItems).get(protect, ISAdmin, getOrders);

@@ -7,11 +7,13 @@ const router = express.Router();
 // console.log(path.join(__dirname, '/uploads '))
 
 const storage = multer.diskStorage({
+  // Files saved to /uploads folder
   destination(req, file, cb) {
     cb(null, "uploads/");
   },
+
+  // Filename will be image-Date.now().jpg
   filename(req, file, cb) {
-    // image-Date.now().jpg
     cb(
       null,
       `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
@@ -19,7 +21,6 @@ const storage = multer.diskStorage({
   },
 });
 
-// cb ---> null (for the error)
 function checkFileType(file, cb) {
   const filetypes = /jpg|jpeg|png|avif|webp/;
   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
@@ -54,8 +55,7 @@ router.post("/", upload.single("image"), (req, res) => {
     return res.status(400).json({ error: "No file uploaded" });
   }
 
-  res.send(`/${req.file.filename}`);
-  // http://localhost:8090/image-1624453584772.jpg ---> write in the browser it will work
+  res.send(`/${req.file.filename}`); // /image-1624453584772.jpg
 });
 
 export default router;

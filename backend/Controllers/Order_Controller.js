@@ -7,7 +7,7 @@ import ORDER from "../Models/OrderModels.js";
 // @access      private
 
 const AddOrderItems = asyncHandler(async (req, res) => {
-  // VARIABLES SAME AS THAT OF THE MODEL
+  // Variables same as that of the Model
   const {
     orderItems,
     shippingAddress,
@@ -88,7 +88,7 @@ const Update_OrderToPay = asyncHandler(async (req, res) => {
 });
 
 /*
-  let a  = new Date('2015-02-10T10:12:50.5000z');
+  let a  = new Date('2015-02-10T10:12:50.5050z');
     a.toDateString();'Tue Feb 10 2015';
 */
 

@@ -25,9 +25,7 @@ const ProductSchema = mongoose.Schema(
     },
 
     name: {
-      // object
-      type: String,
-      // required: true
+      type: String, // required: true
       default: 0,
     },
 
@@ -52,8 +50,7 @@ const ProductSchema = mongoose.Schema(
     },
 
     description: {
-      type: String,
-      // required: true,
+      type: String, // required: true,
       default: 0,
     },
 

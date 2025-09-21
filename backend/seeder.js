@@ -1,4 +1,4 @@
-// Import sample data ---- into the DATABASE
+// Import sample product and user data into the database
 import mongoose from "mongoose";
 import userData from "./Data/users.js";
 import productData from "./Data/products.js";
@@ -7,7 +7,6 @@ import User from "./Models/UserModels.js";
 import Order from "./Models/OrderModels.js";
 import Product from "./Models/ProductModels.js";
 import ConnectDB from "./config/DB.js";
-import colors from "colors";
 
 dotenv.config();
 ConnectDB();
@@ -19,15 +18,15 @@ const importData = async () => {
     await Product.deleteMany();
     await User.deleteMany();
 
-    const createdUsers = await User.insertMany(userData); // It's an array of all the users fetched from our sample data
-    const adminUser = createdUsers[0]._id;
+    const createdUserArray = await User.insertMany(userData); // It's an array of all the users fetched from our sample data
+    const adminUser = createdUserArray[0]._id;
     // console.log(adminUser);
-    const sampleProducts = productData.map((product) => {
+    const sampleProductArray = productData.map((product) => {
       return { ...product, user: adminUser }; // ...products includes all the stuffs of the product with addition to the adminUser field
     });
 
-    await Product.insertMany(sampleProducts); // insert the final data with the admin field
-    console.log("DATA IMPORTED".green.inverse);
+    await Product.insertMany(sampleProductArray); // insert the final data with the admin field
+    console.log("Data imported successfully".green.inverse);
     process.exit();
   } catch (error) {
     console.error(`${error}`);

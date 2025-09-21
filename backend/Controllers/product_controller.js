@@ -50,6 +50,7 @@ const deleteProductByID = asyncHandler(async (req, res) => {
 // @access     Private / for ADMIN ONLY
 
 const createProduct = asyncHandler(async (req, res) => {
+  // Create new product with default values if not mentioned
   const newProduct = new PRODUCT({
     name: "sample name",
     user: req.user._id,
@@ -80,8 +81,8 @@ const updatedProduct = asyncHandler(async (req, res) => {
     brand,
     topic,
     catagory,
-    /* numReviews, */ countInStock,
-  } = req.body; // updates values that the user has put
+    countInStock,
+  } = req.body;
   const product = await PRODUCT.findById(req.params.id);
 
   if (product) {
@@ -92,7 +93,6 @@ const updatedProduct = asyncHandler(async (req, res) => {
     product.description = description;
     product.brand = brand;
     product.catagory = catagory;
-    // product.numReviews = numReviews;
     product.countInStock = countInStock;
 
     const updatedProduct = await product.save();
