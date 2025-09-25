@@ -2,10 +2,18 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "./Rating.js";
+import API_URL from "../config.js";
 import "../index.css";
 
+const getImageUrl = (image) => {
+  if (!image) return "";
+  if (image.startsWith("http")) return image; // Already a full URL
+
+  return `${API_URL}/${image}`; // Construct from filename
+};
+
 // props can be passed orelse we can do DESTRUCTURING
-const Prod = (/*props*/ { pro }) => {
+const Prod = ({ pro }) => {
   return (
     <>
       {/* <p>Left arrow: <i class="arrow left"></i></p> */}
@@ -14,7 +22,11 @@ const Prod = (/*props*/ { pro }) => {
         <Link to={`/product/${pro._id}`}>
           {" "}
           {/* <a> is changed to Link tag*/}
-          <Card.Img id="img_product" src={pro.image} variant="top" />
+          <Card.Img
+            id="img_product"
+            src={getImageUrl(pro.image)}
+            variant="top"
+          />
         </Link>
 
         <Card.Body className="p-3">

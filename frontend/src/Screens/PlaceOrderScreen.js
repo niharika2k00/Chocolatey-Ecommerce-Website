@@ -8,6 +8,7 @@ import { clearCart } from "../Actions/Cart_action.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import "../STYLES/placeOrderScreen.css";
+import { getImageUrl } from "../utils.js";
 
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -110,7 +111,7 @@ const PlaceOrderScreen = ({ history }) => {
                       <Row>
                         <Col md={2} sm={3} xs={3}>
                           <Image
-                            src={item.image}
+                            src={getImageUrl(item.image)}
                             alt={item.name}
                             fluid
                             rounded

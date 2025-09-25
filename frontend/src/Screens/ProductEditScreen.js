@@ -7,12 +7,12 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   Detailsproducts,
   updateProductAction,
-} from "../Actions/product_action.js";
+} from "@/Actions/Product_action.js";
 import Loginform_Container from "../Components/Loginform_Container.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import { PRODUCT_UPDATE_RESET } from "../Constants/Product_constant.js";
-import backend_URL from "../backend_URL.js";
+import API_URL from "../config.js";
 import axios from "axios";
 
 const UserEditScreen = ({ history, match }) => {
@@ -98,12 +98,12 @@ const UserEditScreen = ({ history, match }) => {
       };
 
       const { data } = await axios.post(
-        `${backend_URL}/api/upload`,
+        `${API_URL}/api/upload`,
         formData,
         config
       );
-      console.log("DATA : ", `${backend_URL}` + data);
-      setImage(`${backend_URL}` + data);
+      console.log("Data: ", data);
+      setImage(data); // Store only filename
       setImgUploading(false);
     } catch (e) {
       console.log(e);
@@ -170,9 +170,17 @@ const UserEditScreen = ({ history, match }) => {
                 className="form_box"
                 type="text"
                 placeholder="enter image Url"
-                value={image}
+                value={image ? `${API_URL}/${image}` : ""}
                 // accept=".png, .jpg, .jpeg"
-                onChange={(e) => setImage(e.target.value)}
+                onChange={(e) => {
+                  // Extract filename from full URL if user pastes a full URL
+                  const url = e.target.value;
+                  if (url.includes(API_URL)) {
+                    setImage(url.replace(`${API_URL}/`, ""));
+                  } else {
+                    setImage(url);
+                  }
+                }}
               ></Form.Control>
               <Form.File
                 id="image-file"

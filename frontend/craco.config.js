@@ -3,10 +3,9 @@ const path = require("path");
 module.exports = {
   webpack: {
     alias: {
-      "@images": path.resolve(__dirname, "../images"),
-      "@frontend": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"),
       "@backend": path.resolve(__dirname, "../backend"),
-      "@": path.resolve(__dirname, "../"),
+      "@images": path.resolve(__dirname, "./public/images"), // this includes images from the public directory
     },
     configure: (webpackConfig) => {
       // Allow importing files from outside src directory

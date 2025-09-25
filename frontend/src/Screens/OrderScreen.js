@@ -14,6 +14,7 @@ import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import "../STYLES/placeOrderScreen.css";
 import API_URL from "../config.js";
+import { getImageUrl } from "../utils.js";
 import { PayPalButton } from "react-paypal-button-v2";
 import {
   ORDER_PAY_RESET,
@@ -170,7 +171,7 @@ const OrderScreen = ({ match, history }) => {
                           <Row>
                             <Col md={2} sm={3} xs={3}>
                               <Image
-                                src={item.image}
+                                src={getImageUrl(item.image)}
                                 alt={item.name}
                                 fluid
                                 rounded

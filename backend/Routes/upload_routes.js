@@ -55,7 +55,7 @@ router.post("/", upload.single("image"), (req, res) => {
     return res.status(400).json({ error: "No file uploaded" });
   }
 
-  res.send(`/${req.file.filename}`); // /image-1624453584772.jpg
+  res.send(req.file.filename); // send only the image name "image-1624453584772.jpg", then append the backend url to get the full url from frontend
 });
 
 export default router;

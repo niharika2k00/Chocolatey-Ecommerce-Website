@@ -1,4 +1,8 @@
-// Import sample product and user data into the database
+// ------------------------------------------------------------------------------------------------
+// This file is used to import sample products and users data into the database
+// Note: The product images are uploaded to cloudinary and their links are stored in the database. Raw images are present in product_images directory.
+// ------------------------------------------------------------------------------------------------
+
 import mongoose from "mongoose";
 import userData from "./Data/users.js";
 import productData from "./Data/products.js";
@@ -11,7 +15,7 @@ import ConnectDB from "./config/DB.js";
 dotenv.config();
 ConnectDB();
 
-// async-await bcz we are fetching data frm the database so everything will RETURN A PROMISE
+// async-await bcz we are fetching data frm the database so everything will return a promise
 const importData = async () => {
   try {
     await Order.deleteMany();

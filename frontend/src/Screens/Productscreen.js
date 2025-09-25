@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Row,
-  Col,
-  Image,
-  ListGroup,
-  Card,
-  Button,
-  Form,
-  Dropdown,
-  DropdownButton,
-} from "react-bootstrap";
+import { Row, Col, ListGroup, Card, Button, Form } from "react-bootstrap";
 import Rating from "../Components/Rating.js";
 import "../index.css";
 import "../STYLES/product_style.css";
 import { useDispatch, useSelector } from "react-redux";
+import { getImageUrl } from "../utils.js";
 import {
   Detailsproducts,
   createProductReviewAction,
@@ -92,7 +83,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
         <>
           <Row className="topGap">
             <Col md={4} id="proimg" sm={12}>
-              <img src={product.image} fluid />
+              <img src={getImageUrl(product.image)} fluid />
             </Col>
 
             <Col md={5} sm={12} xs={12} className="colGap">

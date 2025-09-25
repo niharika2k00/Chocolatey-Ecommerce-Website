@@ -14,7 +14,7 @@ import { addToCart, removefromCart } from "../Actions/Cart_action.js";
 import "../STYLES/cart_style.css";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
-import API_URL from "../config.js";
+import { getImageUrl } from "../utils.js";
 
 const Cartscreen = ({ match, location, history, filling }) => {
   const dispatch = useDispatch();
@@ -71,7 +71,7 @@ const Cartscreen = ({ match, location, history, filling }) => {
                   <Row>
                     <Col md={2} sm={3} xs={3}>
                       <Image
-                        src={item.image}
+                        src={getImageUrl(item.image)}
                         alt={item.name}
                         fluid
                         rounded
