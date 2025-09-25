@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Mess from "../Components/Message.js";
-import Load from "../Components/Loading.js";
-import PROD from "../Components/Prod.js";
-import { Listproducts } from "../Actions/product_action.js";
+import Mess from "@/Components/Message.js";
+import Load from "@/Components/Loading.js";
+import PROD from "@/Components/Prod.js";
+import { Listproducts } from "@/Actions/Product_action.js";
 import { clone } from "ramda";
 
 const Homescreen = () => {
@@ -20,7 +20,7 @@ const Homescreen = () => {
 
   // const products = [];
 
-  // ---------------------------------           FILTER AND SORTING METHODS      -------------------------------
+  // ---------------------------------        FILTER AND SORTING METHODS      ------------------------------------
   const [currCartItems, setcurrCartItems] = useState([]); // data from redux
   const [activee, setActivee] = useState("");
 

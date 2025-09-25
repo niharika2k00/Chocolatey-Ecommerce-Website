@@ -21,13 +21,13 @@ import {
   PRODUCT_CREATE_REVIEW_FAIL,
   PRODUCT_CREATE_REVIEW_RESET,
 } from "../Constants/Product_constant.js";
-import backend_URL from "../backend_URL.js";
+import API_URL from "../config.js";
 
 // dispatch() is the method used to dispatch actions and trigger state changes to the store.
 export const Listproducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-    const { data } = await axios.get(`${backend_URL}/api/products`); // destructure - frm the prev homescreen
+    const { data } = await axios.get(`${API_URL}/api/products`); // destructure - frm the prev homescreen
     console.log("successafter");
 
     dispatch({
@@ -48,7 +48,7 @@ export const Listproducts = () => async (dispatch) => {
 export const Detailsproducts = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
-    const { data } = await axios.get(`${backend_URL}/api/products/${id}`); // returns obj{} from the backend
+    const { data } = await axios.get(`${API_URL}/api/products/${id}`); // returns obj{} from the backend
     console.log("successafter");
 
     dispatch({
@@ -82,7 +82,7 @@ export const deleteProductAction = (id) => async (dispatch, getState) => {
       },
     };
 
-    await axios.delete(`${backend_URL}/api/products/${id}`, config); // from user_controller backend
+    await axios.delete(`${API_URL}/api/products/${id}`, config); // from user_controller backend
 
     dispatch({ type: PRODUCT_DELETE_SUCCESS });
   } catch (error) {
@@ -111,11 +111,8 @@ export const createProductAction = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post(
-      `${backend_URL}/api/products`,
-      {},
-      config
-    ); // from user_controller backend
+    // now pointer goto product_routes backend to create a new product -> product_controller backend
+    const { data } = await axios.post(`${API_URL}/api/products`, {}, config);
 
     dispatch({
       type: PRODUCT_CREATE_SUCCESS,
@@ -147,11 +144,12 @@ export const updateProductAction = (product) => async (dispatch, getState) => {
       },
     };
 
+    // now goto product_routes backend to update a product -> product_controller
     const { data } = await axios.put(
-      `${backend_URL}/api/products/${product._id}`,
+      `${API_URL}/api/products/${product._id}`,
       product,
       config
-    ); // from user_controller backend
+    );
 
     dispatch({
       type: PRODUCT_UPDATE_SUCCESS,
@@ -185,7 +183,7 @@ export const createProductReviewAction =
       };
 
       await axios.post(
-        `${backend_URL}/api/products/${productId}/reviews`,
+        `${API_URL}/api/products/${productId}/reviews`,
         reviewObj,
         config
       );

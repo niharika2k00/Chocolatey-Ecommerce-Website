@@ -14,7 +14,7 @@ import { addToCart, removefromCart } from "../Actions/Cart_action.js";
 import "../STYLES/cart_style.css";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
-import backend_URL from "../backend_URL.js";
+import API_URL from "../config.js";
 
 const Cartscreen = ({ match, location, history, filling }) => {
   const dispatch = useDispatch();

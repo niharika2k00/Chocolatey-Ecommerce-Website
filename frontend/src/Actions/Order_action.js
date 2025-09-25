@@ -22,7 +22,7 @@ import {
   ORDER_DELIVER_FAIL,
   ORDER_DELIVER_RESET,
 } from "../Constants/Order_constant.js";
-import backend_URL from "../backend_URL.js";
+import API_URL from "../config.js";
 
 export const Create_OrderAction = (Order) => async (dispatch, getState) => {
   try {
@@ -41,11 +41,7 @@ export const Create_OrderAction = (Order) => async (dispatch, getState) => {
     console.log(Order);
 
     // axios.post(URL , DATA that we want to send back to the server , config)
-    const { data } = await axios.post(
-      `${backend_URL}/api/orders`,
-      Order,
-      config
-    ); // from user_controller backend
+    const { data } = await axios.post(`${API_URL}/api/orders`, Order, config); // from user_controller backend
     console.log(data);
 
     dispatch({
@@ -76,7 +72,7 @@ export const GetOrderDetails_ByID = (ID) => async (dispatch, getState) => {
     };
 
     // axios.post(URL , DATA that we want to send back to the server , config)
-    const { data } = await axios.get(`${backend_URL}/api/orders/${ID}`, config); // from user_controller backend
+    const { data } = await axios.get(`${API_URL}/api/orders/${ID}`, config); // from user_controller backend
     console.log(data); // Payload Object Printing
 
     dispatch({
@@ -112,7 +108,7 @@ export const OrderPay_Action =
       };
 
       const { data } = await axios.put(
-        `${backend_URL}/api/orders/${ORDER_ID}/pay`,
+        `${API_URL}/api/orders/${ORDER_ID}/pay`,
         paymentResult,
         config
       ); // from user_controller backend
@@ -148,7 +144,7 @@ export const OrderDeliver_Action = (ORDER) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `${backend_URL}/api/orders/${ORDER._id}/deliver`,
+      `${API_URL}/api/orders/${ORDER._id}/deliver`,
       {},
       config
     ); // from user_controller backend
@@ -179,10 +175,7 @@ export const OrderMyAll_Action = () => async (dispatch, getState) => {
       headers: { Authorization: ` Bearer ${UserInfo.token}` },
     };
 
-    const { data } = await axios.get(
-      `${backend_URL}/api/orders/myorders`,
-      config
-    ); // from user_controller backend
+    const { data } = await axios.get(`${API_URL}/api/orders/myorders`, config); // from user_controller backend
     console.log(data); //  [{} {} {} {}]
 
     dispatch({
@@ -210,7 +203,7 @@ export const Order_All_Action = () => async (dispatch, getState) => {
       headers: { Authorization: ` Bearer ${UserInfo.token}` },
     };
 
-    const { data } = await axios.get(`${backend_URL}/api/orders`, config); // from user_controller backend
+    const { data } = await axios.get(`${API_URL}/api/orders`, config); // from user_controller backend
     console.log(data); //  [{} {} {} {}]
 
     dispatch({

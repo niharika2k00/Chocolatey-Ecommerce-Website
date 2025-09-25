@@ -13,7 +13,7 @@ import { clearCart } from "../Actions/Cart_action.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import "../STYLES/placeOrderScreen.css";
-import backend_URL from "../backend_URL.js";
+import API_URL from "../config.js";
 import { PayPalButton } from "react-paypal-button-v2";
 import {
   ORDER_PAY_RESET,
@@ -58,7 +58,7 @@ const OrderScreen = ({ match, history }) => {
     else {
       const addPayPalScript = async () => {
         const { data: clientID } = await axios.get(
-          `${backend_URL}/api/config/paypal`
+          `${API_URL}/api/config/paypal`
         );
         console.log("CLIENT-ID = ", clientID);
         const script = document.createElement("script");

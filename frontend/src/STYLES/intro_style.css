@@ -204,7 +204,7 @@ html {
 
 .parallax {
   background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../../images/parallax1.jpg") fixed center center;
+    url("@images/parallax1.jpg") fixed center center;
   background-size: cover;
   padding: 100px 0;
   /* width of the parallax */

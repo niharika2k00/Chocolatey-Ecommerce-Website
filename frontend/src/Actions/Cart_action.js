@@ -6,11 +6,11 @@ import {
   CART_SAVE_SHIPPING_ADDRESS,
   CART_CLEAR_ITEMS,
 } from "../Constants/Cart_constant.js";
-import backend_URL from "../backend_URL.js";
+import API_URL from "../config.js";
 
 // (productID, QTY) <---- passed from the CartScreen as props
 export const addToCart = (id, qty, filling) => async (dispatch, getState) => {
-  const { data } = await axios.get(`${backend_URL}/api/products/${id}`); // Item OBJ {}  added jst now to the cart
+  const { data } = await axios.get(`${API_URL}/api/products/${id}`); // Item OBJ {}  added jst now to the cart
   // console.log(data)
 
   // ACTION PART---- dispatch

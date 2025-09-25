@@ -9,7 +9,7 @@ import {
   Listproducts,
   deleteProductAction,
   createProductAction,
-} from "../Actions/product_action.js";
+} from "@/Actions/Product_action.js";
 import { PRODUCT_CREATE_RESET } from "../Constants/Product_constant.js";
 
 const ProductsListScreen = ({ history }) => {

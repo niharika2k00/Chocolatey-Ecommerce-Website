@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   Detailsproducts,
   createProductReviewAction,
-} from "../Actions/product_action.js";
+} from "@/Actions/Product_action.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../Constants/Product_constant.js";
