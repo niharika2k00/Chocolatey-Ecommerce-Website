@@ -24,7 +24,6 @@ import {
   USER_UPDATE_REQUEST,
   USER_UPDATE_SUCCESS,
   USER_UPDATE_FAIL,
-  USER_UPDATE_RESET,
 } from "../Constants/User_constant.js";
 import { ORDER_ALL_MY_RESET } from "../Constants/Order_constant.js";
 import API_URL from "../config.js";

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Container } from "react-bootstrap";
 import "./index.css";
 import NAVIGATION_BAR from "./Components/Header.js";
 import FOOT from "./Components/Footer.js";

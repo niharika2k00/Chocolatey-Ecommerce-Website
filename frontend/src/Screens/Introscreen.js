@@ -5,7 +5,7 @@ import "../STYLES/intro_style.css";
 // Import css files for Carousal
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 // Images
 import carousel1 from "@images/carousel1.avif";
@@ -13,8 +13,8 @@ import carousel2 from "@images/carousel2.avif";
 import carousel3 from "@images/carousel3.avif";
 import carousel4 from "@images/carousel4.avif";
 
-import gifts from "@images/gifts.jfif";
-import party from "@images/party.jfif";
+// import gifts from "@images/gifts.jfif";
+// import party from "@images/party.jfif";
 
 import choco1 from "@images/choco1.png";
 import choco2 from "@images/choco2.png";

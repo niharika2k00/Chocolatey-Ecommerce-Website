@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Row,
@@ -13,7 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removefromCart } from "../Actions/Cart_action.js";
 import "../STYLES/cart_style.css";
 import Mess from "../Components/Message.js";
-import Load from "../Components/Loading.js";
 import { getImageUrl } from "../utils.js";
 
 const Cartscreen = ({ match, location, history, filling }) => {

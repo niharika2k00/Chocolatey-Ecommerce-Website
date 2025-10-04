@@ -1,23 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import Store from './store.js';
-import './bootstrap.min.css';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import Store from "./store.js";
+import "./bootstrap.min.css";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <Provider store={Store} >
+  <Provider store={Store}>
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
+    </React.StrictMode>
+    ,
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 reportWebVitals();
-
-// ROUTER :  npm i react-router-dom react-router-bootstrap  
-// REACT : npx create-react-app lool --template cra-template-pwa

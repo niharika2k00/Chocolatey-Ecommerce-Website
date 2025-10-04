@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
+import { Button, Row, Col, ListGroup, Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import CheckoutSteps from "../Components/CheckoutSteps.js";
 import { Create_OrderAction } from "../Actions/Order_action.js";
 import { clearCart } from "../Actions/Cart_action.js";
 import Mess from "../Components/Message.js";
-import Load from "../Components/Loading.js";
 import "../STYLES/placeOrderScreen.css";
 import { getImageUrl } from "../utils.js";
 

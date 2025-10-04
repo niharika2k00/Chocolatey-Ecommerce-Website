@@ -1,14 +1,6 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
-import {
-  Container,
-  Nav,
-  Navbar,
-  Button,
-  Form,
-  FormControl,
-  NavDropdown,
-} from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { LogOUT } from "../Actions/User_action.js";
 import { useHistory } from "react-router-dom";
@@ -39,6 +31,7 @@ const Header = () => {
               Chocolatey{" "}
               <img
                 src="./chocolate.png"
+                alt="logo"
                 style={{ width: "36px", height: "36px", marginLeft: "8px" }}
               />
             </Navbar.Brand>
