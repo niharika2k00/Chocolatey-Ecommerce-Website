@@ -5,7 +5,7 @@ import "../index.css";
 import "../STYLES/Loginform.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { LogIN } from "../Actions/User_action.js";
-import Loginform_Container from "../Components/Loginform_Container.js";
+import FormContainer from "../Components/FormContainer.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 
@@ -30,7 +30,7 @@ const LoginScreen = ({ location, history }) => {
   };
 
   return (
-    <Loginform_Container>
+    <FormContainer>
       <h1 className="cartHead" style={{ paddingBottom: "2.3rem" }}>
         Login
       </h1>
@@ -88,7 +88,7 @@ const LoginScreen = ({ location, history }) => {
           </Link>
         </Col>
       </Row>
-    </Loginform_Container>
+    </FormContainer>
   );
 };
 

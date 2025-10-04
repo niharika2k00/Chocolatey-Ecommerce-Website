@@ -4,7 +4,7 @@ import "../index.css";
 import "../STYLES/Loginform.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { SaveShippingAddress } from "../Actions/Cart_action.js";
-import Loginform_Container from "../Components/Loginform_Container.js";
+import FormContainer from "../Components/FormContainer.js";
 import CheckoutSteps from "../Components/CheckoutSteps.js";
 
 const ShippingScreen = ({ history }) => {
@@ -28,7 +28,7 @@ const ShippingScreen = ({ history }) => {
 
   return (
     <div>
-      <Loginform_Container>
+      <FormContainer>
         <CheckoutSteps step1 step2 />
         <h1 className="cartHead" style={{ paddingBottom: "1.8rem" }}>
           Shipping
@@ -99,7 +99,7 @@ const ShippingScreen = ({ history }) => {
             <div style={{ fontSize: "16px" }}>Continue..</div>
           </Button>
         </Form>
-      </Loginform_Container>
+      </FormContainer>
     </div>
   );
 };

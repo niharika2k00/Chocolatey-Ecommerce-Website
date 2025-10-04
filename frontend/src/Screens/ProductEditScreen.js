@@ -8,7 +8,7 @@ import {
   Detailsproducts,
   updateProductAction,
 } from "@/Actions/Product_action.js";
-import Loginform_Container from "../Components/Loginform_Container.js";
+import FormContainer from "../Components/FormContainer.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import { PRODUCT_UPDATE_RESET } from "../Constants/Product_constant.js";
@@ -121,7 +121,7 @@ const UserEditScreen = ({ history, match }) => {
         <i className="arrow left"></i> GO BACK{" "}
       </Link>
 
-      <Loginform_Container>
+      <FormContainer>
         <h1 className="cartHead" style={{ paddingBottom: "2.1rem" }}>
           Edit Product
         </h1>
@@ -260,7 +260,7 @@ const UserEditScreen = ({ history, match }) => {
             </Button>
           </Form>
         )}
-      </Loginform_Container>
+      </FormContainer>
     </>
   );
 };

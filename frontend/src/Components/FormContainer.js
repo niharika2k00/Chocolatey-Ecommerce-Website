@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../STYLES/Loginform.scss";
 
-const Loginform_Container = ({ children }) => {
+const FormContainer = ({ children }) => {
   return (
     <div>
       <Container>
@@ -16,4 +16,4 @@ const Loginform_Container = ({ children }) => {
   );
 };
 
-export default Loginform_Container;
+export default FormContainer;

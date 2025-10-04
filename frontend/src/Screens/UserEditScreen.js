@@ -5,7 +5,7 @@ import "../index.css";
 import "../STYLES/Loginform.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails, userUpdateAction } from "../Actions/User_action.js";
-import Loginform_Container from "../Components/Loginform_Container.js";
+import FormContainer from "../Components/FormContainer.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import { USER_UPDATE_RESET } from "../Constants/User_constant.js";
@@ -70,7 +70,7 @@ const UserEditScreen = ({ history, match }) => {
         <i className="arrow left"></i> GO BACK{" "}
       </Link>
 
-      <Loginform_Container>
+      <FormContainer>
         <h1 className="cartHead" style={{ paddingBottom: "2.1rem" }}>
           Edit User
         </h1>
@@ -125,7 +125,7 @@ const UserEditScreen = ({ history, match }) => {
             </Button>
           </Form>
         )}
-      </Loginform_Container>
+      </FormContainer>
     </>
   );
 };

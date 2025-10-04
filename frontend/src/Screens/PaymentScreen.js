@@ -4,7 +4,7 @@ import "../index.css";
 import "../STYLES/Loginform.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { SavePaymentMethod } from "../Actions/Cart_action.js";
-import Loginform_Container from "../Components/Loginform_Container.js";
+import FormContainer from "../Components/FormContainer.js";
 import CheckoutSteps from "../Components/CheckoutSteps.js";
 
 const PaymentScreen = ({ history }) => {
@@ -25,7 +25,7 @@ const PaymentScreen = ({ history }) => {
   };
 
   return (
-    <Loginform_Container>
+    <FormContainer>
       <CheckoutSteps step1 step2 step3 />
       <h1 className="cartHead" style={{ paddingBottom: "1.5rem" }}>
         Payment Method
@@ -84,7 +84,7 @@ const PaymentScreen = ({ history }) => {
           <div style={{ fontSize: "16px" }}>Continue..</div>
         </Button>
       </Form>
-    </Loginform_Container>
+    </FormContainer>
   );
 };
 
