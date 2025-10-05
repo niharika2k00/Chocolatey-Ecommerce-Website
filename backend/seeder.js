@@ -1,6 +1,6 @@
 // ------------------------------------------------------------------------------------------------
 // This file is used to import sample products and users data into the database
-// Note: The product images are uploaded to cloudinary and their links are stored in the database. Raw images are present in product_images directory.
+// Note: The product images are uploaded to cloudinary and their links are stored in the database. Raw images are present inside product_images directory.
 // ------------------------------------------------------------------------------------------------
 
 import mongoose from "mongoose";
@@ -16,6 +16,7 @@ dotenv.config();
 ConnectDB();
 
 // async-await bcz we are fetching data frm the database so everything will return a promise
+// Import users and products data
 const importData = async () => {
   try {
     await Order.deleteMany();
@@ -38,15 +39,14 @@ const importData = async () => {
   }
 };
 
-// Delete All
+// Delete all users and products data
 const destroyData = async () => {
-  // async bcz it we are fetching data frm the database so everything returns a promise
   try {
     await Order.deleteMany();
     await Product.deleteMany();
     await User.deleteMany();
 
-    console.log("DATA DESTROYED !!".red.inverse);
+    console.log("Data destroyed successfully !!".red.inverse);
     process.exit();
   } catch (error) {
     console.error(`${error}`.red.inverse);

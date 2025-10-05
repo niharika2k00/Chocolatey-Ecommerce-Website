@@ -1,12 +1,9 @@
 import mongoose from "mongoose";
+import colors from "colors";
 
-// ConnectDB is an object/function
 const ConnectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-    });
+    const conn = await mongoose.connect(process.env.MONGODB_URI);
     console.log(
       `MongoDB Connected : ${conn.connection.host}`.white.underline.bold
     );
