@@ -104,8 +104,8 @@ const Homescreen = () => {
           <div className="text-center">
             <h2>Featured Chocolates Products</h2>
             <p>
-              <i className="fas fa-candy-cane px-2"></i>Delight in Every Bite.
-              Lets Chocolate makes your day ........{" "}
+              <i className="fas fa-candy-cane px-2"></i>Taste the Magic, Feel
+              the Love — Crafted for your Sweetest Cravings...
             </p>
             <a className="parallax2-btn" href="/cart">
               SHOP

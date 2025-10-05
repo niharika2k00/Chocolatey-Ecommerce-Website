@@ -12,9 +12,9 @@ const Header = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const Logout_Handler = () => {
-    console.log("LOGOUT");
+  const LogoutHandler = () => {
     dispatch(LogOUT());
+    history.push("/"); // Redirect to home page after logout
   };
 
   return (
@@ -44,7 +44,6 @@ const Header = () => {
                   <i className="fas fa-store"></i> Products
                 </Nav.Link>
               </LinkContainer>
-
               {/*CREATED LATER AFTER THE LOGIN PART(frontend + backend)*/}
               {UserInfo ? (
                 <NavDropdown
@@ -56,19 +55,17 @@ const Header = () => {
                     <NavDropdown.Item> Profile </NavDropdown.Item>
                   </LinkContainer>
 
-                  <NavDropdown.Item onClick={Logout_Handler}>
+                  <NavDropdown.Item onClick={LogoutHandler}>
                     Logout
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to="/login" style={{ paddingRight: "1rem" }}>
                   <Nav.Link className="navBig">
-                    {" "}
-                    Sign In <i className="far fa-user"></i>
+                    Login <i className="far fa-user" />
                   </Nav.Link>
                 </LinkContainer>
               )}
-
               {/* THIS DROPDOWN IS ONLY VISIBLE WHEN THE USER IS AN ADMIN */}
               {UserInfo && UserInfo.isAdmin && (
                 <NavDropdown title="Admin" id="adminMenu" className="navBig">
@@ -86,17 +83,12 @@ const Header = () => {
                 </NavDropdown>
               )}
 
-              <div
-                onClick={() => history.push("/cart")}
-                style={{
-                  color: "white",
-                  fontSize: "1.2rem",
-                  marginTop: ".5rem",
-                  fontWeight: "500",
-                }}
-              >
-                Cart <i class="fas fa-cart-arrow-down"></i>
-              </div>
+              {/* onClick={() => history.push("/cart")} */}
+              <LinkContainer to="/cart" style={{ paddingRight: "1rem" }}>
+                <Nav.Link className="navBig">
+                  Cart <i className="fas fa-cart-arrow-down"></i>
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
