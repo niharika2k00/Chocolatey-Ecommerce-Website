@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import "../index.css";
 import "../STYLES/Loginform.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { SaveShippingAddress } from "../Actions/Cart_action.js";
 import FormContainer from "../Components/FormContainer.js";
 import CheckoutSteps from "../Components/CheckoutSteps.js";
+import CustomButton from "../Components/CustomButton.js";
 
 const ShippingScreen = ({ history }) => {
   const CART = useSelector((state) => state.CART);
@@ -35,7 +36,7 @@ const ShippingScreen = ({ history }) => {
         </h1>
 
         <Form onSubmit={submitHandler} id="login_form">
-          <Form.Group controlId="address">
+          <Form.Group controlId="address" style={{ marginBottom: "1.4rem" }}>
             <Form.Label>
               <b>Address</b>
             </Form.Label>
@@ -48,7 +49,7 @@ const ShippingScreen = ({ history }) => {
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId="city">
+          <Form.Group controlId="city" style={{ marginBottom: "1.4rem" }}>
             <Form.Label>
               <b>City</b>
             </Form.Label>
@@ -61,7 +62,7 @@ const ShippingScreen = ({ history }) => {
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId="postalcode">
+          <Form.Group controlId="postalcode" style={{ marginBottom: "1.4rem" }}>
             <Form.Label>
               <b>Postal Code</b>
             </Form.Label>
@@ -87,17 +88,7 @@ const ShippingScreen = ({ history }) => {
             ></Form.Control>
           </Form.Group>
 
-          <Button
-            type="submit"
-            style={{
-              marginTop: "1.6rem",
-              marginBottom: "3.2rem",
-              borderRadius: "1rem",
-            }}
-            className="customButton neonBtn "
-          >
-            <div style={{ fontSize: "16px" }}>Continue..</div>
-          </Button>
+          <CustomButton type="submit">Continue...</CustomButton>
         </Form>
       </FormContainer>
     </div>

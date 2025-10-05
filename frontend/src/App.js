@@ -18,7 +18,7 @@ import USERS_LIST from "./Screens/UsersListScreen.js";
 import USER_EDIT from "./Screens/UserEditScreen.js";
 import PRODUCTS_LIST from "./Screens/ProductsListScreen.js";
 import PRODUCT_EDIT from "./Screens/ProductEditScreen.js";
-import ORDERS_LIST from "./Screens/Orders_ListScreen.jsx";
+import ORDERS_LIST from "./Screens/OrdersListScreen.js";
 
 function App() {
   const [filling, setFilling] = useState("None");
@@ -27,7 +27,7 @@ function App() {
     <Router>
       <div style={{ backgroundColor: "#1b1a1a" }}>
         {" "}
-        {/* bc3908   for cards backgrnd  */}
+        {/* bc3908   for cards background  */}
         <NAVIGATION_BAR />
         <main>
           <div className="self_containerFull">

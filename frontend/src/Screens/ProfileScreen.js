@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Button, Table, Form } from "react-bootstrap";
+import { Row, Col, Table, Form } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "../index.css";
 import "../STYLES/Loginform.scss";
@@ -9,6 +9,7 @@ import { getUserDetails, UserUpdateProfile } from "../Actions/User_action.js";
 import { OrderMyAll_Action } from "../Actions/Order_action.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
+import CustomButton from "../Components/CustomButton.js";
 
 const LoginScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -53,7 +54,7 @@ const LoginScreen = ({ history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (password != confirmpass) setMsg("Password doesn't match!");
+    if (password !== confirmpass) setMsg("Password doesn't match!");
     else {
       //DISPATCH Updated PROFILE
       dispatch(UserUpdateProfile({ id: USER._id, name, email, password }));
@@ -62,7 +63,7 @@ const LoginScreen = ({ history }) => {
 
   return (
     <Row>
-      <Col md={4} xs={12} sm={12}>
+      <Col md={4} sm={12} xs={12}>
         <h1 className="cartHead headingGap">Profile</h1>
 
         {msg && <Mess variant="danger">{msg}</Mess>}
@@ -75,45 +76,54 @@ const LoginScreen = ({ history }) => {
           id="login_form"
           style={{ paddingBottom: "2rem" }}
         >
-          <Form.Group controlId="name">
+          <Form.Group controlId="name" style={{ marginBottom: "1.4rem" }}>
             <Form.Label>
               <i className="far fa-user profileIcon"></i> <b>Name</b>
             </Form.Label>
-            <Form.Control
-              className="form_box boxLength"
-              type="name"
-              placeholder=" name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            ></Form.Control>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Form.Control
+                className="form_box boxLength"
+                type="name"
+                placeholder=" name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                style={{ maxWidth: "400px" }}
+              ></Form.Control>
+            </div>
           </Form.Group>
 
-          <Form.Group controlId="email">
+          <Form.Group controlId="email" style={{ marginBottom: "1.4rem" }}>
             <Form.Label>
               <i className="fas fa-envelope profileIcon"></i>{" "}
               <b>Email Address</b>
             </Form.Label>
-            <Form.Control
-              className="form_box boxLength"
-              type="email"
-              placeholder=" email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></Form.Control>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Form.Control
+                className="form_box boxLength"
+                type="email"
+                placeholder=" email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                style={{ maxWidth: "400px" }}
+              ></Form.Control>
+            </div>
           </Form.Group>
 
-          <Form.Group controlId="password">
+          <Form.Group controlId="password" style={{ marginBottom: "1.4rem" }}>
             <Form.Label>
               {" "}
               <i className="fas fa-lock profileIcon"></i> <b>Password</b>
             </Form.Label>
-            <Form.Control
-              className="form_box boxLength "
-              type="password"
-              placeholder=" password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></Form.Control>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Form.Control
+                className="form_box boxLength "
+                type="password"
+                placeholder=" password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                style={{ maxWidth: "400px" }}
+              ></Form.Control>
+            </div>
           </Form.Group>
 
           <Form.Group controlId="confirmpassword">
@@ -122,31 +132,28 @@ const LoginScreen = ({ history }) => {
               <i className="far fa-check-circle profileIcon"></i>{" "}
               <b>Confirm Password</b>
             </Form.Label>
-            <Form.Control
-              className="form_box boxLength"
-              type="password"
-              placeholder="confirm password"
-              value={confirmpass}
-              onChange={(e) => setConfirmpass(e.target.value)}
-            ></Form.Control>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Form.Control
+                className="form_box boxLength"
+                type="password"
+                placeholder="confirm password"
+                value={confirmpass}
+                onChange={(e) => setConfirmpass(e.target.value)}
+                style={{ maxWidth: "400px" }}
+              ></Form.Control>
+            </div>
           </Form.Group>
 
-          <Button
-            type="submit"
-            style={{
-              marginTop: "1.6rem",
-              marginBottom: "3.2rem",
-              borderRadius: "1rem",
-            }}
-            className="customButton neonBtn "
-          >
-            <div style={{ fontSize: "16px" }}>Update</div>
-          </Button>
+          <div style={{ textAlign: "center" }}>
+            <CustomButton type="submit" style={{ width: "40%" }}>
+              Update
+            </CustomButton>
+          </div>
         </Form>
       </Col>
 
-      <Col md={8} xs={12} sm={11}>
-        <h1 className="cartHead headingGap">My Orders</h1>
+      <Col md={8} sm={11} xs={12}>
+        <h1 className="cartHead headingGap"> My Orders </h1>
         {loadingAllMyOrders ? (
           <Load />
         ) : errorOfMyOrders ? (
@@ -163,9 +170,11 @@ const LoginScreen = ({ history }) => {
                 <th></th>
               </tr>
             </thead>
+
             <tbody>
-              {/*        allMyOrders --------->   [{} , {},  {} ] array of objects    */}
-              {allMyOrders &&
+              {/* allMyOrders -> [{} , {}, {} ] array of objects */}
+              {allMyOrders !== undefined &&
+                allMyOrders.length > 0 &&
                 allMyOrders.map((odr) => (
                   <tr key={odr._id}>
                     <td>{odr._id}</td>
@@ -175,37 +184,34 @@ const LoginScreen = ({ history }) => {
                       {odr.isPaid && odr.isPaid ? (
                         odr.paid_at.substring(0, 10)
                       ) : (
-                        <i
-                          className="fas fa-times"
-                          style={{ color: "red" }}
-                        ></i>
+                        <div style={{ textAlign: "center" }}>
+                          <i
+                            className="fas fa-times"
+                            style={{ color: "red" }}
+                          ></i>
+                        </div>
                       )}
                     </td>
                     <td>
                       {odr.isDelivered ? (
-                        odr.Delivered_at.substring(0, 10)
+                        odr.delivered_at.substring(0, 10)
                       ) : (
-                        <i
-                          className="fas fa-times"
-                          style={{ color: "red" }}
-                        ></i>
+                        <div style={{ textAlign: "center" }}>
+                          <i
+                            className="fas fa-times"
+                            style={{ color: "red" }}
+                          ></i>
+                        </div>
                       )}
                     </td>
-                    <td>
+                    <td style={{ textAlign: "center" }}>
                       <LinkContainer to={`/order/${odr._id}`}>
-                        {/* <Button className='btn-sm' variant='success'>
-                                                Details
-                                            </Button> */}
-                        <Button
-                          style={{
-                            marginTop: "1.6rem",
-                            marginBottom: "3.0rem",
-                            borderRadius: "10rem",
-                          }}
+                        <CustomButton
                           className="customButton neonBtn"
+                          isTableButton={true}
                         >
-                          <div style={{ fontSize: "14px" }}>Details</div>
-                        </Button>
+                          Details
+                        </CustomButton>
                       </LinkContainer>
                     </td>
                   </tr>

@@ -197,11 +197,11 @@ export const Order_All_Action = () => async (dispatch, getState) => {
       user_Login: { UserInfo },
     } = getState();
     const config = {
-      headers: { Authorization: ` Bearer ${UserInfo.token}` },
+      headers: { Authorization: `Bearer ${UserInfo.token}` },
     };
 
     const { data } = await axios.get(`${API_URL}/api/orders`, config); // from user_controller backend
-    console.log(data); //  [{} {} {} {}]
+    console.log("all orders:", data); // [{} {} {} {}]
 
     dispatch({
       type: ORDERS_SUCCESS,

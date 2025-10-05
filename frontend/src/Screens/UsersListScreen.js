@@ -64,7 +64,7 @@ const UsersListScreen = ({ history }) => {
                   {" "}
                   <a href={`mailto:${user.email}`}>{user.email}</a>{" "}
                 </td>
-                <td>
+                <td style={{ textAlign: "center" }}>
                   {user.isAdmin ? (
                     <i
                       className="fas fa-check"
@@ -77,7 +77,7 @@ const UsersListScreen = ({ history }) => {
                     ></i>
                   )}
                 </td>
-                <td>
+                <td style={{ textAlign: "center" }}>
                   <LinkContainer to={`/admin/user/${user._id}/edit`}>
                     <Button variant="light" className="btn-sm">
                       <i className="fas fa-edit"></i>

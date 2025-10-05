@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Button, Form, Col } from "react-bootstrap";
+import { Form, Col } from "react-bootstrap";
 import "../index.css";
 import "../STYLES/Loginform.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { SavePaymentMethod } from "../Actions/Cart_action.js";
 import FormContainer from "../Components/FormContainer.js";
 import CheckoutSteps from "../Components/CheckoutSteps.js";
+import CustomButton from "../Components/CustomButton.js";
 
 const PaymentScreen = ({ history }) => {
   const CART = useSelector((state) => state.CART);
@@ -36,6 +37,7 @@ const PaymentScreen = ({ history }) => {
           <Form.Label as="h2" className="paymentSub">
             Select Method
           </Form.Label>
+
           <Col>
             <Form.Check
               className="paymentSub1"
@@ -72,17 +74,7 @@ const PaymentScreen = ({ history }) => {
           </Col>
         </Form.Group>
 
-        <Button
-          type="submit"
-          style={{
-            marginTop: "1.6rem",
-            marginBottom: "3.2rem",
-            borderRadius: "1rem",
-          }}
-          className="customButton neonBtn "
-        >
-          <div style={{ fontSize: "16px" }}>Continue..</div>
-        </Button>
+        <CustomButton type="submit">Continue..</CustomButton>
       </Form>
     </FormContainer>
   );

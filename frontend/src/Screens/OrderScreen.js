@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
+import { Button, Row, Col, ListGroup, Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   GetOrderDetails_ByID,
@@ -133,8 +133,7 @@ const OrderScreen = ({ match, history }) => {
                   </p>
                   {Order.isDelivered ? (
                     <Mess variant="success">
-                      {" "}
-                      Delivered At {Order.Delivered_at}{" "}
+                      Delivered At {Order.delivered_at}
                     </Mess>
                   ) : (
                     <Mess variant="danger"> Not Delivered </Mess>

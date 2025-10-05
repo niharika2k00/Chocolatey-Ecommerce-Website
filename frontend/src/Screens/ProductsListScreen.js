@@ -69,7 +69,7 @@ const ProductsListScreen = ({ history }) => {
   return (
     <div>
       <Row>
-        <Col>
+        <Col lg={10} md={10} sm={8} xs={6}>
           <h1
             className="cartHead text-center"
             style={{ paddingBottom: "2rem" }}
@@ -81,9 +81,7 @@ const ProductsListScreen = ({ history }) => {
         <Col className="text-right">
           <button className="custom-btn btn-6" onClick={createNewProduct}>
             <span>
-              {" "}
-              <i className="fas fa-plus"></i>
-              Create Product
+              <i className="fas fa-plus"></i> Create Product
             </span>
           </button>
         </Col>
@@ -124,7 +122,7 @@ const ProductsListScreen = ({ history }) => {
                 <td> {item.brand} </td>
                 <td> {item.topic} </td>
                 <td> {item.catagory} </td>
-                <td>
+                <td style={{ textAlign: "center" }}>
                   <LinkContainer to={`/admin/product/${item._id}/edit`}>
                     <Button variant="light" className="btn-sm">
                       <i className="fas fa-edit"></i>

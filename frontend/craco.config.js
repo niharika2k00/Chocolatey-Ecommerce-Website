@@ -15,4 +15,13 @@ module.exports = {
       return webpackConfig;
     },
   },
+  style: {
+    postcss: {
+      plugins: [
+        require("autoprefixer")({
+          ignoreUnknownVersions: true,
+        }),
+      ],
+    },
+  },
 };

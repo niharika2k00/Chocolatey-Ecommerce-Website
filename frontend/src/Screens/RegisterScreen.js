@@ -44,7 +44,7 @@ const LoginScreen = ({ location, history }) => {
       {loading && <Load />}
 
       <Form onSubmit={submitHandler} id="login_form">
-        <Form.Group controlId="name" style={{ marginBottom: "2rem" }}>
+        <Form.Group controlId="name" style={{ marginBottom: "1.4rem" }}>
           <Form.Label>
             {" "}
             <i className="far fa-user profileIcon"></i> <b>Name</b>
@@ -58,7 +58,7 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="email" style={{ marginBottom: "2rem" }}>
+        <Form.Group controlId="email" style={{ marginBottom: "1.4rem" }}>
           <Form.Label>
             <i className="fas fa-envelope profileIcon"></i> <b>Email Address</b>
           </Form.Label>
@@ -71,7 +71,7 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId="password" style={{ marginBottom: "2rem" }}>
+        <Form.Group controlId="password" style={{ marginBottom: "1.4rem" }}>
           <Form.Label>
             {" "}
             <i className="fas fa-lock profileIcon"></i> <b>Password</b>
@@ -102,10 +102,9 @@ const LoginScreen = ({ location, history }) => {
         <div style={{ textAlign: "center" }}>
           <Button
             type="submit"
-            variant="danger"
+            variant="success"
             style={{
               marginTop: "1.6rem",
-              marginBottom: "1rem",
               borderRadius: ".3rem",
               width: "50%",
             }}

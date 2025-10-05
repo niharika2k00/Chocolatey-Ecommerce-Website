@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import "../index.css";
 import "../STYLES/Loginform.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,7 @@ import FormContainer from "../Components/FormContainer.js";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import { USER_UPDATE_RESET } from "../Constants/User_constant.js";
+import CustomButton from "../Components/CustomButton.js";
 
 const UserEditScreen = ({ history, match }) => {
   // Id of the specific USER
@@ -85,7 +86,7 @@ const UserEditScreen = ({ history, match }) => {
           <Mess variant="danger">{error}</Mess>
         ) : (
           <Form onSubmit={submitHandler} id="login_form">
-            <Form.Group controlId="name">
+            <Form.Group controlId="name" style={{ marginBottom: "2rem" }}>
               <Form.Label>
                 <b>Name</b>
               </Form.Label>
@@ -98,7 +99,7 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="email">
+            <Form.Group controlId="email" style={{ marginBottom: "2rem" }}>
               <Form.Label>
                 <b>Email Address</b>
               </Form.Label>
@@ -120,9 +121,11 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Check>
             </Form.Group>
 
-            <Button type="submit" variant="success">
-              <b style={{ fontSize: "16px" }}>Edit</b>
-            </Button>
+            <div style={{ textAlign: "center" }}>
+              <CustomButton type="submit" style={{ width: "40%" }}>
+                <span style={{ fontSize: "16px" }}> Update </span>
+              </CustomButton>
+            </div>
           </Form>
         )}
       </FormContainer>
