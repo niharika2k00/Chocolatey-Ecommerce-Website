@@ -7,7 +7,7 @@ const products = [
     brand: "Galaxy",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 3.5,
     numReviews: 0,
     price: 100,
@@ -24,7 +24,7 @@ const products = [
     brand: "Apple",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 4.0,
     numReviews: 0,
     price: 240,
@@ -41,7 +41,7 @@ const products = [
     brand: "Lattee",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 4,
     numReviews: 0,
     price: 350,
@@ -58,7 +58,7 @@ const products = [
     brand: "Nutilics",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 5,
     numReviews: 0,
     price: 150,
@@ -75,7 +75,7 @@ const products = [
     brand: "Bournville",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 3.5,
     numReviews: 0,
     price: 200,
@@ -92,7 +92,7 @@ const products = [
     brand: "Lattee",
     catagory: "Cup Cakes",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 3,
     numReviews: 0,
     price: 80,
@@ -109,7 +109,7 @@ const products = [
     brand: "Gifty",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 4,
     numReviews: 0,
     price: 690,
@@ -126,7 +126,7 @@ const products = [
     brand: "Ferrero Rocher",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 2.5,
     numReviews: 0,
     price: 210,
@@ -143,7 +143,7 @@ const products = [
     brand: "Amul",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 4,
     numReviews: 0,
     price: 120,
@@ -160,7 +160,7 @@ const products = [
     brand: "Lattee",
     catagory: "Cup Cakes",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 4.5,
     numReviews: 0,
     price: 150,
@@ -177,7 +177,7 @@ const products = [
     brand: "Fantasy World",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 2.5,
     numReviews: 0,
     price: 320,
@@ -194,7 +194,7 @@ const products = [
     brand: "Bournville",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 2,
     numReviews: 0,
     price: 200,
@@ -211,7 +211,7 @@ const products = [
     brand: "Pillsbury ",
     catagory: "Brownie",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 2.5,
     numReviews: 0,
     price: 99,
@@ -228,7 +228,7 @@ const products = [
     brand: "Gifty",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 2.5,
     numReviews: 0,
     price: 210,
@@ -245,7 +245,7 @@ const products = [
     brand: "Dairy Milk",
     catagory: "Chocolate",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 4,
     numReviews: 0,
     price: 145,
@@ -262,7 +262,7 @@ const products = [
     brand: "Macarons",
     catagory: "Cup Cakes",
     description:
-      "Chocolate is a made from Cocoa Beans.It can be in a solid form like a candy bar or it can be in a liquid form like hot chocolate. Commercial chocolate has sugar and sometimes milk added. Dark chocolate has less sugar, and a more bitter taste. It was originally used to make drinking chocolate.",
+      "Indulge in the rich, velvety taste of premium chocolate crafted from the finest cocoa beans. Experience the ultimate in chocolate indulgence with our handcrafted collection, where each piece delivers an exquisite balance of rich flavors and smooth textures. From creamy milk chocolate to intense dark varieties, our selection offers something special for every chocolate lover. Perfect for special occasions, thoughtful gifts, or simply treating yourself to a moment of pure luxury. Made with passion and precision, these chocolates promise an unforgettable taste experience.",
     rating: 4,
     numReviews: 0,
     price: 145,

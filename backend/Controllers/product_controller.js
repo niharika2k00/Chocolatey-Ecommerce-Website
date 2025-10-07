@@ -34,9 +34,9 @@ const getproductByID = asyncHandler(async (req, res) => {
 // @access     Private / for ADMIN ONLY
 
 const deleteProductByID = asyncHandler(async (req, res) => {
-  const prod = await PRODUCT.findById(req.params.id);
-  if (prod) {
-    await prod.remove();
+  const product = await PRODUCT.findByIdAndDelete(req.params.id);
+  if (product) {
+    console.log("Product deleted:", product);
     res.json({ message: "Product Deleted !" });
   } else {
     // res.status(404).json({ message: "Product not found" });
