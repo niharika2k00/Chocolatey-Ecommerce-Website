@@ -1,0 +1,25 @@
+services:
+  chocolatey-backend:
+    container_name: chocolatey-backend
+    image: niharikadutta/chocolatey-backend:v0.0.1
+    restart: always
+    # build:
+    #   context: ../
+    #   dockerfile: Dockerfile
+    ports:
+      - "5050:5050"
+    env_file:
+      - .env
+    volumes:
+      - ./uploads:/app/uploads
+    networks:
+      - chocolatey-network
+      - prod_network
+
+networks:
+  chocolatey-network:
+    driver: bridge
+    external: true
+  prod_network:
+    driver: bridge
+    external: true
