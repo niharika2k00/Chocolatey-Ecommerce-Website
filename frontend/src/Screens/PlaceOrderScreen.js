@@ -127,7 +127,8 @@ const PlaceOrderScreen = ({ history }) => {
                         </Col>
 
                         <Col md={4} sm={4} xs={4} className="itemDet fontWt7_4">
-                          {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
+                          {item.qty} x {item.price} = ₹{" "}
+                          {item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -155,28 +156,28 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item id="boxsubitem">
                 <Row>
                   <Col>Items</Col>
-                  <Col>₹{CART.itemsPrice}</Col>
+                  <Col>₹ {CART.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item id="boxsubitem">
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>₹{CART.shippingPrice}</Col>
+                  <Col>₹ {CART.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item id="boxsubitem">
                 <Row>
                   <Col>Tax</Col>
-                  <Col>₹{CART.taxPrice}</Col>
+                  <Col>₹ {CART.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item id="boxsubitem">
                 <Row>
                   <Col>Total</Col>
-                  <Col>₹{CART.totalPrice}</Col>
+                  <Col>₹ {CART.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
@@ -193,8 +194,7 @@ const PlaceOrderScreen = ({ history }) => {
                   onClick={placeOrderHandler}
                 >
                   <b>
-                    {" "}
-                    Place Order <i className="fas fa-biking"></i>{" "}
+                    Place Order <i className="fas fa-biking"></i>
                   </b>
                 </Button>
               </ListGroup.Item>

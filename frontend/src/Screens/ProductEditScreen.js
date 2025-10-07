@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Button, Form } from "react-bootstrap";
+import { Form, InputGroup, Button } from "react-bootstrap";
 import "../index.css";
 import "../STYLES/Loginform.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Detailsproducts,
   updateProductAction,
-} from "@/Actions/Product_action.js";
+} from "../Actions/Product_action.js";
 import FormContainer from "../Components/FormContainer.js";
 import Mess from "../Components/Message.js";
-import Load from "../Components/Loading.js";
+import Loader from "../Components/Loading.js";
 import { PRODUCT_UPDATE_RESET } from "../Constants/Product_constant.js";
+import CustomButton from "../Components/CustomButton.js";
+import { getImageUrl } from "../utils.js";
 import API_URL from "../config.js";
 import axios from "axios";
 
-const UserEditScreen = ({ history, match }) => {
-  // Id of the specific USER
+const ProductEditScreen = ({ history, match }) => {
+  // Id of the specific product
   const urlProductID = match.params.id;
   console.log(urlProductID);
 
@@ -29,6 +31,7 @@ const UserEditScreen = ({ history, match }) => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
   const [imgUploading, setImgUploading] = useState(false);
+  const fileInputRef = useRef(null);
 
   const dispatch = useDispatch();
 
@@ -83,13 +86,18 @@ const UserEditScreen = ({ history, match }) => {
     dispatch(updateProductAction(prod));
   };
 
+  const handleFileButtonClick = () => {
+    fileInputRef.current?.click();
+  };
+
   const fileUploadHandler = async (e) => {
     console.log("Image upload Success!");
-    const file = e.target.files[0];
+    const file = e.target.files[0]; // as selecting single file
+    if (!file) return;
+
     console.log("File : ", file);
     const formData = new FormData();
-    formData.append("image", file); //  add a form field with the given IMAGE and FILE,
-    console.log("FormData : ", formData);
+    formData.append("image", file); // add a form field with the given image and file
     setImgUploading(true);
 
     try {
@@ -117,25 +125,27 @@ const UserEditScreen = ({ history, match }) => {
         to="/admin/productsList"
         style={{ fontSize: "1.05rem", color: "white" }}
       >
-        {" "}
-        <i className="arrow left"></i> GO BACK{" "}
+        <i className="arrow left"></i> Go Back
       </Link>
 
-      <FormContainer>
-        <h1 className="cartHead" style={{ paddingBottom: "2.1rem" }}>
+      <FormContainer pageType="singlePage">
+        <h1
+          className="cartHead"
+          style={{ paddingBottom: "1.5rem", marginBottom: "0.5rem" }}
+        >
           Edit Product
         </h1>
 
         {errorUpdate && <Mess variant="danger">{errorUpdate}</Mess>}
-        {loadingUpdate && <Load />}
+        {loadingUpdate && <Loader />}
 
         {loading ? (
-          <Load />
+          <Loader />
         ) : error ? (
           <Mess variant="danger">{error}</Mess>
         ) : (
           <Form onSubmit={submitHandler} id="login_form">
-            <Form.Group controlId="name">
+            <Form.Group controlId="name" style={{ marginBottom: "1.2rem" }}>
               <Form.Label>
                 <b>Name</b>
               </Form.Label>
@@ -148,7 +158,7 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="price">
+            <Form.Group controlId="price" style={{ marginBottom: "1.2rem" }}>
               <Form.Label>
                 <b>Price </b>
               </Form.Label>
@@ -161,36 +171,60 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            {imgUploading && <Load />}
-            <Form.Group controlId="image">
+            <Form.Group controlId="image" style={{ marginBottom: "1.2rem" }}>
               <Form.Label>
-                <b>Image </b>
+                <b>Image</b>
               </Form.Label>
-              <Form.Control
-                className="form_box"
-                type="text"
-                placeholder="enter image Url"
-                value={image ? `${API_URL}/${image}` : ""}
-                // accept=".png, .jpg, .jpeg"
-                onChange={(e) => {
+              <InputGroup>
+                <Form.Control
+                  className="form_box"
+                  type="text"
+                  placeholder="Enter image url or click upload to select file"
+                  value={getImageUrl(image)}
                   // Extract filename from full URL if user pastes a full URL
-                  const url = e.target.value;
-                  if (url.includes(API_URL)) {
-                    setImage(url.replace(`${API_URL}/`, ""));
-                  } else {
-                    setImage(url);
-                  }
-                }}
-              ></Form.Control>
-              <Form.File
-                id="image-file"
-                label="Choose File"
-                custom
+                  onChange={(e) => {
+                    const url = e.target.value;
+                    if (url.includes(API_URL)) {
+                      setImage(url.replace(`${API_URL}/`, ""));
+                    } else {
+                      setImage(url);
+                    }
+                  }}
+                />
+                <Button
+                  variant="outline-secondary"
+                  onClick={handleFileButtonClick}
+                  disabled={imgUploading}
+                  style={{
+                    borderColor: "#6c757d",
+                    color: "#6c757d",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  {imgUploading ? (
+                    <span style={{ color: "white" }}>
+                      <i className="fas fa-spinner fa-spin" /> Uploading...
+                    </span>
+                  ) : (
+                    <span style={{ color: "white" }}>
+                      <i className="fas fa-upload" /> Upload
+                    </span>
+                  )}
+                </Button>
+              </InputGroup>
+              <Form.Text className="text-muted">
+                Enter a direct image URL or click upload to select a file
+              </Form.Text>
+              <input
+                type="file"
+                ref={fileInputRef}
                 onChange={fileUploadHandler}
-              ></Form.File>
+                accept="image/*"
+                style={{ display: "none" }}
+              />
             </Form.Group>
 
-            <Form.Group controlId="topic">
+            <Form.Group controlId="topic" style={{ marginBottom: "1.2rem" }}>
               <Form.Label>
                 <b>Topic </b>
               </Form.Label>
@@ -203,7 +237,10 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="description">
+            <Form.Group
+              controlId="description"
+              style={{ marginBottom: "1.2rem" }}
+            >
               <Form.Label>
                 <b>Description </b>
               </Form.Label>
@@ -216,7 +253,7 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="brand">
+            <Form.Group controlId="brand" style={{ marginBottom: "1.2rem" }}>
               <Form.Label>
                 <b>Brand </b>
               </Form.Label>
@@ -229,7 +266,7 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="catagory">
+            <Form.Group controlId="catagory" style={{ marginBottom: "1.2rem" }}>
               <Form.Label>
                 <b>Catagory </b>
               </Form.Label>
@@ -242,7 +279,10 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="CountInStock">
+            <Form.Group
+              controlId="CountInStock"
+              style={{ marginBottom: "1.2rem" }}
+            >
               <Form.Label>
                 <b>CountInStock </b>
               </Form.Label>
@@ -255,9 +295,11 @@ const UserEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant="success">
-              <b style={{ fontSize: "16px" }}>Edit</b>
-            </Button>
+            <div style={{ textAlign: "center", marginTop: "1rem" }}>
+              <CustomButton type="submit" style={{ width: "40%" }}>
+                <span style={{ fontSize: "16px" }}> Update </span>
+              </CustomButton>
+            </div>
           </Form>
         )}
       </FormContainer>
@@ -265,4 +307,4 @@ const UserEditScreen = ({ history, match }) => {
   );
 };
 
-export default UserEditScreen;
+export default ProductEditScreen;

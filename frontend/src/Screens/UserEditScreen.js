@@ -71,7 +71,7 @@ const UserEditScreen = ({ history, match }) => {
         <i className="arrow left"></i> GO BACK{" "}
       </Link>
 
-      <FormContainer>
+      <FormContainer pageType="default">
         <h1 className="cartHead" style={{ paddingBottom: "2.1rem" }}>
           Edit User
         </h1>

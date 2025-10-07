@@ -189,7 +189,7 @@ const OrderScreen = ({ match, history }) => {
                               xs={5}
                               className="itemDet fontWt7_4"
                             >
-                              {item.qty} x ₹{item.price} = ₹
+                              {item.qty} x {item.price} = ₹{" "}
                               {item.qty * item.price}
                             </Col>
                           </Row>
@@ -216,28 +216,28 @@ const OrderScreen = ({ match, history }) => {
                   <ListGroup.Item id="boxsubitem">
                     <Row>
                       <Col>Items</Col>
-                      <Col>₹{Order.itemsPrice}</Col>
+                      <Col>₹ {Order.itemsPrice} </Col>
                     </Row>
                   </ListGroup.Item>
 
                   <ListGroup.Item id="boxsubitem">
                     <Row>
                       <Col>Shipping</Col>
-                      <Col>₹{Order.shipping_price}</Col>
+                      <Col>₹ {Order.shipping_price} </Col>
                     </Row>
                   </ListGroup.Item>
 
                   <ListGroup.Item id="boxsubitem">
                     <Row>
                       <Col>Tax</Col>
-                      <Col>₹{Order.taxPrice}</Col>
+                      <Col>₹ {Order.taxPrice}</Col>
                     </Row>
                   </ListGroup.Item>
 
                   <ListGroup.Item id="boxsubitem">
                     <Row>
                       <Col>Total</Col>
-                      <Col>₹{Order.total_price}</Col>
+                      <Col>₹ {Order.total_price}</Col>
                     </Row>
                   </ListGroup.Item>
 

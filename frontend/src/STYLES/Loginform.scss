@@ -1,5 +1,29 @@
 /* ***************************   LOGIN FORM     ************************************* */
 
+.form-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  overflow: visible;
+  margin: 0;
+  padding: 20px 0;
+}
+
+/* Specific styling for login/register forms */
+.form-container-wrapper.login-form {
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Prevent scroll bars on login/register pages */
+body:has(.form-container-wrapper.login-form) {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .myrow {
   margin: 40px;
   padding: 30px;
@@ -109,8 +133,12 @@
 }
 
 @media (max-width: 450px) {
+  .form-container-wrapper {
+    height: 100vh;
+    padding: 0;
+  }
   .myrow {
-    margin: 60px auto;
+    margin: 20px auto;
     padding: 8px;
   }
   #login_form {

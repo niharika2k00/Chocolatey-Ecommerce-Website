@@ -1,92 +1,92 @@
 .procart {
-    padding-top: 1.0rem;
-    margin-top: 1rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
 }
 
 .boxsm {
-    font-family: 'PT Serif', serif;
-    margin-top: 14px;
-    padding: .6rem;
-    background-color: #1b1a1a;
-    padding: .5rem 2rem;
-    color: rgba(236, 231, 231, 0.932);
-    font-size: .96rem;
-    letter-spacing: .8px;
+  font-family: "PT Serif", serif;
+  margin-top: 14px;
+  padding: 0.6rem;
+  background-color: #1b1a1a;
+  padding: 0.5rem 2rem;
+  color: rgba(236, 231, 231, 0.932);
+  font-size: 0.96rem;
+  letter-spacing: 0.8px;
 }
 
 .boxsm_cart {
-    padding: .8rem 5rem;
+  padding: 0.8rem 5rem;
 }
 
 .cartitem_num {
-    border-radius: 2rem;
-    background-color: #faf6f5;
+  border-radius: 2rem;
+  background-color: #faf6f5;
 }
 
 .cartbox_rgt {
-    background-color: #fff3b0;
-    color: #000;
+  background-color: #fff3b0;
+  color: #000;
 }
 
 .cartbox_rgt h2 {
-    font-family: 'PT Serif', serif;
-    font-size: 2.1rem;
-    font-weight: 300;
-    color: #000000;
+  font-family: "PT Serif", serif;
+  font-size: 2.1rem;
+  font-weight: 300;
+  color: #000000;
 }
 
 .cartbox_rgt p {
-    margin-bottom: 1px;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #000000;
+  margin-bottom: 1px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #000000;
 }
 
 .cartHead {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: 700;
-    font-size: 2.5rem;
-    background: linear-gradient(160deg, #f9419d, #f5de5e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #222022ef;
-    font-family: 'PT Serif', serif;
-    letter-spacing: 1px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: linear-gradient(160deg, #f9419d, #f5de5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #222022ef;
+  font-family: "PT Serif", serif;
+  letter-spacing: 1px;
 }
 
 .cart_subHead {
-    font-size: 1.2rem;
-    color: #f7f7f7e3;
-    font-weight: 700;
-    font-family: 'PT Serif', serif;
-    text-decoration: none;
+  font-size: 1.2rem;
+  color: #f7f7f7e3;
+  font-weight: 700;
+  font-family: "PT Serif", serif;
+  text-decoration: none;
 }
 
 @media (max-width: 450px) {
-    .cartHead {
-        font-weight: 700;
-        font-size: 2.1rem;
-    }
-    .cartbox_rgt h2 {
-        font-size: 1.9rem;
-    }
-    .cart_subHead {
-        font-weight: 400;
-        font-size: 0.85rem;
-    }
-    .boxsm {
-        margin-top: 14px;
-        padding: .4rem;
-    }
-    #cartimg {
-        width: 4vw;
-    }
-    .cartbox_rgt h2 {
-        font-size: 2rem;
-    }
-    .cartbox_rgt p {
-        font-size: 1.6rem;
-    }
+  .cartHead {
+    font-weight: 700;
+    font-size: 2.1rem;
+  }
+  .cartbox_rgt h2 {
+    font-size: 1.9rem;
+  }
+  .cart_subHead {
+    font-weight: 400;
+    font-size: 0.85rem;
+  }
+  .boxsm {
+    margin-top: 14px;
+    padding: 0.4rem;
+  }
+  #cartimg {
+    width: 4vw;
+  }
+  .cartbox_rgt h2 {
+    font-size: 2rem;
+  }
+  .cartbox_rgt p {
+    font-size: 1.6rem;
+  }
 }

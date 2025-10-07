@@ -1,3 +1,8 @@
+html,
+body {
+  background-color: #1b1a1a;
+}
+
 main {
   min-height: 85vh;
 }

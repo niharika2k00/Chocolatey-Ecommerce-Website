@@ -30,7 +30,7 @@ const LoginScreen = ({ location, history }) => {
   };
 
   return (
-    <FormContainer>
+    <FormContainer pageType="login">
       <h1 className="cartHead" style={{ paddingBottom: "2.3rem" }}>
         Login
       </h1>

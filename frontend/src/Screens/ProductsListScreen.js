@@ -4,13 +4,13 @@ import { Table, Button, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
-import "../STYLES/admin_style.css";
 import {
   Listproducts,
   deleteProductAction,
   createProductAction,
 } from "@/Actions/Product_action.js";
 import { PRODUCT_CREATE_RESET } from "../Constants/Product_constant.js";
+import CustomButton from "../Components/CustomButton.js";
 
 const ProductsListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -79,11 +79,13 @@ const ProductsListScreen = ({ history }) => {
         </Col>
 
         <Col className="text-right">
-          <button className="custom-btn btn-6" onClick={createNewProduct}>
-            <span>
-              <i className="fas fa-plus"></i> Create Product
-            </span>
-          </button>
+          <div style={{ textAlign: "center" }}>
+            <CustomButton onClick={createNewProduct}>
+              <span style={{ fontSize: "16px" }}>
+                <i className="fas fa-plus" /> Create Product
+              </span>
+            </CustomButton>
+          </div>
         </Col>
       </Row>
 

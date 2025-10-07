@@ -1,83 +1,84 @@
 #Ordersubhead {
-    font-family: 'PT Serif', serif;
-    font-size: 1.1rem;
-    padding: 0 10px 10px 6px;
+  font-family: "PT Serif", serif;
+  font-size: 1.1rem;
+  padding: 0 10px 10px 6px;
 }
 
 .Orderbkgrnd {
-    background-color: #1b1a1a;
+  background-color: #1b1a1a;
 }
 
 .Orderbox {
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    margin-bottom: 3.8rem;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin-bottom: 3.8rem;
 }
 
 #boxsubitem {
-    padding: 6px 20px;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
+  padding: 6px 20px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .orderHead {
-    font-weight: 600;
-    font-family: 'PT Serif', serif;
-    font-size: 2.0rem;
-    background: linear-gradient(160deg, #f9419d, #f5de5e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #222022ef;
-    letter-spacing: 1px;
-    padding: 2rem 1rem 0rem 0;
+  font-weight: 600;
+  font-family: "PT Serif", serif;
+  font-size: 2rem;
+  background: linear-gradient(160deg, #f9419d, #f5de5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #222022ef;
+  letter-spacing: 1px;
+  padding: 2rem 1rem 0rem 0;
 }
 
 .itemDet {
-    font-size: 1.2rem;
-    color: #f7f7f7de;
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
+  font-size: 1.2rem;
+  color: #f7f7f7de;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
 }
 
 #orderNum {
-    font-size: 2.1rem;
-    color: #fdffb6;
-    padding: 1rem 0 2.6rem 0;
-    letter-spacing: 1.5px;
+  font-size: 2.1rem;
+  color: #fdffb6;
+  padding: 1rem 0 2.6rem 0;
+  letter-spacing: 1.5px;
 }
 
-.fontWt7_5, .fontWt7_4 {
-    font-weight: 700;
+.fontWt7_5,
+.fontWt7_4 {
+  font-weight: 700;
 }
 
 @media (max-width: 450px) {
-    .orderHead {
-        font-weight: 700;
-        font-size: 1.4rem;
-        padding: 2rem 1rem 0rem 0;
-    }
-    #Ordersubhead {
-        font-size: 0.96rem;
-    }
-    .itemDet {
-        font-size: 0.95rem;
-    }
-    .fontWt7_5 {
-        font-weight: 500;
-    }
-    .fontWt7_4 {
-        font-weight: 400;
-    }
-    .Orderbox {
-        padding-top: 1.5rem;
-    }
-    #boxsubitem {
-        font-size: 0.92rem;
-    }
-    #orderNum {
-        font-size: 1.3rem;
-        color: #fdffb6;
-        padding: 1rem 0 1.5rem 0;
-        letter-spacing: 1.5px;
-    }
+  .orderHead {
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 2rem 1rem 0rem 0;
+  }
+  #Ordersubhead {
+    font-size: 0.96rem;
+  }
+  .itemDet {
+    font-size: 0.95rem;
+  }
+  .fontWt7_5 {
+    font-weight: 500;
+  }
+  .fontWt7_4 {
+    font-weight: 400;
+  }
+  .Orderbox {
+    padding-top: 1.5rem;
+  }
+  #boxsubitem {
+    font-size: 0.92rem;
+  }
+  #orderNum {
+    font-size: 1.3rem;
+    color: #fdffb6;
+    padding: 1rem 0 1.5rem 0;
+    letter-spacing: 1.5px;
+  }
 }

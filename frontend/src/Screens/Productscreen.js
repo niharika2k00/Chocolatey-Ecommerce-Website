@@ -13,6 +13,7 @@ import {
 import Mess from "../Components/Message.js";
 import Load from "../Components/Loading.js";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../Constants/Product_constant.js";
+import CustomButton from "../Components/CustomButton.js";
 
 const Productscreen = ({ history, match, filling, setFilling }) => {
   // < ------  Fetcing data from the Backend using REDUX  ------>
@@ -70,8 +71,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
       {/* { product.name} */}
       <section className="Button">
         <a className="Button-btn" href="/home">
-          {" "}
-          Back{" "}
+          Back
         </a>
       </section>
 
@@ -104,15 +104,15 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                   className="listy1 bgcolor"
                   style={{ fontSize: "1.6rem" }}
                 >
-                  <b> Price : </b>₹{product.price}{" "}
+                  <b> Price : </b>₹{product.price}
                 </ListGroup.Item>
                 <ListGroup.Item className="listy1 bgcolor">
                   <b> Brand : </b>
-                  {product.brand}{" "}
+                  {product.brand}
                 </ListGroup.Item>
                 <ListGroup.Item className="listy1 bgcolor">
                   <b> Description : </b>
-                  {product.description}{" "}
+                  {product.description}
                 </ListGroup.Item>
 
                 <ListGroup.Item className="listy1 bgcolor">
@@ -145,7 +145,6 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                     </Col>
 
                     <Col>
-                      {" "}
                       <br /> <p>{filling}</p>
                     </Col>
                   </Row>
@@ -162,19 +161,12 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                   <ListGroup.Item className="boxsm">
                     <Row>
                       <Col>
-                        {" "}
                         <b>
-                          {" "}
-                          Price {
-                            "  "
-                          } <i className="fas fa-arrow-right"></i>{" "}
-                        </b>{" "}
+                          Price <i className="fas fa-arrow-right"></i>
+                        </b>
                       </Col>
                       <Col>
-                        <strong>
-                          {" "}
-                          ₹ {"  "} {product.price}
-                        </strong>
+                        <strong> Rs. {product.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -182,16 +174,12 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                   <ListGroup.Item className="boxsm">
                     <Row>
                       <Col>
-                        {" "}
                         <b>
-                          Status {"  "} <i className="fas fa-arrow-right"></i>{" "}
-                        </b>{" "}
+                          Status <i className="fas fa-arrow-right"></i>
+                        </b>
                       </Col>
                       <Col>
-                        {" "}
-                        {product.countInStock > 0
-                          ? "In Stock"
-                          : "Out of Stock"}{" "}
+                        {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -202,9 +190,9 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                       <Row>
                         <Col>
                           <strong>
-                            Quantity {"  "}{" "}
-                            <i className="fas fa-arrow-right"></i>{" "}
-                          </strong>{" "}
+                            Quantity
+                            <i className="fas fa-arrow-right"></i>
+                          </strong>
                         </Col>
                         <Col>
                           <Form.Control
@@ -260,7 +248,6 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
               {product.reviews.length === 0 && (
                 <Mess variant="success">
-                  {" "}
                   No Reviews. Be the first Reviewer.
                 </Mess>
               )}
@@ -281,8 +268,7 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
 
                 <ListGroup.Item style={{ paddingTop: "5rem" }}>
                   <h2 style={{ fontSize: "1.4rem" }} id="prohead">
-                    {" "}
-                    WRITE A CUSTOMER REVIEW OF THIS PRODUCT{" "}
+                    Write a Customer Review of this Product
                   </h2>
 
                   {prodRev_error && (
@@ -290,7 +276,10 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                   )}
                   {UserInfo ? (
                     <Form onSubmit={submitReviewHandler}>
-                      <Form.Group controlId="rating">
+                      <Form.Group
+                        controlId="rating"
+                        style={{ marginBottom: "1.4rem" }}
+                      >
                         <Form.Label> Rating </Form.Label>
                         <Form.Control
                           as="select"
@@ -319,18 +308,16 @@ const Productscreen = ({ history, match, filling, setFilling }) => {
                         ></Form.Control>
                       </Form.Group>
                       <br></br>
-                      <Button
-                        type="submit"
-                        variant="success"
-                        style={{ borderRadius: ".36rem" }}
-                      >
-                        Submit
-                      </Button>
+
+                      <div style={{ textAlign: "center" }}>
+                        <CustomButton type="submit" style={{ width: "40%" }}>
+                          <span style={{ fontSize: "16px" }}> Submit </span>
+                        </CustomButton>
+                      </div>
                     </Form>
                   ) : (
                     <Mess>
-                      {" "}
-                      Please <Link to="/login">login</Link> to write a review{" "}
+                      Please <Link to="/login">login</Link> to write a review
                     </Mess>
                   )}
                 </ListGroup.Item>
