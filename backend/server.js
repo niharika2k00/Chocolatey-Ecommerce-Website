@@ -6,21 +6,12 @@
                   http://localhost:3200/user?name=tom&age=55 - req.query would yield {name:"tom", age: "55"}
 
   req.query is an object containing the property for each query string parameter in the route.
-  req.params will return parameters in the matched route. If your req.param is a function that peels
-  parameters out of the request.
-
+  req.params will return parameters in the matched route. If your req.param is a function that peels parameters out of the request.
 
   Content-Type Header ----->  tells the client what the content type of the returned content .
+*/
 
-
-
-  */
-
-/* const express = require('express');
-  const dotenv = require('dotenv');
-  const cors = require('cors'); */
-
-// syntax using ESSCRIPT
+// syntax using ES6 Modules
 import express from "express";
 import dotenv from "dotenv";
 import ConnectDB from "./config/DB.js";
@@ -121,7 +112,7 @@ app.get("*", (req, res) => {
 
 app.use(notFound);
 app.use(errorHandler);
-// app.use()
+
 const port = process.env.PORT || 5050;
 app.listen(
   port,
@@ -130,147 +121,6 @@ app.listen(
   )
 );
 
-// port change if needed ---> server.js , .env, frontend - backendurl
-
-/*
-  ADMIN
-  admin@gmail.com
-  12345
-
-
-  STEPS ::
-
-  1) npm i                  ----> /
-  2) npm i                  ----> cd frontend
-  3) npm start              ----> start only frontend (cd frontend)
-  4) npm start || npm run start         ----> start only Backend(cd backend SERVER)
-  5) npm run dev            ----> start both Frontend(CLIENT SIDE) & Backend(SERVER SIDE)
-  6) npm run data:import    ----> for importing into the Database
-  7) Add .env file :
-
-  npm run build -> for craco build
-
-  For building the frontend, we need to run the following command:
-  cd frontend && npm run build
-
-
-
-  PORT=5050
-  NODE_ENV=production
-  MONGODB_URI=mongodb+srv://niharika:dbpassword123@cluster0.0njtlop.mongodb.net/Ecommerce?retryWrites=true&w=majority
-  JWT_TOKEN=abc@123
-  PAYPAL_CLIENT_ID=AceHkmmupJasiEWdEUthEPJQSlLfDXD1aTQuxzQQ3VD15DD-I6IdyuxJPtQgFw_cOhFik-IrHZ87or41
-  PAYPAL_SECRET_ID=EIZqtLuiEhgnMfV3WTwHRePwwfs1804ORJbHJQnNn0m6aBl1Irw0Ts7EVHmP0gcCEzIrFsYBWL2HDdNA
-
-
-
-  Emma Lawson
-  Emily Carter
-  Olivia Bennett
-  Lucas Parker
-
-
-
-
-  sb-e147tu45057405@personal.example.com
-  Q!&bDA6M
-
-  */
-
-/* const middleware = (req, res, next) => {
-    // code...
-    next();
-    }
-    app.use(middleware());
-
-
-    223.223.138.236
-
-
-    http://115.187.34.234:5050/
-
-
-
-    MONGODB USERNAME AND PASSWORD
-    niharika
-    dbpassword123
-
-    - In MongoDB Atlas, create a database
-    - In the database, build a new cluster (or collection or tables)
-    - now upload sample data in the collection using seeder.js
-    - now we can use the database in the server.js
-
-  Configure Access
-  Database Access: Add user with username/password (e.g., niharika/dbpassword123)
-  Network Access: Add IP address (0.0.0.0/0 for development)
-
-    If get Atlas cluster IP whitelist error, then add the IP address in the Atlas cluster > Network Access tab
-    Now I've set it to 0.0.0.0/0
-    To create new user goto Database Access
-
-
-    mongodb+srv://<username>:<password>@<cluster_name>.mongodb.net/<database_name>?retryWrites=true&w=majority
-
-
-    now using the mongodb uri connect in compass
-    MONGODB_URI=mongodb+srv://niharika:dbpassword123@cluster1.q1fgmra.mongodb.net/ecommerce_chocolatey?retryWrites=true&w=majority
-
-
-  brew install mongosh
-  mongosh --version
-
-  mongosh
-
-  // connect to the database
-  mongosh <mongodb_uri>
-
-
-    // Show current database
-  db.getName()
-
-  show dbs
-  use ecommerce_chocolatey
-  show collections
-  db.users.find();
-  db.users.countDocuments();
-  db.users.find({ isAdmin: true })
-  db.users.findOne({ email: "admin@example.com" })
-
-
-  db.products.find({ numReviews: { $gt: 0 } })
-
-
-  db.products.updateMany(
-  { name: "Creamy Choco" },
-  { $set: { numReviews: 5 } }
-)
-
-
-
-
-  brew services start mongodb-community
-  brew services stop mongodb-community
-  brew services restart mongodb-community
-
-
-
-  in compass :
-  mongodb+srv://niharika:<db_password>@cluster1.q1fgmra.mongodb.net/
-
-  in mongosh:
-  mongosh "mongodb+srv://cluster1.q1fgmra.mongodb.net/" --apiVersion 1 --username niharika
-
-
-
-
-
-
-  https://chocolatey.raspberryip.com/
-
-  http://videohub.raspberryip.com/
-
-
-
-
-
-  */
+// npm run dev         -> starts both frontend and backend
+// npm run data:import -> for importing into database
+// npm run server      -> starts only backend (with nodemon)

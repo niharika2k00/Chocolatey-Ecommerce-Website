@@ -8,10 +8,8 @@ A full-stack chocolate e-commerce platform built with React.js frontend and Node
 
 ## 📸 Screenshots
 
-![Admin Dashboard](screenshots/2.png)
-
 <details>
-<summary><b>✨ Visual Tour | Screenshots</b></summary>
+<summary><span style="font-size: 1rem; font-weight: bold" >✨ Visual Tour | Screenshots</span></summary>
 
 ### 🏠 Homepage
 
@@ -46,7 +44,7 @@ A full-stack chocolate e-commerce platform built with React.js frontend and Node
 
 </details>
 
-### Homepage
+![a](screenshots/2.png)
 
 ## 🌟 Features
 
@@ -89,7 +87,7 @@ A full-stack chocolate e-commerce platform built with React.js frontend and Node
 3. **Install frontend dependencies**
 
    ```bash
-   cd ../frontend
+   cd frontend
    npm install
    ```
 

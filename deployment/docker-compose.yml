@@ -10,8 +10,8 @@ services:
       - "5050:5050"
     env_file:
       - .env
-    volumes:
-      - ./uploads:/app/uploads
+    # volumes:
+    #   - ./uploads:/app/uploads
     networks:
       - chocolatey-network
       - prod_network

@@ -23,10 +23,19 @@ docker buildx build --platform linux/amd64,linux/arm64 -t niharikadutta/chocolat
 
 echo "\n Deployment complete!"
 
-# docker push niharikadutta/chocolatey-backend:v0.0.1
-# docker pull niharikadutta/chocolatey-backend:v0.0.1
 
-# 1. Do necessary changes in the environment variables
-# 2. Run the script
-# 3. Upload the deployment setup in the server(VM) using scp
-# 4. Run the docker compose file in the server
+# Steps to deploy the application using Docker (For Production)
+
+# 1. Update all environment variables in .env files
+# 2. Run build script ./script.sh
+# 3. Upload the deployment setup (./deployment) in the server(VM) using scp
+#       scp -r ./deployment niharika@bihan-prod:/home/niharika/
+# 4. SSH into the server and Pull the latest image from the docker hub
+#       docker pull <username>/<image_name>:<tag>
+#       docker pull niharikadutta/chocolatey-backend:v0.0.1
+# 5. Run the docker compose file in the remote server
+#       docker compose up -d
+# 6. Check docker logs to verify the deployment
+#       docker logs <container_name> -f
+#       docker logs chocolatey-backend -f
+
