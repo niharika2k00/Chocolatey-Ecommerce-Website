@@ -1,3 +1,5 @@
+name: chocolatey-deployment
+
 services:
   chocolatey-backend:
     container_name: chocolatey-backend

@@ -1,4 +1,4 @@
-# 🍫 Chocolatey E-Commerce Website
+# <div align="center"> 🍫 Chocolatey E-Commerce Website </div>
 
 A full-stack chocolate e-commerce platform built with React.js frontend and Node.js backend, featuring user authentication, product management, shopping cart, order processing, and PayPal payment(sandbox) integration.
 

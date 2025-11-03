@@ -23,7 +23,6 @@ docker buildx build --platform linux/amd64,linux/arm64 -t niharikadutta/chocolat
 
 echo "\n Deployment complete!"
 
-
 # Steps to deploy the application using Docker (For Production)
 
 # 1. Update all environment variables in .env files
@@ -38,4 +37,3 @@ echo "\n Deployment complete!"
 # 6. Check docker logs to verify the deployment
 #       docker logs <container_name> -f
 #       docker logs chocolatey-backend -f
-

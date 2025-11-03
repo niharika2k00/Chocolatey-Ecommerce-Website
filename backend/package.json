@@ -1,7 +1,7 @@
 {
-  "name": "Chocolatey",
+  "name": "Chocolatey Backend",
   "version": "1.0.0",
-  "description": "ecommerce chocolate store website",
+  "description": "E-commerce chocolate store website",
   "main": "server.js",
   "type": "module",
   "scripts": {
